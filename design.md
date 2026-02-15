@@ -1,12 +1,12 @@
-# BAANI Design Document
+# VAANI Design Document
 
 ## 1. System Overview
 
-**BAANI** (Baani) is a voice-first AI-powered decision support system designed to empower rural farmers with contextual, explainable, and actionable intelligence. Instead of delivering raw data, BAANI answers the key question farmers ask: "Mujhe ab kya karna chahiye?" (What should I do now?)
+**VAANI** (Vaani) is a voice-first AI-powered decision support system designed to empower rural farmers with contextual, explainable, and actionable intelligence. Instead of delivering raw data, VAANI answers the key question farmers ask: "Mujhe ab kya karna chahiye?" (What should I do now?)
 
 **Core Value**: Convert fragmented public data (weather, soil, market prices) into simple, explainable guidance delivered through natural voice interactions in local languages.
 
-**Positioning**: BAANI is not just an AI tool — it is a digital farmer buddy.
+**Positioning**: VAANI is not just an AI tool — it is a digital farmer buddy.
 
 ## 2. Design Principles
 
@@ -20,7 +20,7 @@
 
 ## 3. High-Level Architecture: Three Pillars
 
-BAANI is built on three core pillars that work together to deliver comprehensive farmer support:
+VAANI is built on three core pillars that work together to deliver comprehensive farmer support:
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -69,7 +69,7 @@ BAANI is built on three core pillars that work together to deliver comprehensive
 
 ### Pillar 2: Core Decision Engine (6-Layer Architecture)
 
-This is the brain of BAANI, structured as a 6-layer pipeline:
+This is the brain of VAANI, structured as a 6-layer pipeline:
 
 #### Layer 1: Intent Classification
 **Purpose**: Identify farmer intent and route to appropriate decision logic.
@@ -253,7 +253,7 @@ Agar 2 din baad barish nahi hui, to phir paani de sakte hain."
 - Best practice reminders
 - Timely farming tips
 
-**Goal**: Make BAANI feel like a trusted farming buddy, not just a tool.
+**Goal**: Make VAANI feel like a trusted farming buddy, not just a tool.
 
 ## 5. Decision Intelligence Flow
 
@@ -338,7 +338,7 @@ Agar 2 din baad barish nahi hui, to check kar sakte hain."
 
 ### Response Structure Standard
 
-Every BAANI response follows this pattern:
+Every VAANI response follows this pattern:
 - **Direct Answer**: Clear yes/no or specific action
 - **Key Reasoning**: 2 main supporting reasons
 - **Risk Factors**: Potential issues to consider (when relevant)
@@ -459,7 +459,7 @@ For the hackathon demo, Hindi is used as a common language, with architecture de
 - Modular design allowing independent deployment of pillars
 - Standards-based approach for broad compatibility
 
-BAANI is designed to tolerate intermittent connectivity by caching recent data, while requiring basic internet access for live weather and market updates.
+VAANI is designed to tolerate intermittent connectivity by caching recent data, while requiring basic internet access for live weather and market updates.
 
 ## 9. Scalability & Future Scope
 
@@ -473,14 +473,14 @@ BAANI is designed to tolerate intermittent connectivity by caching recent data, 
 
 ### Long-Term Vision
 
-Each farmer uses BAANI daily to:
+Each farmer uses VAANI daily to:
 - Plan irrigation schedules
 - Time market selling for better prices
 - Choose crops based on trends
 - Access government schemes
 - Reduce farming risks
 
-BAANI becomes a trusted digital companion that supports:
+VAANI becomes a trusted digital companion that supports:
 - Resource-efficient agriculture
 - Improved price realization
 - Sustainable rural ecosystems
@@ -488,11 +488,11 @@ BAANI becomes a trusted digital companion that supports:
 
 ### Impact Vision
 
-BAANI aims to:
+VAANI aims to:
 - Reduce guesswork in farming decisions through data-driven guidance
 - Improve price realization for farmers through market intelligence
 - Increase awareness and access to government schemes
 - Support resource-efficient and sustainable agriculture
 - Promote thriving rural ecosystems
 
-This design provides a comprehensive foundation for building BAANI as a practical, user-friendly agricultural decision support system that truly serves the needs of rural farmers in India.
+This design provides a comprehensive foundation for building VAANI as a practical, user-friendly agricultural decision support system that truly serves the needs of rural farmers in India.

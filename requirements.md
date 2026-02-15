@@ -1,14 +1,14 @@
-# BAANI Requirements Document
+# VAANI Requirements Document
 
 ## Project Overview
 
-**Project Name**: BAANI (Baani)
+**Project Name**: VAANI (Vaani)
 
 **Vision**: A voice-first AI-powered decision support system that empowers rural farmers with contextual, explainable, and actionable intelligence delivered through natural voice interactions.
 
-**Core Value Proposition**: Instead of providing raw data or generic advisories, BAANI focuses on decision intelligence — answering the question rural users actually ask: "Mujhe ab kya karna chahiye?" (What should I do now?)
+**Core Value Proposition**: Instead of providing raw data or generic advisories, VAANI focuses on decision intelligence — answering the question rural users actually ask: "Mujhe ab kya karna chahiye?" (What should I do now?)
 
-**Positioning**: BAANI is not just an AI tool — it is a digital farmer buddy.
+**Positioning**: VAANI is not just an AI tool — it is a digital farmer buddy.
 
 ## Problem Statement
 
@@ -21,7 +21,7 @@ Rural farmers face multiple structural challenges:
 - Market price volatility affecting income
 - Limited awareness of government schemes and benefits
 
-Existing systems provide information, but not contextual decision support. BAANI bridges this gap by converting data into actionable guidance.
+Existing systems provide information, but not contextual decision support. VAANI bridges this gap by converting data into actionable guidance.
 
 ## Target Users
 
@@ -53,7 +53,7 @@ Existing systems provide information, but not contextual decision support. BAANI
 - System maintains conversational flow for follow-up questions
 
 #### 1.2 WhatsApp Interactive Interface
-**User Story**: As a farmer, I want to interact with BAANI through WhatsApp buttons, so I can quickly access common features.
+**User Story**: As a farmer, I want to interact with VAANI through WhatsApp buttons, so I can quickly access common features.
 
 **Acceptance Criteria**:
 - System provides action-oriented call-to-action buttons
@@ -276,8 +276,8 @@ Existing systems provide information, but not contextual decision support. BAANI
 - Community features for farmer knowledge sharing
 
 ### Long-term Vision
-- Each farmer uses BAANI daily to plan irrigation, time market selling, choose crops, access schemes, and reduce risk
-- BAANI becomes a trusted digital companion for rural agricultural decisions
+- Each farmer uses VAANI daily to plan irrigation, time market selling, choose crops, access schemes, and reduce risk
+- VAANI becomes a trusted digital companion for rural agricultural decisions
 - Integration with agricultural supply chain platforms
 - Expansion to other rural livelihood decisions beyond agriculture
 
@@ -303,7 +303,7 @@ Existing systems provide information, but not contextual decision support. BAANI
 
 ## Why AI is Required
 
-BAANI cannot be built using static rules alone because farming and market decisions depend on uncertain, interacting variables such as weather forecasts, price volatility, crop stage, soil conditions, and user intent expressed in natural language. AI enables:
+VAANI cannot be built using static rules alone because farming and market decisions depend on uncertain, interacting variables such as weather forecasts, price volatility, crop stage, soil conditions, and user intent expressed in natural language. AI enables:
 - Contextual reasoning across multiple data sources
 - Natural language understanding for conversational interaction
 - Probabilistic decision-making under uncertainty
