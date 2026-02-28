@@ -57,13 +57,15 @@ Weather-service/
 │   ├── db.py                # SQLAlchemy engine & session maker
 │   ├── models.py            # DB Schema Definitions
 │   ├── services/
-│   │   ├── geocode_service.py   # Pincode to Lat/Lon resolution
-│   │   ├── weather_service.py   # Core orchestration logic
-│   │   ├── openmeteo_client.py  # Async Open-Meteo interactions
-│   │   └── cache_service.py     # Redis caching logic
+│   │   ├── geocode_service.py          # Pincode to Lat/Lon resolution
+│   │   ├── weather_service.py          # Core orchestration logic (V1)
+│   │   ├── weather_features_service.py # Core orchestration logic for derived features (V2)
+│   │   ├── openmeteo_client.py         # Async Open-Meteo interactions
+│   │   └── cache_service.py            # Redis caching logic
 │   └── utils/
-│       ├── time_utils.py        # Timezone & UTC window calculations
-│       └── rainfall_utils.py    # Heavy rain detection algorithms
+│       ├── time_utils.py               # Timezone & UTC window calculations
+│       ├── rainfall_utils.py           # Heavy rain detection algorithms
+│       └── features_utils.py           # Feature computation logic for V2
 ├── .env                     # Environment variables
 ├── docker-compose.yml       # Postgres & Redis containers
 └── requirements.txt         # Python dependencies
@@ -134,3 +136,15 @@ Fetches the weather forecast for the specified highly localized area.
   - `force_refresh` (optional, default: false): Bypasses Redis to force a fresh pull.
 - **Example**: `http://localhost:8080/v1/weather/560066`
 - **Response**: Returns a comprehensive JSON containing `lat`, `lon`, `daily` forecasts, detected `heavy_rain_days`, and granular `hourly` forecasts for those specific rainy days.
+
+### 3. Get Weather Features by Pincode (V2)
+Returns derived, actionable intelligence and agricultural features instead of raw weather data.
+- **URL**: `/v2/weather/{pincode}`
+- **Method**: `GET`
+- **Query Parameters**:
+  - `days_past` (optional, default: 7): Number of historical days to fetch.
+  - `days_future` (optional, default: 16): Number of forecast days to fetch.
+  - `include_hourly` (optional, default: false): Optionally includes `hourly_heavy_rain` data in the payload.
+  - `force_refresh` (optional, default: false): Bypasses Redis to force a fresh pull.
+- **Example**: `http://localhost:8080/v2/weather/560066`
+- **Response**: Returns a compact JSON containing rainfall/temperature summaries, advisory flags (e.g., dry spell, heat stress), and farming recommendations (e.g., preparing land, sowing windows).
