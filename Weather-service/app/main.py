@@ -6,6 +6,7 @@ from app.db import get_db, Base, engine
 import app.models  # ensure models are imported before create_all
 from app.services.cache_service import redis_client
 from app.services.weather_service import get_weather_for_pincode
+from app.services.weather_features_service import get_weather_features_for_pincode
 
 logging.basicConfig(level=logging.INFO)
 
@@ -50,4 +51,24 @@ async def get_weather(
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         logging.error(f"WEATHER SERVICE | Error fetching weather: {e}")
+        raise HTTPException(status_code=500, detail="Internal Service Error")
+
+@app.get("/v2/weather/{pincode}")
+async def get_weather_v2(
+    pincode: str,
+    days_past: int = Query(7),
+    days_future: int = Query(16),
+    include_hourly: bool = Query(False),
+    force_refresh: bool = Query(False),
+    db: Session = Depends(get_db)
+):
+    try:
+        logging.info(f"WEATHER SERVICE | Fetching v2 weather for pincode: {pincode}")
+        result = await get_weather_features_for_pincode(db, pincode, days_past, days_future, include_hourly, force_refresh)
+        logging.info(f"WEATHER SERVICE | V2 Weather fetched successfully for pincode: {pincode}")
+        return result
+    except ValueError as ve:
+        raise HTTPException(status_code=400, detail=str(ve))
+    except Exception as e:
+        logging.error(f"WEATHER SERVICE | Error fetching v2 weather: {e}")
         raise HTTPException(status_code=500, detail="Internal Service Error")
