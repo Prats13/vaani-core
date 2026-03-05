@@ -52,22 +52,31 @@ Client Request (Pincode)
 ```text
 Weather-service/
 ├── app/
-│   ├── main.py                     # FastAPI application & entry points
-│   ├── config.py                   # Pydantic Settings & Env management
-│   ├── db.py                       # SQLAlchemy engine & session maker
-│   ├── models.py                   # DB Schema Definitions
-│   ├── services/
-│   │   ├── geocode_service.py          # Pincode to Lat/Lon resolution
-│   │   ├── weather_service.py          # Core orchestration logic (v1)
-│   │   ├── weather_features_service.py # Core orchestration logic (v2)
-│   │   ├── crop_catalog_service.py     # Crop CRUD and queries
-│   │   ├── crop_intelligence_service.py# Weather + Crop correlations
-│   │   ├── search_service.py           # Universal search across crops
-│   │   ├── openmeteo_client.py         # Async Open-Meteo interactions
-│   │   └── cache_service.py            # Redis caching logic
-│   └── utils/
-│       ├── time_utils.py           # Timezone & UTC window calculations
-│       └── rainfall_utils.py       # Heavy rain detection algorithms
+│   ├── main.py                     # FastAPI application & mounted routers
+│   ├── core/
+│   │   ├── config.py               # Pydantic Settings & Env management
+│   │   ├── db.py                   # SQLAlchemy engine & session maker
+│   │   └── cache_service.py        # Redis caching logic
+│   ├── weather/
+│   │   ├── routers.py              # Weather API endpoints
+│   │   ├── models.py               # Weather DB Schemas
+│   │   ├── services/               # Core orchestration logic
+│   │   ├── clients/                # Open-Meteo interactions
+│   │   └── utils/                  # Heavy rain detection algorithms
+│   ├── crop/
+│   │   ├── routers.py              # Crop Intelligence endpoints
+│   │   ├── models.py               # Crop DB Schemas
+│   │   ├── services/               # Crop catalog and risk evaluations
+│   │   └── utils/                  # Season and time calculations
+│   ├── mandi/
+│   │   ├── routers.py              # Mandi Prices endpoints
+│   │   ├── models.py               # Mandi DB Schemas
+│   │   ├── services/               # Mandi caching and insights logic
+│   │   ├── repositories/           # Mandi DB queries and upserts
+│   │   └── clients/                # Data.gov.in interactions
+│   └── search/
+│       ├── routers.py              # Universal search endpoint
+│       └── services/               # Search service logic
 ├── .env                            # Environment variables
 ├── docker-compose.yml              # Postgres & Redis containers
 └── requirements.txt                # Python dependencies
@@ -83,14 +92,6 @@ Weather-service/
 
 ### 2. Environment Variables
 Ensure a `.env` file exists in the root directory:
-```env
-DATABASE_URL=postgresql://maheshdasika:pass@localhost:5432/VAANI
-REDIS_URL=redis://localhost:6379
-OPEN_METEO_BASE=https://api.open-meteo.com/v1/forecast
-PINCODE_API_BASE=http://api.zippopotam.us/in
-FORECAST_REFRESH_TTL_HOURS=3
-CACHE_TTL_SECONDS=1800
-```
 
 ### 3. Start Database and Cache Native Services (Docker)
 This project uses Docker Compose to easily spin up a PostgreSQL 15 database and a Redis 7 instance. 
@@ -163,3 +164,7 @@ uvicorn app.main:app --reload --port 8081
 
 **6. Cross-Category Search (Tier 6)**
 - `GET /v1/search` - Universal search across crops, varieties, and diseases.
+
+### 🍅 Mandi Price APIs
+- `GET /v1/mandi/raw` - Fetches exact market pricing data from Data.gov.in Agmarknet, caches it in Redis, and locally upserts tracking records in Postgres.
+- `GET /v2/mandi/insights` - Runs data-analysis on Mandi prices over customizable windows (7/30/90 days), providing Min/Max/Avg, price volatility, market rankings, and time-series representations.
