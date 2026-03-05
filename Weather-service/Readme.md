@@ -83,14 +83,7 @@ Weather-service/
 
 ### 2. Environment Variables
 Ensure a `.env` file exists in the root directory:
-```env
-DATABASE_URL=postgresql://maheshdasika:pass@localhost:5432/VAANI
-REDIS_URL=redis://localhost:6379
-OPEN_METEO_BASE=https://api.open-meteo.com/v1/forecast
-PINCODE_API_BASE=http://api.zippopotam.us/in
-FORECAST_REFRESH_TTL_HOURS=3
-CACHE_TTL_SECONDS=1800
-```
+
 
 ### 3. Start Database and Cache Native Services (Docker)
 This project uses Docker Compose to easily spin up a PostgreSQL 15 database and a Redis 7 instance. 
