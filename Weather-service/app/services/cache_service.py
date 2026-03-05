@@ -38,3 +38,19 @@ async def set_cached_weather(key: str, data: dict):
 async def close_redis():
     logger.info(f"WEATHER SERVICE | CACHE SERVICE | REDIS | CLOSING")
     await redis_client.close()
+
+async def get_cached_data(key: str) -> dict:
+    try:
+        data = await redis_client.get(key)
+        if data:
+            return json.loads(data)
+        return None
+    except Exception as e:
+        logger.error(f"CACHE SERVICE | REDIS | ERROR | key: {key}: {e}")
+        return None
+
+async def set_cached_data(key: str, data: dict, ttl_seconds: int):
+    try:
+        await redis_client.setex(key, ttl_seconds, json.dumps(data))
+    except Exception as e:
+        logger.error(f"CACHE SERVICE | REDIS | SET ERROR | key: {key}: {e}")

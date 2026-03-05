@@ -13,7 +13,13 @@ logging.basicConfig(level=logging.INFO)
 # Provide synchronous table creation
 with engine.begin() as conn:
     conn.execute(text("CREATE SCHEMA IF NOT EXISTS weather"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS crop"))
+
 Base.metadata.create_all(bind=engine)
+
+import app.models_crop
+import app.models_mandi
+app.models_crop.CropBase.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Weather Intelligence Service")
 
@@ -238,3 +244,9 @@ async def search_route(q: str = Query(...), state: str = Query(None), limit: int
     except Exception as e:
         logging.error(f"CROP SERVICE | Error in /v1/search: {e}")
         raise HTTPException(500, "Internal Service Error")
+
+# ==========================================
+# MANDI APIS
+# ==========================================
+from app.routers import mandi
+app.include_router(mandi.router)

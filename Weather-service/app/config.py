@@ -14,6 +14,12 @@ class Settings(BaseSettings):
     CROP_CACHE_TTL_SHORT: int = 43200   # 12h for /varieties, /crops/state
     CROP_CACHE_TTL_SEARCH: int = 21600  # 6h for /search
     CROP_CACHE_TTL_WEATHER: int = 10800 # 3h for /crop/suitability (weather dependent)
+    
+    # Mandi API Config
+    DATA_GOV_API_KEY: str = "579b464db66ec23bdd000001cdd3946e44ce4aad7209ff7b23ac571b"
+    MANDI_CACHE_TTL_V1: int = 10800      # 3 hours for raw v1
+    MANDI_CACHE_TTL_V2: int = 21600      # 6 hours for insights v2
+
 
     class Config:
         env_file = ".env"
