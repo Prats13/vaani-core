@@ -156,7 +156,7 @@ async def get_varieties_by_crop(db: Session, crop_name: str, state: str, limit: 
             v_dict["yield_max"] = v_dict.pop("yield_max_q_per_ha", None)
             v_dict["seed_rate_min"] = v_dict.pop("seed_rate_min_g_per_ha", None)
             v_dict["seed_rate_max"] = v_dict.pop("seed_rate_max_g_per_ha", None)
-            v_dict["sowing_time_tags"] = v_dict.pop("sowing_time", None)
+            v_dict["sowing_time_tags"] = v_dict.pop("sowing_time_tags", None)
             
             fmt_vs.append(format_variety_essential(v_dict, include_raw_text))
             
