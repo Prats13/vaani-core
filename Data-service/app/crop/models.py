@@ -26,6 +26,11 @@ class Crop(CropBase):
     has_calendar = Column(Boolean, default=False)
     varieties_count = Column(Integer, default=0)
     metadata_col = Column("metadata", JSONB)
+    # New columns from entities.md
+    local_names = Column(JSONB)
+    crop_type = Column(String)
+    season = Column(String)
+    msp_eligible = Column(Boolean)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
 
@@ -41,9 +46,10 @@ class CropCalendarWindow(CropBase):
     season = Column(String)
     window_label_raw = Column(String)
     source_document = Column(String)
-    sowing_months = Column(ARRAY(TEXT))
-    growth_months = Column(ARRAY(TEXT))
-    harvest_months = Column(ARRAY(TEXT))
+    sowing_months = Column(ARRAY(Integer))  # Changed from TEXT to Integer
+    growth_months = Column(ARRAY(Integer))  # Changed from TEXT to Integer
+    harvest_months = Column(ARRAY(Integer))  # Changed from TEXT to Integer
+    notes = Column(String)  # New column from entities.md
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
 
@@ -70,6 +76,11 @@ class CropVariety(CropBase):
     resistance_or_tolerance_lines = Column(ARRAY(TEXT))
     other_lines = Column(ARRAY(TEXT))
     extras = Column(JSONB)
+    # New columns from entities.md
+    local_names = Column(JSONB)
+    growth_duration_days = Column(Integer)
+    drought_tolerance = Column(String)
+    is_msp_variety = Column(Boolean)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now(), server_default=func.now())
 

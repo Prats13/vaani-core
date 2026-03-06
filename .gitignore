@@ -4,3 +4,9 @@ venv/
 .env
 .idea/
 *.log
+
+# Research data and one-time import scripts
+perplexity_*.json
+Data-service/scripts/import_*.py
+Data-service/RESEARCH_PROMPTS.md
+Data-service/DATA_IMPORT_SUMMARY.md

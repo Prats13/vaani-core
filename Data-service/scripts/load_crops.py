@@ -27,6 +27,29 @@ def parse_range(value):
             return min(nums), max(nums)
     return None, None
 
+def month_name_to_int(month_name):
+    """Convert month name to integer (1-12)."""
+    month_map = {
+        'january': 1, 'february': 2, 'march': 3, 'april': 4,
+        'may': 5, 'june': 6, 'july': 7, 'august': 8,
+        'september': 9, 'october': 10, 'november': 11, 'december': 12
+    }
+    return month_map.get(month_name.lower().strip())
+
+def convert_month_array(months_list):
+    """Convert list of month names/numbers to list of integers."""
+    if not months_list:
+        return []
+    result = []
+    for m in months_list:
+        if isinstance(m, int):
+            result.append(m)
+        elif isinstance(m, str):
+            month_int = month_name_to_int(m)
+            if month_int:
+                result.append(month_int)
+    return result
+
 def parse_sowing_time(sowing_time_raw):
     if not sowing_time_raw:
         return []
@@ -128,10 +151,10 @@ def main():
                     season=cal.get("season"),
                     window_label_raw=cal.get("window_label_raw"),
                     source_document=cal.get("source_reference", {}).get("document"),
-                    sowing_months=cal.get("sowing_months", []),
-                    growth_months=cal.get("growth_months", []),
-                    harvest_months=cal.get("harvest_months", [])
-                ).on_conflict_do_nothing() 
+                    sowing_months=convert_month_array(cal.get("sowing_months", [])),
+                    growth_months=convert_month_array(cal.get("growth_months", [])),
+                    harvest_months=convert_month_array(cal.get("harvest_months", []))
+                ).on_conflict_do_nothing()
                 # Doing do_nothing here because unique constraint has many coalesce constraints
                 conn.execute(stmt_cal)
                 counts["calendars"] += 1
