@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String, Float, DateTime, Boolean, Integer, UniqueConstraint, Index, ForeignKey
 from sqlalchemy.sql import func
-from app.db import Base
+from app.core.db import Base
 
 class PincodeLocation(Base):
     __tablename__ = "pincode_location"

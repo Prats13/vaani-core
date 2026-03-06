@@ -65,7 +65,7 @@ def get_varieties_for_state_by_crop(db: Session, state_name: str, limit: int = N
             "yield_max": v.yield_max_q_per_ha,
             "seed_rate_min": v.seed_rate_min_g_per_ha,
             "seed_rate_max": v.seed_rate_max_g_per_ha,
-            "sowing_time_tags": v.sowing_time,
+            "sowing_time_tags": v.sowing_time_tags,
             "resistance_or_tolerance_lines": v.resistance_or_tolerance_lines,
             "other_lines": v.other_lines,
             "raw_text": v.raw_text,
@@ -193,8 +193,8 @@ def get_candidate_crops_for_state_season(db: Session, state_name: str, season: s
              ).all()
              
              for v in v_q:
-                 if v.sowing_time:
-                     for tag in v.sowing_time:
+                 if v.sowing_time_tags:
+                     for tag in v.sowing_time_tags:
                          if season and season.lower() in tag.lower():
                              matched = True
                              break
