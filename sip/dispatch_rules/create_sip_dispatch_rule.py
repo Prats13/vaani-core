@@ -8,7 +8,7 @@ from sip.sip_config import (
     INBOUND_ROOM_DEPARTURE_TIMEOUT,
     INBOUND_ROOM_MAX_PARTICIPANTS
 )
-from core.config import c_log
+from core.config import logger
 
 root_folder = "SIP"
 sub_file_path = "DISPATCH_RULES"
@@ -23,7 +23,7 @@ async def main():
       )
   )
 
-  inbound_call_handler_agents = [api.RoomAgentDispatch(agent_name="inbound_freo_ai_agent")]
+  inbound_call_handler_agents = [api.RoomAgentDispatch(agent_name="vaani_inbound_agent")]
 
   room_config = api.RoomConfiguration(
       empty_timeout=INBOUND_ROOM_EMPTY_TIMEOUT,
@@ -44,15 +44,12 @@ async def main():
 
   try:
     dispatch_rule = await livekit_api.sip.create_dispatch_rule(request)
-    c_log.debug("-", "-", "-", root_folder, sub_file_path,
-                "CREATE_SIP_DISPATCH_RULE",
-                f"Created dispatch rule: '{dispatch_rule.name}' with ID: {dispatch_rule.sip_dispatch_rule_id}",
-                "SUCCESS")
+    logger.debug(
+        f"{root_folder} | {sub_file_path} | Created dispatch rule: '{dispatch_rule.name}' "
+        f"with ID: {dispatch_rule.sip_dispatch_rule_id}"
+    )
   except api.twirp_client.TwirpError as e:
-      c_log.error("-", "-", "-", root_folder, sub_file_path,
-                  "CREATE_SIP_DISPATCH_RULE",
-                  f"Failed to create dispatch rule: {str(e)}",
-                  "ERROR")
+      logger.error(f"{root_folder} | {sub_file_path} | Failed to create dispatch rule: {e}")
       raise
   finally:
       await livekit_api.aclose()

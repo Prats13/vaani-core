@@ -3,7 +3,7 @@ import asyncio
 from livekit import api
 from livekit.protocol.sip import SIPHeaderOptions
 
-from core.config import c_log
+from core.config import logger
 from sip.sip_config import (
     INBOUND_TRUNK_NAME,
     INBOUND_ALLOWED_NUMBERS,
@@ -34,15 +34,9 @@ async def main():
 
     try:
         trunk = await livekit_api.sip.create_inbound_trunk(request)
-        c_log.debug("-", "-", "-", root_folder, sub_file_path,
-                   "CREATE_SIP_INBOUND_TRUNK",
-                   f"Created Inbound trunk '{trunk.name}' with ID: {trunk.sip_trunk_id}",
-                   "SUCCESS")
+        logger.debug(f"{root_folder} | {sub_file_path} | Created Inbound trunk '{trunk.name}' with ID: {trunk.sip_trunk_id}")
     except Exception as e:
-        c_log.error("-", "-", "-", root_folder, sub_file_path,
-                   "CREATE_SIP_INBOUND_TRUNK",
-                   f"Failed to create trunk: {str(e)}",
-                   "ERROR")
+        logger.error(f"{root_folder} | {sub_file_path} | Failed to create trunk: {e}")
         raise
     finally:
         await livekit_api.aclose()

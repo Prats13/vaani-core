@@ -12,7 +12,7 @@ from sip.sip_config import (
     EXOTEL_SIP_DOMAIN
 )
 
-from core.config import c_log
+from core.config import logger
 
 root_folder = "SIP"
 sub_file_path = "PARTICIPANTS"
@@ -56,11 +56,6 @@ async def create_sip_participant(
     """
     livekit_api = api.LiveKitAPI()
     try:
-        # room = await livekit_api.room.create_room(api.CreateRoomRequest(name=room_name))
-        # await asyncio.sleep(2)
-        # c_log.debug(room.name, "-", "-", root_folder, sub_file_path, "CREATE_SIP_PARTICIPANT",
-        #             f"Created room - {room.name}", "SUCCESS")
-
         # Build From header number (Exotel validates this against registered trunk number)
         # Must use 0-prefix local format (e.g. 08048332547), NOT E.164 (+918048332547)
         from_number = sip_call_from_number.replace("+91", "0")
@@ -88,9 +83,10 @@ async def create_sip_participant(
         )
 
         participant = await livekit_api.sip.create_sip_participant(request)
-        c_log.debug(room_name, "-", "-", root_folder, sub_file_path, "CREATE_SIP_PARTICIPANT",
-                    f"Created SIP Participant - {participant.participant_identity} with ID - {participant.participant_id}",
-                    "SUCCESS")
+        logger.debug(
+            f"{room_name} | {root_folder} | {sub_file_path} | "
+            f"Created SIP Participant - {participant.participant_identity} with ID - {participant.participant_id}"
+        )
 
         return SIPParticipantResult(
             participant_id=participant.participant_id,
@@ -99,8 +95,7 @@ async def create_sip_participant(
         )
 
     except Exception as e:
-        c_log.error(room_name, "-", "-", root_folder, sub_file_path, "CREATE_SIP_PARTICIPANT",
-                    f"Error creating SIP Participant: {str(e)}", "ERROR")
+        logger.error(f"{room_name} | {root_folder} | {sub_file_path} | Error creating SIP Participant: {e}")
         raise
     finally:
         await livekit_api.aclose()

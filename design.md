@@ -25,7 +25,7 @@ VAANI is built on three core pillars that work together to deliver comprehensive
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    PILLAR 1: COMMUNICATION                  │
-│  Phone (IVR) | WhatsApp Voice | WhatsApp Buttons | SMS     │
+│  Phone (IVR) | WhatsApp Voice | WhatsApp Buttons | SMS      │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
@@ -33,12 +33,12 @@ VAANI is built on three core pillars that work together to deliver comprehensive
 │                                                             │
 │  Intent Classification → Context Manager → Data Integration │
 │         ↓                                                   │
-│  Deterministic Logic → AI Reasoning → Guardrails           │
+│  Deterministic Logic → AI Reasoning → Guardrails            │
 └─────────────────────────────────────────────────────────────┘
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │            PILLAR 3: ENGAGEMENT & RETENTION                 │
-│  Daily Notifications | WhatsApp CTAs | Motivation Messages │
+│  Daily Notifications | WhatsApp CTAs | Motivation Messages  │
 └─────────────────────────────────────────────────────────────┘
 ```
 

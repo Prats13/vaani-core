@@ -35,7 +35,7 @@ async def main():
     # SIP headers
     headers = {}
     if exophone_number:
-        sip_endpoint = os.getenv("LIVEKIT_SIP_ENDPOINT", "sip.freo.app")
+        sip_endpoint = os.getenv("LIVEKIT_SIP_ENDPOINT", "localhost")
         headers["P-Asserted-Identity"] = f"<sip:{exophone_number}@{sip_endpoint}>"
 
     print(f"Initiating outbound call to {phone_number}...")

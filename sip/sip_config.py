@@ -10,7 +10,7 @@ LIVEKIT_SIP_ENDPOINT=os.getenv("LIVEKIT_SIP_ENDPOINT")
 
 # OUTBOUND TRUNK INFO
 OUTBOUND_TRUNK_ID=os.getenv("OUTBOUND_TRUNK_ID")
-OUTBOUND_TRUNK_NAME=os.getenv("OUTBOUND_TRUNK_NAME", "freo-sip-outbound")
+OUTBOUND_TRUNK_NAME=os.getenv("OUTBOUND_TRUNK_NAME", "vaani-sip-outbound")
 OUTBOUND_TRUNK_ADDRESS=os.getenv("OUTBOUND_TRUNK_ADDRESS")
 OUTBOUND_TRUNK_DESTINATION_COUNTRY=os.getenv("OUTBOUND_TRUNK_DESTINATION_COUNTRY", "IN")
 OUTBOUND_TRUNK_NUMBERS=json.loads(os.getenv("OUTBOUND_TRUNK_NUMBERS", '[]'))
@@ -20,7 +20,6 @@ _outbound_ringing_timeout_seconds = int(os.getenv("OUTBOUND_RINGING_TIMEOUT", "8
 OUTBOUND_RINGING_TIMEOUT = Duration(seconds=_outbound_ringing_timeout_seconds)
 
 # Exotel requires From header domain = account_sid.pstn.exotel.com
-# e.g. freo62m.pstn.exotel.com
 EXOTEL_SIP_DOMAIN=os.getenv("EXOTEL_SIP_DOMAIN", "")
 
 # INBOUND TRUNK INFO
@@ -40,7 +39,7 @@ INBOUND_MAX_CALL_DURATION = Duration(seconds=_inbound_max_call_duration_seconds)
 
 # DISPATCH RULE
 DISPATCH_RULE_ASSOCIATED_TRUNK_IDS = json.loads(os.getenv("DISPATCH_RULE_ASSOCIATED_TRUNK_IDS", '[]'))
-DISPATCH_RULE_NAME = os.getenv("DISPATCH_RULE_NAME", "freo-inbound-dispatch")
+DISPATCH_RULE_NAME = os.getenv("DISPATCH_RULE_NAME", "vaani-inbound-dispatch")
 DISPATCH_RULE_ATTRIBUTES = {
     "call_direction": "inbound",
     "call_type": "pstn",

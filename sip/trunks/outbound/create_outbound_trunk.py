@@ -10,7 +10,7 @@ OUTBOUND_TRUNK_DESTINATION_COUNTRY,
 OUTBOUND_TRUNK_NUMBERS,
 )
 
-from core.config import c_log
+from core.config import logger
 
 root_folder = "SIP | TRUNKS"
 sub_file_path = "OUTBOUND"
@@ -32,15 +32,9 @@ async def main():
 
   try:
       trunk = await lkapi.sip.create_outbound_trunk(request)
-      c_log.debug("-", "-", "-", root_folder, sub_file_path,
-                  "CREATE_SIP_OUTBOUND_TRUNK",
-                  f"Created Outbound trunk '{trunk.name}' with ID: {trunk.sip_trunk_id}",
-                  "SUCCESS")
+      logger.debug(f"{root_folder} | {sub_file_path} | Created Outbound trunk '{trunk.name}' with ID: {trunk.sip_trunk_id}")
   except Exception as e:
-      c_log.error("-", "-", "-", root_folder, sub_file_path,
-                  "CREATE_SIP_OUTBOUND_TRUNK",
-                  f"Failed to create trunk: {str(e)}",
-                  "ERROR")
+      logger.error(f"{root_folder} | {sub_file_path} | Failed to create trunk: {e}")
       raise
   finally:
       await lkapi.aclose()
