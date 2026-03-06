@@ -1,0 +1,30 @@
+{
+    "agent_params": {
+        "customer_external_id": "CUST_TEST_05_108",
+        "customer_name": "Pratyush Patra",
+        "customer_mobile_number": "+919612276838",
+        "ref_id": "REF_TEST_05_108",
+        "approved_limit": 31000,
+        "interest_rate": 26.5,
+        "line_type": "MCL",
+        "kyc_flag": true,
+        "selfie_upload_flag": false,
+        "source": "operation",
+        "stage": "AIP_TO_PENDING",
+        "exophone": "+918048332547",
+        "call_attempts": 1
+    },
+    "agent_config": {
+        "agent_type": "aip_to_line",
+        "stt_config": "sarvam-saarika-2.5",
+        "llm_config": "openai-gpt-4o-mini",
+        "tts_config": "cartesia-sonic-3"
+    },
+    "call_config": {
+        "call_direction": "outbound",
+        "call_type": "pstn",
+        "call_provider": "exotel",
+        "call_from": "+918048332547",
+        "call_to": "+919612276838"
+    }
+}

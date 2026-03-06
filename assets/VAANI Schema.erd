@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="VAANI Schema">
+	<entities>
+		<data-source id="postgres-jdbc-19ca578b06a-51155987a3642144">
+			<entity id="1" name="crop_calendar_windows" fq-name="crop.crop_calendar_windows">
+				<path name="crop"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="2" name="crop_varieties" fq-name="crop.crop_varieties">
+				<path name="crop"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="3" name="crops" fq-name="crop.crops">
+				<path name="crop"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="4" name="states" fq-name="crop.states">
+				<path name="crop"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="5" name="variety_states" fq-name="crop.variety_states">
+				<path name="crop"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="6" name="pincode_location" fq-name="weather.pincode_location">
+				<path name="weather"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="7" name="weather_coverage" fq-name="weather.weather_coverage">
+				<path name="weather"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="8" name="weather_daily" fq-name="weather.weather_daily">
+				<path name="weather"/>
+				<path name="VAANI"/>
+			</entity>
+			<entity id="9" name="weather_hourly" fq-name="weather.weather_hourly">
+				<path name="weather"/>
+				<path name="VAANI"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="variety_states_variety_id_fkey" fq-name="crop.variety_states.variety_states_variety_id_fkey" type="fk" pk-ref="2" fk-ref="5"/>
+		<relation name="crop_calendar_windows_crop_id_fkey" fq-name="crop.crop_calendar_windows.crop_calendar_windows_crop_id_fkey" type="fk" pk-ref="3" fk-ref="1"/>
+		<relation name="crop_varieties_crop_id_fkey" fq-name="crop.crop_varieties.crop_varieties_crop_id_fkey" type="fk" pk-ref="3" fk-ref="2"/>
+		<relation name="variety_states_state_id_fkey" fq-name="crop.variety_states.variety_states_state_id_fkey" type="fk" pk-ref="4" fk-ref="5"/>
+		<relation name="weather_coverage_pincode_fkey" fq-name="weather.weather_coverage.weather_coverage_pincode_fkey" type="fk" pk-ref="6" fk-ref="7"/>
+		<relation name="weather_daily_pincode_fkey" fq-name="weather.weather_daily.weather_daily_pincode_fkey" type="fk" pk-ref="6" fk-ref="8"/>
+		<relation name="weather_hourly_pincode_fkey" fq-name="weather.weather_hourly.weather_hourly_pincode_fkey" type="fk" pk-ref="6" fk-ref="9"/>
+	</relations>
+</diagram>
