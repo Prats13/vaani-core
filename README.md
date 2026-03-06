@@ -1,240 +1,267 @@
-# 🤖 Freo Speech - AI-Powered Voice Automation Platform [PRIVATE ENVIRONMENT]
+# VAANI — The Farmer Buddy
 
-A production-grade conversational AI platform built for **high-scale customer engagement**, featuring an **orchestrator-driven ReAct architecture** for complex data collection and a **smart auto-dialing system** for outbound campaigns. Built with **LiveKit**, **OpenAI**, **Exotel**, and **Gemini**.
-
----
-
-## 🏗️ System Architecture
-
-The platform consists of two main pillars: **Real-time Voice Agents** and the **Auto Dialer Campaign Manager**.
-
-> 🏗️ **Editable Architecture Diagram**: The master design file is available at `assets/Voicebot core infrastructure.drawio`. You can edit this file using [Draw.io](https://app.diagrams.net/).
-
-```mermaid
-graph TD
-    subgraph "External Comms"
-        Client[Client Apps]
-        Exotel[Exotel SIP Trunk]
-        Mobile[Customer Mobile]
-    end
-
-    subgraph "Core Infrastructure"
-        FastAPI[FastAPI Backend]
-        LiveKit[LiveKit Server]
-        Redis[Redis State Store]
-    end
-
-    subgraph "Auto Dialer System"
-        Dialer[Campaign Manager]
-        Tracker[Call Tracker]
-    end
-
-    subgraph "Voice Agents"
-        Orchestrator[Onboarding Agent]
-        AIPAgent[KYC Reminder Agent]
-    end
-
-    Dialer -->|1. Dispatch Call| Exotel
-    Exotel -->|2. SIP Connect| LiveKit
-    Mobile <-->|Voice| Exotel
-    LiveKit <-->|WebRTC| Orchestrator
-    LiveKit <-->|WebRTC| AIPAgent
-    Dialer -->|Config| Redis
-    Orchestrator -->|State| Redis
-```
-
-## 🚀 Core Modules
-
-### 1. 🤖 Voice Agents
-
-#### **Onboarding Agent (Riya)**
-*for Complex Data Collection*
-- **Architecture**: Orchestrator-driven ReAct Loop.
-- **Goal**: Collects 7 specific data points (Name, DOB, PAN, etc.).
-- **Features**:
-    - Real-time intent classification (Gemini 1.5 Flash).
-    - Intelligent validation with error recovery.
-    - **Proactive UI Helpers**: Sends visual cues to the client alongside voice.
-- **State Management**: LiveKit `userdata` for low latency.
-
-#### **KYC Reminder Agent (AIP to Line)**
-*for Outbound Notifications*
-- **Architecture**: Post-Processing Centric.
-- **Goal**: Remind customers with approved limits to complete KYC.
-- **Features**:
-    - **Smart Voicemail Detection**: Uses `trigger_voicemail` tool to leave messages.
-    - **Post-Call Analytics**: LLM analyzes the transcript *after* the call to determine outcomes.
-    - **Simplified Tools**: Focus on call state (in-progress/completed) rather than complex flow control.
+> **Voice-first AI agricultural advisory system for rural Indian farmers**
+> Built for the **AWS AI for Bharat Hackathon**
 
 ---
 
-### 2. 📞 Auto Dialer System
+## What is VAANI?
 
-A robust campaign manager designed to handle high-volume outbound calling via Exotel.
+VAANI answers the one question every rural farmer asks every day:
 
-- **Dynamic Concurrency**: Automatically scales dial-out rate (up to 50 concurrent calls) based on active lines.
-- **Smart Retries**: Automatically re-queues failed or busy numbers.
-- **Redis Tracking**: Real-time state monitoring (In-Progress, Ringing, Failed).
-- **Campaign Management**: Supports multiple iterations and CSV-based contact lists.
+> **"Mujhe ab kya karna chahiye?"** *(What should I do now?)*
+
+India's 146 million farming households have access to weather data, mandi prices, and government scheme portals — but the data is fragmented, technical, and inaccessible to farmers with low digital literacy. VAANI bridges this gap by converting that fragmented public data into simple, explainable, voice-delivered decisions in the farmer's own language.
+
+**VAANI is not a data dashboard. It is a digital farmer buddy.**
 
 ---
 
-## 📁 Project Structure
+## The Problem
+
+| Challenge | Impact |
+|---|---|
+| Fragmented weather + mandi + soil data | Farmers make decisions blind |
+| Low digital literacy | Apps and portals go unused |
+| Language barriers | Hindi/regional languages not supported by most tools |
+| No decision support — only raw data | Farmers get numbers, not answers |
+| Limited government scheme awareness | Eligible farmers miss out on benefits |
+
+---
+
+## How It Works
+
+A farmer sends a voice note on WhatsApp in Hindi or their local language. VAANI responds with a spoken advisory in under 15 seconds.
 
 ```
-freo-speach/
-├── agents/                               # 🧠 Voice Agent Implementations
-│   ├── onboarding/                       # Riya: Complex Onboarding Agent
-│   │   ├── components/                   # ReAct pipeline (Intent, Validation)
-│   │   └── validation/                   # Field validators & UI helpers
-│   └── aip_to_line/                      # KYC Report Agent
-│       └── aip_to_line_agent.py          # Simplified outbound logic
+Farmer Voice Query (WhatsApp / Phone IVR)
+         ↓
+   Speech-to-Text  (Sarvam AI — saaras model)
+         ↓
+   Intent Classification  → domain + intent + entity extraction
+         ↓
+   Context Gathering  → one clarifying question at a time
+         ↓
+   Data Fetch  → Weather (IMD) + Soil (SoilGrids) + Market (eNAM)
+         ↓
+   Deterministic Rules  → threshold logic BEFORE the LLM
+         ↓
+   AI Reasoning  → Claude API synthesises context into advice
+         ↓
+   Guardrails  → no yield guarantees, no exact dosage, always advisory
+         ↓
+   Text-to-Speech  (Sarvam AI — bulbul model)
+         ↓
+Farmer receives voice response (WhatsApp / Phone)
+```
+
+### Example — Irrigation Decision
+
+```
+Farmer:   "Kya main aaj tamatar ko paani doon?"
+
+VAANI:    "Main suggest karunga ki aaj paani na den. Do karan hain:
+           1. Mitti mein nami kaafi hai (65%)
+           2. Kal se barish aane ki sambhavna hai (70%)
+
+           Agar 2 din baad barish nahi hui, to check kar sakte hain."
+```
+
+---
+
+## Three Pillars
+
+### Pillar 1 — Communication
+| Channel | Use Case |
+|---|---|
+| WhatsApp Voice Notes | Primary interaction channel |
+| WhatsApp Interactive Buttons | Quick access to mandi prices, weather, crop advice, schemes |
+| Phone IVR | Feature phone users without WhatsApp |
+| SMS | Notification fallback |
+
+### Pillar 2 — Core Decision Engine (6 Layers)
+| Layer | Function |
+|---|---|
+| Intent Classification | Identifies domain (farming / market / scheme) and extracts entities |
+| Context Manager | Fills missing information one question at a time |
+| Data Integration | Fetches weather, soil, and market data from public APIs |
+| Deterministic Logic | Applies threshold-based rules **before** LLM — prevents hallucinations |
+| AI Reasoning | Claude API generates explainable, conversational recommendations |
+| Guardrails | Safety filters — no guaranteed yields, no exact dosage, always advisory |
+
+### Pillar 3 — Engagement & Retention
+- Daily personalised alerts: price movements, rain warnings, seasonal reminders
+- Motivation and best practice messages
+- WhatsApp CTA buttons for one-tap access
+
+---
+
+## Coverage
+
+| Dimension | MVP Scope |
+|---|---|
+| States | Karnataka, Andhra Pradesh, Telangana, West Bengal |
+| Crops | Paddy, Maize, Groundnut, Cotton, Potato, Ragi + Wheat, Tomato, Sugarcane |
+| Languages | Hindi (demo), Kannada, Telugu, Bengali |
+| Advisory types | Irrigation, Fertilizer guidance, Crop selection, Government schemes, Pest alerts, Disaster alerts |
+
+---
+
+## Data Sources
+
+| Source | Data | Entity |
+|---|---|---|
+| IMD / Open-Meteo | Daily + hourly weather, soil moisture, rain forecast | `weather_daily`, `weather_hourly` |
+| SoilGrids | Soil type, pH, NPK levels, water holding capacity | `SoilData` |
+| eNAM / State Mandi Boards | Daily crop prices, trade volumes, price trends | `MandiPrice`, `MarketTrend` |
+| NDMA / IMD | Disaster and extreme weather alerts | `DisasterAlert` |
+| ICAR / State Agri Depts | Pest and disease advisories | `PestAlert` |
+| Government portals | Central and state agricultural schemes | `GovernmentScheme` |
+
+---
+
+## Technology Stack
+
+| Layer | Technology |
+|---|---|
+| Runtime | Python 3.11+ / FastAPI |
+| Voice (STT) | Sarvam AI — `saaras` model |
+| Voice (TTS) | Sarvam AI — `bulbul` model |
+| LLM / Reasoning | Claude API (Anthropic) via AWS Bedrock |
+| Real-time audio | LiveKit Python SDK |
+| WhatsApp | Gupshup / WhatsApp Business API |
+| Database | PostgreSQL (AWS RDS) |
+| Cache | Redis (AWS ElastiCache) |
+| Storage | AWS S3 (voice files, knowledge base JSONs) |
+| Task queue | Celery + Redis |
+| Hosting | AWS ECS Fargate |
+| Monitoring | AWS CloudWatch + OpenTelemetry |
+
+---
+
+## Data Model
+
+VAANI has **31 entities** split into two categories:
+
+### Primary Entities (17)
+> Things that exist in the real world. VAANI observes or records them.
+
+| Group | Entities |
+|---|---|
+| People | `Farmer` |
+| Geography | `Location (pincode_location)`, `State`, `AgroClimaticZone` |
+| Markets | `Mandi` |
+| Agricultural reference | `Crop`, `CropVariety`, `Fertilizer` |
+| Government | `GovernmentScheme` |
+| Live data signals | `WeatherDaily`, `WeatherHourly`, `SoilData` |
+| External alerts | `DisasterAlert`, `PestAlert` |
+| Farmer interactions | `ConversationSession`, `ConversationTurn`, `FarmerFeedback` |
+
+### Derived Entities (14)
+> Things VAANI creates, computes, or infers by processing primary entities.
+
+| Group | Entities |
+|---|---|
+| Farmer context | `FarmerCrop`, `FarmerSchemeEligibility`, `FarmerNotifPreference` |
+| Crop knowledge | `CropGrowthStage`, `CropCalendarWindow`, `CropAdvisoryRule`, `VarietyState` |
+| Market intelligence | `MandiPrice`, `MarketTrend`, `MarketPriceAlert` |
+| AI pipeline | `QueryContext`, `QueryResult` |
+| System | `Notification`, `WeatherCoverage` |
+
+> Full entity definitions with attributes: [`assets/entities.md`](assets/entities.md)
+> ER diagram: [`assets/VAANI_ER_Diagram.drawio`](assets/VAANI_ER_Diagram.drawio)
+
+---
+
+## Database Schema Layout
+
+The database follows a schema-per-domain organisation (PostgreSQL):
+
+```
+weather.*       → pincode_location, weather_daily, weather_hourly, weather_coverage
+crop.*          → crops, crop_varieties, variety_states, crop_calendar_windows, states
+farmer.*        → farmers, farmer_crops, farmer_scheme_eligibility, farmer_notif_preferences
+market.*        → mandis, mandi_prices, market_trends, market_price_alerts
+advisory.*      → crop_advisory_rules, query_contexts, query_results
+conversation.*  → conversation_sessions, conversation_turns
+engagement.*    → notifications, farmer_feedback
+alerts.*        → pest_alerts, disaster_alerts
+```
+
+> Note: `weather.*` schema is sourced from colleague's tried-and-tested API integration.
+
+---
+
+## Project Structure
+
+```
+VAANI---The-Farmer-Buddy/
 │
-├── auto_dialer/                          # 📞 Outbound Campaign System
-│   ├── auto_dialer.py                    # Main campaign runner
-│   ├── campaign.py                       # Batch orchestration logic
-│   └── outbound_caller.py                # Exotel API integration
+├── assets/
+│   ├── design.md                  # System design document (3 pillars, 6 layers)
+│   ├── requirements.md            # Functional and non-functional requirements
+│   ├── VAANI_Solution_Document.docx  # Full solution document (AWS hackathon)
+│   ├── entities.md                # All 31 entities with attributes + classification
+│   ├── VAANI_ER_Diagram.drawio    # ER diagram (open in draw.io / VS Code extension)
+│   └── VAANI Schema.erd           # Colleague's tested DB schema (DataGrip)
 │
-├── core/                                 # 🔧 Shared Infrastructure
-│   ├── livekit_manager.py                # LiveKit connection logic
-│   ├── redis_session_manager.py          # Shared state management
-│   └── config.py                         # Environment configuration
+├── data_models/                   # JSON schemas for static knowledge base entities
+│   ├── farmer.json
+│   ├── crop.json
+│   ├── climate.json
+│   ├── soil.json
+│   ├── irrigation.json
+│   ├── fertilizers.json
+│   ├── farmer-market.json
+│   └── weather.json
 │
-├── api/                                  # 🌐 REST API
-│   └── routes.py                         # Session start/stop endpoints
+├── sip/                           # SIP/telephony configuration (LiveKit)
+│   ├── trunks/
+│   └── dispatch_rules/
 │
-└── deployment/                           # 🚢 Deployment Resources
-    └── EC2-DEPLOYMENT-STEPS.md
+├── main.py                        # Application entrypoint
+└── requirements.txt               # Python dependencies
 ```
 
 ---
 
-## 🛠️ Quick Start
+## Performance Targets
 
-### Prerequisites
-- Python 3.9+
-- LiveKit Server (or Cloud)
-- Redis Server
-- **API Keys**: OpenAI, Gemini, Deepgram, Exotel
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository>
-   cd freo-speach
-   pip install -r requirements.txt
-   ```
-
-2. **Configure Environment**
-   Copy `.env.example` to `.env` and configure:
-
-   ```bash
-   # Core Keys
-   OPENAI_API_KEY="sk-..."
-   GEMINI_API_KEY="AIza..."
-   DEEPGRAM_API_KEY="Tk-..."
-   
-   # LiveKit
-   LIVEKIT_URL="wss://..."
-   LIVEKIT_API_KEY="devkey"
-   LIVEKIT_API_SECRET="secret"
-   
-   # Exotel (For Outbound)
-   EXOTEL_ACCOUNT_SID="freo123"
-   EXOTEL_API_KEY="exo_key"
-   EXOTEL_API_TOKEN="exo_token"
-   EXOTEL_SUBDOMAIN="api.exotel.com"
-   
-   # Auto Dialer Settings
-   AUTO_DIALER_PARALLEL_THRESHOLD=20
-   AUTO_DIALER_WAIT_TIME=6
-   ```
-
-3. **Start Core Services**
-   ```bash
-   # Terminal 1: LiveKit (if local)
-   livekit-server --dev --bind 0.0.0.0
-
-   # Terminal 2: API Server
-   python main.py
-
-   # Terminal 3: Agent Worker
-   python worker.py
-   ```
+| Metric | Target |
+|---|---|
+| End-to-end latency | < 15 seconds (voice in → voice out) |
+| STT accuracy | > 90% for supported languages |
+| Advisory accuracy | > 85% (vs agri extension officer benchmark) |
+| Farmer satisfaction | > 4.2 / 5 |
+| Concurrent users (MVP) | 1,000 |
 
 ---
 
-## 🎮 Usage Modes
+## Responsible AI Commitments
 
-### Mode A: Single Session (API Interactivity)
-Best for testing individual agents or handling inbound traffic.
+VAANI is built with the following hard guardrails:
 
-**Start Onboarding Session:**
-```bash
-curl -X POST http://localhost:8003/api/v1/start_session \
-  -H "X-API-Key: your_key" \
-  -d '{"user_id": "test_user", "config": {"agent_type": "onboarding"}}'
-```
-
-### Mode B: Campaign Mode (Auto Dialer)
-Best for running outbound call lists.
-
-**Running a Campaign:**
-```bash
-# Syntax: python auto_dialer/auto_dialer.py <csv_file> <iterations> <exophones>
-
-python auto_dialer/auto_dialer.py campaign_data.csv 1 +918012345678
-```
-
-**CSV Format (`campaign_data.csv`):**
-| customer_external_id | customer_name | customer_mobile_number | approved_limit |
-|----------------------|---------------|------------------------|----------------|
-| CUST_001             | Aditi Rao     | +919876543210          | 50000          |
+- **No guaranteed yield claims** — every recommendation is advisory
+- **No exact chemical dosages** — general guidance only, refer to a kisan mitra
+- **No medical advice** — out of scope
+- **No political content** — neutral and government-scheme aware only
+- **Always explainable** — every recommendation includes 2–3 clear reasons
+- **Uncertainty acknowledged** — confidence scores surfaced, fallback to human expert when low
 
 ---
 
-## 🔌 API & Event Reference
+## Roadmap
 
-### Data Channel Events (Onboarding)
-The Onboarding agent uses a standardized data protocol for UI synchronization.
-
-- **`onboarding.form.request`**: Agent requests a field from the user. Contains input type, guidance, and validation rules.
-- **`onboarding.form.status`**: Status of the last input (success/failure) with error messages.
-- **`communication.text.display`**: Subtitles/text to display on screen ensuring Voice-Text sync.
-
-### Session Lifecycle
-1. **Init**: Room created, Token generated.
-2. **Connect**: Agent joins, greets user.
-3. **Loop**: ReAct loop (Think -> Act -> Speak) or Post-Processing.
-4. **End**: Session marked `completed` or `disconnected`. Data saved to DB.
+| Phase | Features |
+|---|---|
+| MVP (Hackathon) | Irrigation, fertilizer, crop selection, scheme awareness — Hindi, 4 states |
+| Phase 2 | Crop disease detection via image, IoT sensor integration, 8 states, 8 languages |
+| Phase 3 | Financial advisory (crop insurance, MSP vs market), community knowledge sharing, all-India |
 
 ---
 
-## 🚧 Development & Debugging
+## Hackathon Context
 
-### Logging
-Logs are structured with strict prefixes for component isolation:
-- `FREO AI | ONBOARDING | ...`
-- `AGENTS | AIP_TO_LINE | ...`
-- `AUTO_DIALER | ...`
-
-### Common Commands
-```bash
-# Check Active Calls in Redis
-redis-cli KEYS "auto_dialer:in_progress:*" | wc -l
-
-# Check LiveKit Rooms
-curl http://localhost:7880/dashboard
-```
-
----
-
-## 🔒 Security
-- **API Authentication**: All endpoints protected by `X-API-Key`.
-- **Masking**: PII is masked in application logs.
-- **Isolation**: Each session runs in a dedicated LiveKit room.
-
----
-**Maintained by Freo Engineering**
-*For detailed deployment instructions, see `deployment/EC2-DEPLOYMENT-STEPS.md`*
+**Event:** AWS AI for Bharat Hackathon
+**Track:** Agriculture / Rural AI
+**Stack requirement:** AWS services (Bedrock, RDS, S3, ECS, ElastiCache, SQS, CloudWatch)
