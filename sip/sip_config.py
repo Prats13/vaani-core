@@ -20,7 +20,7 @@ _outbound_ringing_timeout_seconds = int(os.getenv("OUTBOUND_RINGING_TIMEOUT", "8
 OUTBOUND_RINGING_TIMEOUT = Duration(seconds=_outbound_ringing_timeout_seconds)
 
 # Exotel requires From header domain = account_sid.pstn.exotel.com
-EXOTEL_SIP_DOMAIN=os.getenv("EXOTEL_SIP_DOMAIN", "")
+SIP_HOSTNAME=os.getenv("SIP_HOSTNAME", "")
 
 # INBOUND TRUNK INFO
 INBOUND_TRUNK_NAME=os.getenv("INBOUND_TRUNK_NAME")

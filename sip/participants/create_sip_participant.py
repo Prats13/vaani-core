@@ -9,7 +9,7 @@ from livekit.protocol.sip import CreateSIPParticipantRequest, SIPOutboundConfig,
 from sip.sip_config import (
     OUTBOUND_TRUNK_ID,
     OUTBOUND_RINGING_TIMEOUT,
-    EXOTEL_SIP_DOMAIN
+    SIP_HOSTNAME
 )
 
 from core.config import logger
@@ -62,8 +62,8 @@ async def create_sip_participant(
 
         # Exotel requires From header domain = account_sid.pstn.exotel.com
         # Per LiveKit proto: SIPOutboundConfig.hostname controls the From domain.
-        # We pass it via trunk=SIPOutboundConfig(hostname=EXOTEL_SIP_DOMAIN)
-        trunk_override = SIPOutboundConfig(hostname=EXOTEL_SIP_DOMAIN) if EXOTEL_SIP_DOMAIN else None
+        # We pass it via trunk=SIPOutboundConfig(hostname=SIP_HOSTNAME)
+        trunk_override = SIPOutboundConfig(hostname=SIP_HOSTNAME) if SIP_HOSTNAME else None
 
         request = CreateSIPParticipantRequest(
             sip_trunk_id=sip_trunk_id,
