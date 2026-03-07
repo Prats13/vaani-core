@@ -253,8 +253,11 @@ class ModelProviders:
                 case "cartesia-sonic-3":
                     return cartesia.TTS(
                         model="sonic-3",
+                        voice="95d51f79-c397-46f9-b49a-23763d3eaa2d",  # Indian female customer support
                         api_key=self.settings.cartesia_api_key,
+                        language="hi",
                         speed=1.0,
+                        emotion="content",
                         **kwargs
                     )
 

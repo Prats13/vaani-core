@@ -4,7 +4,13 @@ Vaani Onboarding — Session Starter
 Called by the outbound worker via the agent registry.
 Owns all session construction logic for the onboarding agent.
 """
-from livekit.agents import JobContext, AgentSession
+from livekit.agents import (
+    JobContext,
+    AgentSession,
+    BackgroundAudioPlayer,
+    AudioConfig,
+    BuiltinAudioClip,
+)
 
 from agents.vaani_onboarding.onboarding_agent import VaaniOnboardingAgent
 from agents.vaani_onboarding.models.onboarding_data_model import FarmerOnboardingData
@@ -45,7 +51,16 @@ async def start_onboarding_session(
         userdata=farmer_data,
         min_endpointing_delay=0.5,
         max_endpointing_delay=2.0,
+        preemptive_generation=True,
     )
 
     await session.start(room=ctx.room, agent=agent)
     logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | Session started")
+
+    # Background audio: subtle ambient sound for presence and warmth.
+    # Uses built-in clip at low volume — swap for a custom clip later if needed.
+    background_audio = BackgroundAudioPlayer(
+        ambient_sound=AudioConfig(BuiltinAudioClip.OFFICE_AMBIENCE, volume=0.7),
+    )
+    await background_audio.start(room=ctx.room, agent_session=session)
+    logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | Background audio started")

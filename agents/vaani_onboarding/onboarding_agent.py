@@ -5,19 +5,27 @@ Orchestrating agent for farmer onboarding.
 Delegates profile collection to CollectFarmerProfileTask and handles
 post-completion messaging.
 
+Also provides:
+  - on_user_turn_completed: conversation fillers to mask LLM latency
+  - tts_node: pronunciation correction scaffold
+
 Architecture:
   VaaniOnboardingAgent.on_enter()
       → starts CollectFarmerProfileTask (awaits completion)
       → thanks the farmer
       → session ends naturally
 """
-from livekit import api
-from livekit.agents import Agent, function_tool, RunContext, get_job_context
+from typing import AsyncIterable, Optional
+
+from livekit import rtc
+from livekit.agents import Agent, ChatContext, ChatMessage, ModelSettings
 
 from agents.vaani_onboarding.models.onboarding_data_model import FarmerOnboardingData
 from agents.vaani_onboarding.tasks.collect_profile_task import CollectFarmerProfileTask
 from agents.vaani_onboarding.prompts import COMPLETION_INSTRUCTION
 from core.config import logger
+from core.conversation_fillers import play_filler
+from core.pronunciation import apply_pronunciation_fixes, PRONUNCIATION_MAP
 
 root_folder = "AGENTS | VAANI_ONBOARDING"
 sub_file_path = "ONBOARDING_AGENT"
@@ -31,6 +39,10 @@ class VaaniOnboardingAgent(Agent):
       1. Starts CollectFarmerProfileTask — bounded conversation for data collection
       2. Awaits task completion (auto-completes when 5 required fields filled)
       3. Thanks the farmer and says goodbye
+
+    Hooks:
+      - on_user_turn_completed: plays a conversation filler to mask LLM latency
+      - tts_node: applies pronunciation fixes (when map is populated)
 
     Session userdata: FarmerOnboardingData (pre-filled with farmer_id + phone)
     Instructions: Injected at construction time by the worker via build_agent_instructions()
@@ -75,49 +87,32 @@ class VaaniOnboardingAgent(Agent):
             logger.error(f"{root_folder} | {sub_file_path} | ON_ENTER | ERROR | {e}")
             raise
 
-    @function_tool(description=(
-        "Disconnect the call when the conversation has reached a natural end — "
-        "either onboarding is complete and goodbye has been said, "
-        "or the farmer wants to end the call early."
-    ))
-    async def disconnect_call(
+    async def on_user_turn_completed(
         self,
-        context: RunContext[FarmerOnboardingData],
-        reason: str,
-    ) -> dict:
-        """Gracefully end the call by shutting down the session and deleting the room."""
-        try:
-            data: FarmerOnboardingData = context.userdata
-            logger.debug(
-                f"{data.farmer_phone_number} | {root_folder} | "
-                f"{sub_file_path} | DISCONNECT_CALL | Reason: {reason}"
-            )
+        turn_ctx: ChatContext,
+        new_message: ChatMessage,
+    ) -> None:
+        """
+        Play a conversation filler to mask LLM thinking latency.
+        Fires before the LLM generates its response — the filler plays in parallel.
+        """
+        play_filler(self.session)
 
-            # Step 1: Say goodbye — let audio play before cutting the line
-            await self.session.say(
-                text="Bahut bahut dhanyavaad aapka. Vaani pe aapka swagat hai. Namaskar!"
-            )
-
-            # Step 2: Shutdown with drain — waits for queued audio to finish, commits transcripts
-            context.session.shutdown(drain=True)
-            logger.debug(
-                f"{data.farmer_phone_number} | {root_folder} | "
-                f"{sub_file_path} | DISCONNECT_CALL | Session drained and shut down"
-            )
-
-            # Step 3: Delete room — terminates call for all participants including SIP trunk
-            job_ctx = get_job_context()
-            if job_ctx:
-                await job_ctx.api.room.delete_room(
-                    api.DeleteRoomRequest(room=job_ctx.room.name)
-                )
-                logger.debug(
-                    f"{data.farmer_phone_number} | {root_folder} | "
-                    f"{sub_file_path} | DISCONNECT_CALL | Room deleted"
-                )
-
-            return {"status": "success", "message": "Call disconnected."}
-
-        except Exception as e:
-            logger.error(f"{root_folder} | {sub_file_path} | DISCONNECT_CALL | ERROR | {e}")
-            return {"status": "error", "message": str(e)}
+    async def tts_node(
+        self,
+        text: AsyncIterable[str],
+        model_settings: ModelSettings,
+    ) -> Optional[AsyncIterable[rtc.AudioFrame]]:
+        """
+        Apply pronunciation corrections before TTS.
+        Currently a no-op (empty PRONUNCIATION_MAP).
+        Populate core/pronunciation.py from real call feedback.
+        """
+        if PRONUNCIATION_MAP:
+            corrected_text = apply_pronunciation_fixes(text)
+            async for frame in Agent.default.tts_node(self, corrected_text, model_settings):
+                yield frame
+        else:
+            # No-op pass-through when map is empty
+            async for frame in Agent.default.tts_node(self, text, model_settings):
+                yield frame
