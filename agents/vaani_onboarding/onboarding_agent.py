@@ -11,7 +11,8 @@ Architecture:
       → thanks the farmer
       → session ends naturally
 """
-from livekit.agents import Agent
+from livekit import api
+from livekit.agents import Agent, function_tool, RunContext, get_job_context
 
 from agents.vaani_onboarding.models.onboarding_data_model import FarmerOnboardingData
 from agents.vaani_onboarding.tasks.collect_profile_task import CollectFarmerProfileTask
@@ -73,3 +74,50 @@ class VaaniOnboardingAgent(Agent):
         except Exception as e:
             logger.error(f"{root_folder} | {sub_file_path} | ON_ENTER | ERROR | {e}")
             raise
+
+    @function_tool(description=(
+        "Disconnect the call when the conversation has reached a natural end — "
+        "either onboarding is complete and goodbye has been said, "
+        "or the farmer wants to end the call early."
+    ))
+    async def disconnect_call(
+        self,
+        context: RunContext[FarmerOnboardingData],
+        reason: str,
+    ) -> dict:
+        """Gracefully end the call by shutting down the session and deleting the room."""
+        try:
+            data: FarmerOnboardingData = context.userdata
+            logger.debug(
+                f"{data.farmer_phone_number} | {root_folder} | "
+                f"{sub_file_path} | DISCONNECT_CALL | Reason: {reason}"
+            )
+
+            # Step 1: Say goodbye — let audio play before cutting the line
+            await self.session.say(
+                text="Bahut bahut dhanyavaad aapka. Vaani pe aapka swagat hai. Namaskar!"
+            )
+
+            # Step 2: Shutdown with drain — waits for queued audio to finish, commits transcripts
+            context.session.shutdown(drain=True)
+            logger.debug(
+                f"{data.farmer_phone_number} | {root_folder} | "
+                f"{sub_file_path} | DISCONNECT_CALL | Session drained and shut down"
+            )
+
+            # Step 3: Delete room — terminates call for all participants including SIP trunk
+            job_ctx = get_job_context()
+            if job_ctx:
+                await job_ctx.api.room.delete_room(
+                    api.DeleteRoomRequest(room=job_ctx.room.name)
+                )
+                logger.debug(
+                    f"{data.farmer_phone_number} | {root_folder} | "
+                    f"{sub_file_path} | DISCONNECT_CALL | Room deleted"
+                )
+
+            return {"status": "success", "message": "Call disconnected."}
+
+        except Exception as e:
+            logger.error(f"{root_folder} | {sub_file_path} | DISCONNECT_CALL | ERROR | {e}")
+            return {"status": "error", "message": str(e)}
