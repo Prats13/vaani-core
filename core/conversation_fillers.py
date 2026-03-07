@@ -11,10 +11,19 @@ from core.config import logger
 
 # Language-agnostic fillers that TTS renders as natural vocal sounds.
 # These are universal across Hindi, Telugu, Kannada, Tamil, Bengali, etc.
+# Variety prevents repetitiveness — random.choice picks one per turn.
 FILLERS = [
     "Hmm",
     "Mm-hmm",
     "Hmm hmm",
+    "Okay",
+    "Right",
+    "Ah",
+    "Oh okay",
+    "I see",
+    "Alright",
+    "Uh-huh",
+    "Got it",
 ]
 
 
