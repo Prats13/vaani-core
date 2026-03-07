@@ -62,6 +62,12 @@ class OutboundCallResponse(BaseModel):
     message: str
 
 
+@router.get("/health")
+async def sip_health_check():
+    """Health check endpoint for SIP routes"""
+    return {"status": "healthy", "service": "vaani-sip"}
+
+
 @router.post(path="/call/outbound", response_model=OutboundCallResponse, status_code=status.HTTP_201_CREATED)
 async def make_outbound_call(
         request: OutboundCallRequest,

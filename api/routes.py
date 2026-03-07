@@ -36,7 +36,7 @@ class StartSessionResponse(BaseModel):
     session_id: str
 
 
-@router.post("/start_session", response_model=StartSessionResponse)
+@router.post("/whatsapp/start_session", response_model=StartSessionResponse)
 async def start_session(request: StartSessionRequest, api_key: str = Depends(verify_api_key)):
     """
     Create a new LiveKit room and generate access token.
@@ -71,7 +71,7 @@ async def start_session(request: StartSessionRequest, api_key: str = Depends(ver
         raise HTTPException(status_code=500, detail=f"Failed to start session: {str(e)}")
 
 
-@router.get("/health")
+@router.get("/whatsapp/health")
 async def health_check():
     """Health check endpoint"""
     return {"status": "healthy", "service": "vaani"}
