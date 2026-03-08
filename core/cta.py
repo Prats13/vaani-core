@@ -16,20 +16,24 @@ CTA messages are rendered as button pill groups.
 """
 import json
 import logging
-from livekit.agents import AgentSession
+from livekit.agents import AgentSession, get_job_context
 
 logger = logging.getLogger("vaani")
 
+# LiveKit data channel topic for chat messages
+_CHAT_TOPIC = "lk-chat-topic"
+
 
 async def send_cta(session: AgentSession, message: str, buttons: list[str]) -> None:
-    """Send a CTA message to the frontend via LiveKit chat."""
+    """Send a CTA message to the frontend via LiveKit data channel."""
     try:
         payload = json.dumps({
             "vaani_cta": True,
             "message": message,
             "buttons": buttons,
-        })
-        await session.chat.send_message(payload)
+        }).encode("utf-8")
+        room = get_job_context().room
+        await room.local_participant.publish_data(payload, reliable=True, topic=_CHAT_TOPIC)
         logger.debug(f"CTA | SENT | message='{message}' | buttons={buttons}")
     except Exception as e:
         logger.error(f"CTA | SEND_ERROR | {e}")
@@ -38,7 +42,9 @@ async def send_cta(session: AgentSession, message: str, buttons: list[str]) -> N
 async def send_text(session: AgentSession, message: str) -> None:
     """Send a plain text chat message to the frontend."""
     try:
-        await session.chat.send_message(message)
+        payload = message.encode("utf-8")
+        room = get_job_context().room
+        await room.local_participant.publish_data(payload, reliable=True, topic=_CHAT_TOPIC)
         logger.debug(f"CTA | TEXT_SENT | message='{message}'")
     except Exception as e:
         logger.error(f"CTA | TEXT_SEND_ERROR | {e}")
