@@ -105,9 +105,11 @@ async def create_farmer_advisory_session(
 ) -> AgentSession:
     """
     Build and start an AgentSession for the farmer advisory agent.
-    This is a stub — the actual agent implementation (agents/farmer_advisory/)
-    will be wired in once built.
+    Delegates to agents/vaani_advisory/session.py which handles DB lookup,
+    agent creation, and session startup.
     """
+    from agents.vaani_advisory.session import start_advisory_session
+
     room_name = dispatch_ctx.room_name
     params = dispatch_ctx.agent_params
     farmer_name = params.get("farmer_name", "Kisan")
@@ -121,23 +123,20 @@ async def create_farmer_advisory_session(
     )
     session_registry[room_name] = session_data
 
-    # Build AgentSession with Vaani-default providers
-    session = AgentSession(
-        stt=model_providers.get_stt(dispatch_ctx.stt_config),
-        llm=model_providers.get_llm(dispatch_ctx.llm_config, temperature=0.7),
-        tts=model_providers.get_tts(dispatch_ctx.tts_config),
-        vad=model_providers.get_vad(),
-        userdata=session_data,
-    )
-
-    # Note: Agent will be wired here once agents/farmer_advisory/ is built
-    # For now, session is created without an agent — will be started by the worker
     logger.debug(
-        f"{room_name} | AGENT_DISPATCHER | farmer_advisory session created | "
+        f"{room_name} | AGENT_DISPATCHER | farmer_advisory dispatching to start_advisory_session | "
         f"STT={dispatch_ctx.stt_config}, LLM={dispatch_ctx.llm_config}, TTS={dispatch_ctx.tts_config}"
     )
 
-    return session
+    await start_advisory_session(
+        ctx=ctx,
+        agent_params=params,
+        stt_config=dispatch_ctx.stt_config,
+        llm_config=dispatch_ctx.llm_config,
+        tts_config=dispatch_ctx.tts_config,
+    )
+
+    return None
 
 
 async def create_farmer_onboarding_session(

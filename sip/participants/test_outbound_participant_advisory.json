@@ -1,0 +1,19 @@
+{
+    "agent_params": {
+        "farmer_phone": "+919612276838",
+        "farmer_name": "Pratyush"
+    },
+    "agent_config": {
+        "agent_type": "farmer_advisory",
+        "stt_config": "sarvam-saarika-2.5",
+        "llm_config": "gemini-2.5-flash",
+        "tts_config": "sarvam-bulbul"
+    },
+    "call_config": {
+        "call_direction": "outbound",
+        "call_type": "pstn",
+        "call_provider": "exotel",
+        "call_from": "+918048332547",
+        "call_to": "+919612276838"
+    }
+}
