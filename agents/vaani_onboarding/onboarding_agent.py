@@ -15,6 +15,7 @@ Architecture:
       → thanks the farmer
       → session ends naturally
 """
+import asyncio
 from typing import AsyncIterable, Optional
 
 from livekit import rtc
@@ -26,6 +27,7 @@ from agents.vaani_onboarding.prompts import COMPLETION_INSTRUCTION
 from core.config import logger
 from core.conversation_fillers import play_filler
 from core.pronunciation import apply_pronunciation_fixes, PRONUNCIATION_MAP
+from core.db.farmer_db import SessionLocal, upsert_farmer, add_farmer_crop
 
 root_folder = "AGENTS | VAANI_ONBOARDING"
 sub_file_path = "ONBOARDING_AGENT"
@@ -75,6 +77,9 @@ class VaaniOnboardingAgent(Agent):
                 f"language={completed_data.preferred_language}"
             )
 
+            # Save farmer profile to RDS
+            await asyncio.to_thread(self._save_farmer_to_db, completed_data)
+
             # Thank the farmer and say goodbye
             await self.session.generate_reply(instructions=COMPLETION_INSTRUCTION)
 
@@ -86,6 +91,34 @@ class VaaniOnboardingAgent(Agent):
         except Exception as e:
             logger.error(f"{root_folder} | {sub_file_path} | ON_ENTER | ERROR | {e}")
             raise
+
+    def _save_farmer_to_db(self, data: FarmerOnboardingData) -> None:
+        """Save completed farmer profile to RDS. Runs in a thread (sync SQLAlchemy)."""
+        db = SessionLocal()
+        try:
+            farmer = upsert_farmer(
+                db,
+                phone_number=data.farmer_phone_number,
+                name=data.farmer_name,
+                state=data.state,
+                district=data.district,
+                village=data.village,
+                land_area_acres=data.land_size,
+                irrigation_type=data.irrigation_type.value if data.irrigation_type else None,
+                preferred_language=data.preferred_language.value if data.preferred_language else None,
+                is_profile_complete=True,
+            )
+            if data.primary_crops:
+                for crop_name in data.primary_crops:
+                    add_farmer_crop(db, farmer_id=farmer.farmer_id, crop_name=crop_name)
+            logger.info(
+                f"{data.farmer_phone_number} | {root_folder} | {sub_file_path} | "
+                f"DB_SAVE | farmer_id={farmer.farmer_id}"
+            )
+        except Exception as e:
+            logger.error(f"{root_folder} | {sub_file_path} | DB_SAVE | ERROR | {e}")
+        finally:
+            db.close()
 
     async def on_user_turn_completed(
         self,
