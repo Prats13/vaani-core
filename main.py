@@ -33,7 +33,7 @@ with engine.begin() as conn:
     conn.execute(text("CREATE SCHEMA IF NOT EXISTS crop"))
 
 Base.metadata.create_all(bind=engine)
-app.crop.models.CropBase.metadata.create_all(bind=engine)
+data_service.crop.models.CropBase.metadata.create_all(bind=engine)
 
 
 @asynccontextmanager
