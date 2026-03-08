@@ -191,7 +191,13 @@ def main():
                     page=var.get("page"),
                     extras=var
                 ).on_conflict_do_update(
-                    constraint='uq_crop_varieties',
+                    index_elements=[
+                        t_varieties.c.crop_id,
+                        t_varieties.c.variety_type,
+                        t_varieties.c.name,
+                        text("COALESCE(source, '')"),
+                        text("COALESCE(year, 0)")
+                    ],
                     set_={
                         "yield_min_q_per_ha": y_min,
                         "yield_max_q_per_ha": y_max,
