@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.orm import Session
 import logging
 
-from app.core.db import get_db
-from app.weather.services.weather_service import get_weather_for_pincode
-from app.weather.services.weather_features_service import get_weather_features_for_pincode
+from data_service.core.db import get_db
+from data_service.weather.services.weather_service import get_weather_for_pincode
+from data_service.weather.services.weather_features_service import get_weather_features_for_pincode
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["Weather"])

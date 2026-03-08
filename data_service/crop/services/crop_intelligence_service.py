@@ -3,12 +3,12 @@ import logging
 from typing import Dict, Any, List
 from sqlalchemy.orm import Session
 from core.config import settings
-from app.core.cache_service import redis_client
-from app.weather.services.geocode_service import resolve_pincode
-from app.weather.services.weather_features_service import get_weather_features_for_pincode
-from app.crop.services.crop_query_service import get_candidate_crops_for_state_season, get_crop_calendar_windows, get_varieties_for_crop_in_state
-from app.crop.utils.state_normalization import build_alias_map_from_db, normalize_state_token
-from app.crop.utils.crop_time_utils import get_current_month_ist, month_int_to_name, month_to_season, determine_stage
+from data_service.core.cache_service import redis_client
+from data_service.weather.services.geocode_service import resolve_pincode
+from data_service.weather.services.weather_features_service import get_weather_features_for_pincode
+from data_service.crop.services.crop_query_service import get_candidate_crops_for_state_season, get_crop_calendar_windows, get_varieties_for_crop_in_state
+from data_service.crop.utils.state_normalization import build_alias_map_from_db, normalize_state_token
+from data_service.crop.utils.crop_time_utils import get_current_month_ist, month_int_to_name, month_to_season, determine_stage
 
 logger = logging.getLogger(__name__)
 

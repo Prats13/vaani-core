@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.orm import Session
 import logging
 
-from app.core.db import get_db
-from app.search.services import search_service
+from data_service.core.db import get_db
+from data_service.search.services import search_service
 
 logger = logging.getLogger(__name__)
 

@@ -1,10 +1,10 @@
 import logging
 from datetime import datetime
 from sqlalchemy.orm import Session
-from app.weather.services.weather_service import get_weather_for_pincode
-from app.core.cache_service import get_cached_weather, set_cached_weather
-from app.weather.utils.features_utils import compute_features
-from app.crop.utils.time_utils import get_now_utc, get_time_window_utc, utc_to_local_str
+from data_service.weather.services.weather_service import get_weather_for_pincode
+from data_service.core.cache_service import get_cached_weather, set_cached_weather
+from data_service.weather.utils.features_utils import compute_features
+from data_service.crop.utils.time_utils import get_now_utc, get_time_window_utc, utc_to_local_str
 from zoneinfo import ZoneInfo
 
 logger = logging.getLogger(__name__)

@@ -1,6 +1,6 @@
 import httpx
 from sqlalchemy.orm import Session
-from app.weather.models import PincodeLocation
+from data_service.weather.models import PincodeLocation
 from core.config import settings
 
 async def resolve_pincode(db: Session, pincode: str) -> PincodeLocation:

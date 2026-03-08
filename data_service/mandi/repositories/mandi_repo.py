@@ -2,7 +2,7 @@ import logging
 from sqlalchemy.orm import Session
 from sqlalchemy import select, and_, desc, asc
 from sqlalchemy.dialects.postgresql import insert
-from app.mandi.models import MandiPrice, ApiRawSnapshot
+from data_service.mandi.models import MandiPrice, ApiRawSnapshot
 from datetime import datetime
 from typing import List, Optional
 

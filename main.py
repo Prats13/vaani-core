@@ -13,16 +13,16 @@ from contextlib import asynccontextmanager
 # ---------------------------------------------------------------------------
 # Data-service model imports — ensure tables are registered before create_all
 # ---------------------------------------------------------------------------
-import app.weather.models   # noqa: F401
-import app.crop.models      # noqa: F401
-import app.mandi.models     # noqa: F401
+import data_service.weather.models   # noqa: F401
+import data_service.crop.models      # noqa: F401
+import data_service.mandi.models     # noqa: F401
 
-from app.weather import routers as weather_routers
-from app.crop import routers as crop_routers
-from app.mandi import routers as mandi_routers
-from app.search import routers as search_routers
-from app.core.db import engine, Base
-from app.core.cache_service import close_redis
+from data_service.weather import routers as weather_routers
+from data_service.crop import routers as crop_routers
+from data_service.mandi import routers as mandi_routers
+from data_service.search import routers as search_routers
+from data_service.core.db import engine, Base
+from data_service.core.cache_service import close_redis
 from sqlalchemy import text
 
 # ---------------------------------------------------------------------------

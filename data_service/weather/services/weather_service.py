@@ -2,12 +2,12 @@ import logging
 from datetime import datetime, timedelta, timezone
 from sqlalchemy.orm import Session
 from sqlalchemy import select, and_, delete
-from app.weather.models import WeatherDaily, WeatherHourly, WeatherCoverage, WeatherResponse
-from app.weather.services.geocode_service import resolve_pincode
-from app.weather.clients.openmeteo_client import fetch_daily_forecast, fetch_hourly_forecast
-from app.core.cache_service import get_cached_weather, set_cached_weather, generate_cache_key
-from app.crop.utils.time_utils import get_time_window_utc, get_now_utc, utc_to_local_str, local_to_utc
-from app.weather.utils.rainfall_utils import is_heavy_rain_day
+from data_service.weather.models import WeatherDaily, WeatherHourly, WeatherCoverage, WeatherResponse
+from data_service.weather.services.geocode_service import resolve_pincode
+from data_service.weather.clients.openmeteo_client import fetch_daily_forecast, fetch_hourly_forecast
+from data_service.core.cache_service import get_cached_weather, set_cached_weather, generate_cache_key
+from data_service.crop.utils.time_utils import get_time_window_utc, get_now_utc, utc_to_local_str, local_to_utc
+from data_service.weather.utils.rainfall_utils import is_heavy_rain_day
 from core.config import settings
 
 logger = logging.getLogger(__name__)

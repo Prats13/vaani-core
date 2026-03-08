@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy.orm import Session
 import logging
 
-from app.core.db import get_db
-from app.crop.services import crop_catalog_service, crop_intelligence_service
+from data_service.core.db import get_db
+from data_service.crop.services import crop_catalog_service, crop_intelligence_service
 
 logger = logging.getLogger(__name__)
 router = APIRouter(tags=["Crop Intelligence"])

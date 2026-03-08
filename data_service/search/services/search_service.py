@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from typing import Dict, Any, List
-from app.crop.models import Crop, CropVariety, State, VarietyState
+from data_service.crop.models import Crop, CropVariety, State, VarietyState
 from sqlalchemy import or_
 
 async def execute_search(db: Session, q: str, state: str = None, limit: int = 25) -> Dict[str, Any]:

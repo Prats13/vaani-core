@@ -5,9 +5,9 @@ from typing import Optional, List
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
 from core.config import settings
-from app.mandi.clients.data_gov_client import fetch_mandi_prices_from_data_gov
-from app.mandi.repositories import mandi_repo
-from app.core.cache_service import get_cached_data, set_cached_data
+from data_service.mandi.clients.data_gov_client import fetch_mandi_prices_from_data_gov
+from data_service.mandi.repositories import mandi_repo
+from data_service.core.cache_service import get_cached_data, set_cached_data
 
 logger = logging.getLogger(__name__)
 

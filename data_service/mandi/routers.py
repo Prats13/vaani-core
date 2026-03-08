@@ -3,8 +3,8 @@ from sqlalchemy.orm import Session
 import logging
 from typing import Optional
 
-from app.core.db import get_db
-from app.mandi.services import mandi_service
+from data_service.core.db import get_db
+from data_service.mandi.services import mandi_service
 
 logger = logging.getLogger(__name__)
 

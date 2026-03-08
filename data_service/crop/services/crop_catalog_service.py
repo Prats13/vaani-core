@@ -3,17 +3,17 @@ import logging
 from typing import Dict, Any, List
 from sqlalchemy.orm import Session
 from core.config import settings
-from app.core.cache_service import redis_client
-from app.crop.services.crop_query_service import (
+from data_service.core.cache_service import redis_client
+from data_service.crop.services.crop_query_service import (
     get_crops_paginated, get_states_with_aliases, get_varieties_for_state_by_crop,
     get_varieties_for_crop_in_state, find_resistant_varieties, get_crop_calendar_windows,
     get_candidate_crops_for_state_season
 )
-from app.crop.utils.state_normalization import build_alias_map_from_db, normalize_state_token
-from app.crop.utils.crop_payload_utils import (
+from data_service.crop.utils.state_normalization import build_alias_map_from_db, normalize_state_token
+from data_service.crop.utils.crop_payload_utils import (
     group_varieties_by_crop, find_top_yield_variety, format_variety_essential, calculate_crop_stats
 )
-from app.crop.utils.crop_time_utils import month_int_to_name, month_to_season, get_current_month_ist, determine_stage
+from data_service.crop.utils.crop_time_utils import month_int_to_name, month_to_season, get_current_month_ist, determine_stage
 
 logger = logging.getLogger(__name__)
 
