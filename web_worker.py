@@ -18,7 +18,7 @@ import asyncio
 import json
 import re
 
-from livekit.agents import JobContext, AgentServer, AutoSubscribe, Agent, AgentSession
+from livekit.agents import JobContext, AgentServer, AutoSubscribe, Agent, AgentSession, WorkerOptions
 
 from agents.registry import OUTBOUND_AGENT_REGISTRY
 from core.config import settings, logger
@@ -119,4 +119,4 @@ async def entrypoint(ctx: JobContext):
 
 
 if __name__ == "__main__":
-    asyncio.run(server.run())
+    asyncio.run(server.run(WorkerOptions(http_port=8082)))
