@@ -18,7 +18,7 @@ import asyncio
 import json
 import re
 
-from livekit.agents import JobContext, AgentServer, AutoSubscribe, Agent, AgentSession, WorkerOptions
+from livekit.agents import JobContext, AgentServer, AutoSubscribe, Agent, AgentSession
 
 from agents.registry import OUTBOUND_AGENT_REGISTRY
 from core.config import settings, logger
@@ -28,7 +28,7 @@ from core.room_event_handler import create_callback_registry, setup_room_listene
 root_folder = "WEB_WORKER"
 sub_file_path = "ENTRYPOINT"
 
-server = AgentServer()
+server = AgentServer(port=8082)
 
 
 def _extract_phone_from_identity(identity: str) -> str | None:
@@ -119,4 +119,4 @@ async def entrypoint(ctx: JobContext):
 
 
 if __name__ == "__main__":
-    asyncio.run(server.run(WorkerOptions(http_port=8082)))
+    asyncio.run(server.run())
