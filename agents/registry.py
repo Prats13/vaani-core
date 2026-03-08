@@ -9,8 +9,9 @@ To add a new outbound agent:
 from typing import Callable, Dict
 
 from agents.vaani_onboarding.session import start_onboarding_session
+from agents.vaani_advisory.session import start_advisory_session
 
 OUTBOUND_AGENT_REGISTRY: Dict[str, Callable] = {
     "farmer_onboarding": start_onboarding_session,
-    # "farmer_advisory": start_advisory_session,  ← add new agents here
+    "farmer_advisory": start_advisory_session,
 }
