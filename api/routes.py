@@ -13,6 +13,7 @@ import time
 from core.livekit_manager import livekit_manager
 from core.config import settings, logger
 from core.auth import verify_api_key
+from core.db.farmer_db import SessionLocal, get_farmer_by_phone, get_farmer_crops
 
 router = APIRouter()
 
@@ -69,6 +70,44 @@ async def start_session(request: StartSessionRequest, api_key: str = Depends(ver
     except Exception as e:
         logger.error(f"API | ROUTES | Failed to start session: {e}")
         raise HTTPException(status_code=500, detail=f"Failed to start session: {str(e)}")
+
+
+@router.get("/farmer/{phone_number}")
+async def get_farmer(phone_number: str, api_key: str = Depends(verify_api_key)):
+    """
+    Lookup a farmer by phone number.
+    Returns profile + crops if registered, 404 if not found.
+    Phone number must be in E.164 format: +91XXXXXXXXXX
+    """
+    db = SessionLocal()
+    try:
+        farmer = get_farmer_by_phone(db, phone_number)
+        if not farmer:
+            raise HTTPException(status_code=404, detail="Farmer not found")
+
+        crops = get_farmer_crops(db, farmer.farmer_id)
+
+        return {
+            "farmer_id": str(farmer.farmer_id),
+            "phone_number": farmer.phone_number,
+            "name": farmer.name,
+            "state": farmer.state,
+            "district": farmer.district,
+            "village": farmer.village,
+            "pincode": farmer.pincode,
+            "land_area_acres": farmer.land_area_acres,
+            "irrigation_type": farmer.irrigation_type,
+            "preferred_language": farmer.preferred_language,
+            "is_profile_complete": farmer.is_profile_complete,
+            "primary_crops": [c.crop_name for c in crops],
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        logger.error(f"API | ROUTES | GET /farmer/{phone_number} | ERROR | {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+    finally:
+        db.close()
 
 
 @router.get("/whatsapp/health")
