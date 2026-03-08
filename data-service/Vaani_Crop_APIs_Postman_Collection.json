@@ -1,0 +1,476 @@
+{
+    "info": {
+        "name": "Vaani - Crop Intelligence APIs",
+        "description": "Postman Collection for the newly added Crop Intelligence and Weather Fusion endpoints.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Tier 1: Catalog APIs",
+            "item": [
+                {
+                    "name": "1. Get All Crops",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops?limit=10&offset=0",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops"
+                            ],
+                            "query": [
+                                {
+                                    "key": "limit",
+                                    "value": "10",
+                                    "description": "Pagination limit"
+                                },
+                                {
+                                    "key": "offset",
+                                    "value": "0",
+                                    "description": "Pagination offset"
+                                }
+                            ]
+                        },
+                        "description": "Fetches a paginated list of all crops available in the database, including the total count of varieties."
+                    }
+                },
+                {
+                    "name": "2. Get States",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/states",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "states"
+                            ]
+                        },
+                        "description": "Returns the canonical list of states along with their recognized aliases (useful for tracking normalizations)."
+                    }
+                },
+                {
+                    "name": "3. Get Crops by State",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops/state/karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops",
+                                "state",
+                                "karnataka"
+                            ]
+                        },
+                        "description": "Finds all crops that have at least one valid variety documented for the given state. The state string can be an alias (e.g., UP, Tamilnadu)."
+                    }
+                },
+                {
+                    "name": "4. Get Crops by Season",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops/season/kharif?state=karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops",
+                                "season",
+                                "kharif"
+                            ],
+                            "query": [
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                }
+                            ]
+                        },
+                        "description": "Filters crop choices and top top yielding varieties based on the season string (Kharif, Rabi, Zaid, Annual)."
+                    }
+                },
+                {
+                    "name": "5. Get Crops by Month",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops/month/6?state=karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops",
+                                "month",
+                                "6"
+                            ],
+                            "query": [
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                }
+                            ]
+                        },
+                        "description": "Filters crops whose optimal sowing month matches the input month (1-12) for the specific state."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tier 2: Variety APIs",
+            "item": [
+                {
+                    "name": "6. Get Varieties for Crop",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/varieties/rice?state=karnataka&include_raw_text=false",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "varieties",
+                                "rice"
+                            ],
+                            "query": [
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                },
+                                {
+                                    "key": "include_raw_text",
+                                    "value": "false"
+                                }
+                            ]
+                        },
+                        "description": "Returns a detailed list of every variety/hybrid available for a specific crop in a given state, ordered by highest yield."
+                    }
+                },
+                {
+                    "name": "7. Get Top Varieties",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/varieties/top?state=karnataka&limit=10",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "varieties",
+                                "top"
+                            ],
+                            "query": [
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                },
+                                {
+                                    "key": "limit",
+                                    "value": "10"
+                                }
+                            ]
+                        },
+                        "description": "Provides the overall top-yielding varieties available in the user's state, spanning across multiple crops."
+                    }
+                },
+                {
+                    "name": "8. Search Resistant Varieties",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/varieties/resistant?crop=rice&state=karnataka&disease=blight",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "varieties",
+                                "resistant"
+                            ],
+                            "query": [
+                                {
+                                    "key": "crop",
+                                    "value": "rice"
+                                },
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                },
+                                {
+                                    "key": "disease",
+                                    "value": "blight"
+                                }
+                            ]
+                        },
+                        "description": "Finds specific crop varieties that are mapped to be resilient or tolerant to a provided disease string (e.g., blight, rust, aphids)."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tier 3: Calendar APIs",
+            "item": [
+                {
+                    "name": "9. Get Crop Calendar",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crop/rice/calendar",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crop",
+                                "rice",
+                                "calendar"
+                            ]
+                        },
+                        "description": "Fetches all regional lifecycle calendar segments (sowing, growth, harvest month integers) for a particular crop."
+                    }
+                },
+                {
+                    "name": "10. Get Crop Stage",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crop/rice/stage?month=6",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crop",
+                                "rice",
+                                "stage"
+                            ],
+                            "query": [
+                                {
+                                    "key": "month",
+                                    "value": "6"
+                                }
+                            ]
+                        },
+                        "description": "Given a month (defaults to current time if omitted), evaluates the lifecycle windows to determine if the crop is currently in Sowing, Growth, or Harvest."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tier 4: Weather Intelligence",
+            "item": [
+                {
+                    "name": "11. Get Crop Suitability (Weather aware)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v2/crop/suitability/560001?month=6&days_future=16",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v2",
+                                "crop",
+                                "suitability",
+                                "560001"
+                            ],
+                            "query": [
+                                {
+                                    "key": "month",
+                                    "value": "6",
+                                    "description": "Optional, defaults to current month"
+                                },
+                                {
+                                    "key": "days_future",
+                                    "value": "16"
+                                }
+                            ]
+                        },
+                        "description": "An advanced fusion endpoint. Resolves the pincode, pulls the extreme weather risk flags for the upcoming days, cross references the state and month calendar, and outputs a scored list of 'recommended' vs 'avoid' crops."
+                    }
+                },
+                {
+                    "name": "12. Get Crop Risk (Weather aware)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v2/crop/risk/560001?crop=rice&month=6",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v2",
+                                "crop",
+                                "risk",
+                                "560001"
+                            ],
+                            "query": [
+                                {
+                                    "key": "crop",
+                                    "value": "rice"
+                                },
+                                {
+                                    "key": "month",
+                                    "value": "6"
+                                }
+                            ]
+                        },
+                        "description": "Calculates immediate threat risks to a specific crop based on upcoming weather and its current growth stage."
+                    }
+                },
+                {
+                    "name": "13. Get Sowing Window (Weather aware)",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v2/crop/sowing-window/560001",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v2",
+                                "crop",
+                                "sowing-window",
+                                "560001"
+                            ]
+                        },
+                        "description": "Recommends whether a user should plant seeds now or wait based on expected heavy rain or dry spells."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tier 5: Decision Support",
+            "item": [
+                {
+                    "name": "14. Compare Crops side-by-side",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops/compare?crops=rice,maize,wheat&state=karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops",
+                                "compare"
+                            ],
+                            "query": [
+                                {
+                                    "key": "crops",
+                                    "value": "rice,maize,wheat"
+                                },
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                }
+                            ]
+                        },
+                        "description": "Accepts a list of crops and returns a consolidated overview allowing the Frontend/LLM to directly evaluate max yield and sowing validity."
+                    }
+                },
+                {
+                    "name": "15. Get Crop Type Ratio",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/crops/rice/types?state=karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "crops",
+                                "rice",
+                                "types"
+                            ],
+                            "query": [
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                }
+                            ]
+                        },
+                        "description": "Returns statistical aggregates comparing Hybrids vs regular Varieties for a specific crop."
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Tier 6: Search",
+            "item": [
+                {
+                    "name": "16. Global Unified Search",
+                    "request": {
+                        "method": "GET",
+                        "url": {
+                            "raw": "http://localhost:8080/v1/search?q=ganga&state=karnataka",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "8080",
+                            "path": [
+                                "v1",
+                                "search"
+                            ],
+                            "query": [
+                                {
+                                    "key": "q",
+                                    "value": "ganga"
+                                },
+                                {
+                                    "key": "state",
+                                    "value": "karnataka"
+                                }
+                            ]
+                        },
+                        "description": "Searches both Crop names and specific Variety names using fuzzy ILIKE, returning a combined search result payload."
+                    }
+                }
+            ]
+        }
+    ]
+}
