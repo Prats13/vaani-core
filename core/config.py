@@ -66,6 +66,28 @@ class Settings(BaseSettings):
 
     external_livekit_url: str = "wss://localhost:7880"
 
+    # Database (AWS RDS)
+    database_url: str = "postgresql://localhost:5432/postgres"
+
+    # Redis
+    redis_url: str = "redis://localhost:6379"
+
+    # Data-service cache TTLs (seconds)
+    cache_ttl_seconds: int = 1800
+    crop_cache_ttl_long: int = 604800       # 7 days for /states
+    crop_cache_ttl_medium: int = 86400      # 24h for /crops
+    crop_cache_ttl_short: int = 43200       # 12h for /varieties, /crops/state
+    crop_cache_ttl_search: int = 21600      # 6h for /search
+    crop_cache_ttl_weather: int = 10800     # 3h for /crop/suitability (weather dependent)
+    mandi_cache_ttl_v1: int = 10800         # 3 hours for raw v1
+    mandi_cache_ttl_v2: int = 21600         # 6 hours for insights v2
+    forecast_refresh_ttl_hours: int = 3
+
+    # External APIs
+    open_meteo_base: str = "https://api.open-meteo.com/v1/forecast"
+    pincode_api_base: str = "http://api.zippopotam.us/in"
+    data_gov_api_key: str = ""
+
 
 settings = Settings()
 

@@ -1,0 +1,3932 @@
+{
+  "document_metadata": {
+    "sources": [
+      "crop-description.json",
+      "new_varieties_vegetable_crops_enhanced.json"
+    ],
+    "merged_on": "2026-03-02",
+    "country": "India",
+    "notes": [
+      "Merged by normalized crop_name (lowercase, spaces/underscores normalized) with basic aliases (e.g., chilli/chili, paddy/rice).",
+      "calendar[] comes from crop-description.json; varieties[] comes from new_varieties_vegetable_crops_enhanced.json.",
+      "Variety records preserve parsed fields plus raw_text; states are included as standardized list when present."
+    ]
+  },
+  "crops": [
+    {
+      "crop_name": "Ash gourd",
+      "crop_name_key": "ash gourd",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "KAG-1",
+          "source": "CSAU&T, Kanpur; 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            539.0,
+            787.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Vines are medium long, yield range form 539-787 q/ha.",
+            "summer"
+          ],
+          "raw_text": "• Variety : KAG-1\n• Source: CSAU&T, Kanpur; 2011\n• Vines are medium long, yield range form 539-787 q/ha.\n• Seed rate: 2.0-2.5 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 66,
+          "crop": "Ash gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DAGH-16 (Pusa Urmi)",
+          "source": "ICAR-IARI, New Delhi; 2013",
+          "year": 2013,
+          "yield_q_per_ha": 475.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi; and",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are oblong ellipsoid with greenish white rind and",
+            "white flesh. yield 475 q/ha.",
+            "summer",
+            "Karnataka, Tamil Nadu and Kerala"
+          ],
+          "raw_text": "• Hybrid: DAGH-16 (Pusa Urmi)\n• Source: ICAR-IARI, New Delhi; 2013\n• Fruits are oblong ellipsoid with greenish white rind and\nwhite flesh. yield 475 q/ha.\n• Seed rate: 2.0 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Rajasthan, Gujarat, Haryana and Delhi; and\nKarnataka, Tamil Nadu and Kerala",
+          "page": 66,
+          "crop": "Ash gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DAGH-14 (Pusa Shreyali)",
+          "source": "ICAR-IARI, New Delhi; 2013",
+          "year": 2013,
+          "yield_q_per_ha": 520.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits cylindrical with white rind and white flesh. Fruits",
+            "weight 10.5kg; yield 520 q/ha.",
+            "summer"
+          ],
+          "raw_text": "• Hybrid: DAGH-14 (Pusa Shreyali)\n• Source: ICAR-IARI, New Delhi; 2013\n• Fruits cylindrical with white rind and white flesh. Fruits\nweight 10.5kg; yield 520 q/ha.\n• Seed rate: 2.0 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 67,
+          "crop": "Ash gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "DAG-12",
+          "source": "ICAR-IARI, New Delhi; 2014",
+          "year": 2014,
+          "yield_q_per_ha": 360.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits cylindrical and easy for long distance",
+            "transportation. Greenish white rind and white flesh, Av frt",
+            "wt. 3.5 kg, yield 360 q/ha.",
+            "summer"
+          ],
+          "raw_text": "• Variety : DAG-12\n• Source: ICAR-IARI, New Delhi; 2014\n• Fruits cylindrical and easy for long distance\ntransportation. Greenish white rind and white flesh, Av frt\nwt. 3.5 kg, yield 360 q/ha.\n• Seed rate: 2.0- 2.5 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 67,
+          "crop": "Ash gourd"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 4
+      }
+    },
+    {
+      "crop_name": "Bajra",
+      "crop_name_key": "bajra",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "June",
+            "July"
+          ],
+          "growth_months": [
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Barley",
+      "crop_name_key": "barley",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "March",
+            "April",
+            "May"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Bitter gourd",
+      "crop_name_key": "bitter gourd",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "Sel-1 (Pusa Aushadhi)",
+          "source": "ICAR-IARI, New Delhi; 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            200.0,
+            220.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif & Spring-summer",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are light green, medium long (16.5 cm) and medium",
+            "thick (6.0 cm) , 200-220q/ha yield"
+          ],
+          "raw_text": "• Variety: Sel-1 (Pusa Aushadhi)\n• Source: ICAR-IARI, New Delhi; 2013\n• Fruits are light green, medium long (16.5 cm) and medium\nthick (6.0 cm) , 200-220q/ha yield\n• Seed rate: 4.0-4.5 kg/ha, Sowing time: Kharif & Spring-summer\n• States: Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 62,
+          "crop": "Bitter gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "NBIH-2009",
+          "source": "Nuziveedu Seeds Pvt. Ltd., 2018",
+          "year": 2018,
+          "yield_q_per_ha": [
+            150.0,
+            200.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif & Spring",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits dark green, sharp and dense tubercles, fruit length 22",
+            "24 cm, 4-5cm thick, medium bitter in taste, 150-200 q/ha yield",
+            "summer"
+          ],
+          "raw_text": "• Hybrid: NBIH-2009\n• Source: Nuziveedu Seeds Pvt. Ltd., 2018\n• Fruits dark green, sharp and dense tubercles, fruit length 22-\n24 cm, 4-5cm thick, medium bitter in taste, 150-200 q/ha yield\n• Seed rate: 2.5-3.0 kg/ha, Sowing time: Kharif & Spring-\nsummer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 62,
+          "crop": "Bitter gourd"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Bottle gourd",
+      "crop_name_key": "bottle gourd",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "NDBG-619",
+          "source": "NDUA&T, Faizabad, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 635.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Madhya Pradesh, Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Long cylindrical attractive fruits, 635 q/ha yield",
+            "summer"
+          ],
+          "raw_text": "• Variety: NDBG-619\n• Source: NDUA&T, Faizabad, 2009\n• Long cylindrical attractive fruits, 635 q/ha yield\n• Seed rate: 4.0-4.5 kg/ha, Sowing: Kharif & Spring-\nsummer\n• States: Madhya Pradesh, Maharashtra and Goa",
+          "page": 60,
+          "crop": "Bottle gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Santosh-20 (KBGH-20)",
+          "source": "Krishidhan Vegetable Seeds India Pvt. Ltd.,",
+          "year": null,
+          "yield_q_per_ha": [
+            350.0,
+            400.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to powdery mildew and downy mildew,"
+          ],
+          "other_lines": [
+            "2010",
+            "Tolerant to powdery mildew and downy mildew,",
+            "350-400 q/ha yield",
+            "summer"
+          ],
+          "raw_text": "• Hybrid: Santosh-20 (KBGH-20)\n• Source: Krishidhan Vegetable Seeds India Pvt. Ltd.,\n2010\n• Tolerant to powdery mildew and downy mildew,\n350-400 q/ha yield\n• Seed rate: 2.0-3.0 kg/ha, Sowing: Kharif & Spring-\nsummer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 60,
+          "crop": "Bottle gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "PBOG-89",
+          "source": "GBPUAT, Pantnagar, 2010",
+          "year": 2010,
+          "yield_q_per_ha": 350.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are cylindrical and attractive , 350q/ha yield",
+            "summer",
+            "Jharkhand, Madhya Pradesh, Maharashtra and Goa"
+          ],
+          "raw_text": "• Variety: PBOG-89\n• Source: GBPUAT, Pantnagar, 2010\n• Fruits are cylindrical and attractive , 350q/ha yield\n• Seed rate: 4.0-4.5 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,\nJharkhand, Madhya Pradesh, Maharashtra and Goa",
+          "page": 61,
+          "crop": "Bottle gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Anurag",
+          "source": "Nuziveedu Seeds Pvt. Ltd., 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            300.0,
+            350.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Suitable for long distance transport, 300-350 q/ha yield",
+            "summer"
+          ],
+          "raw_text": "• Hybrid: Anurag\n• Source: Nuziveedu Seeds Pvt. Ltd., 2013\n• Suitable for long distance transport, 300-350 q/ha yield\n• Seed rate: 2.0-3.0 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 61,
+          "crop": "Bottle gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "NDBG-10 (Narendra Pooja)",
+          "source": "NDUA&T, Faizabad, 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            300.0,
+            500.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerance to downy mildew., 300-500 q/ha yield"
+          ],
+          "other_lines": [
+            "Tolerance to downy mildew., 300-500 q/ha yield",
+            "summer"
+          ],
+          "raw_text": "• Variety: NDBG-10 (Narendra Pooja)\n• Source: NDUA&T, Faizabad, 2013\n• Tolerance to downy mildew., 300-500 q/ha yield\n• Seed rate: 4.0-4.5 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 61,
+          "crop": "Bottle gourd"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 5
+      }
+    },
+    {
+      "crop_name": "Brinjal",
+      "crop_name_key": "brinjal",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "PB-67",
+          "source": "GBAU&T, Pantnagar, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 410.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Early maturity, resistant to bacterial wilt and"
+          ],
+          "other_lines": [
+            "Early maturity, resistant to bacterial wilt and",
+            "Phomopsis, yield potential of 410 q/ha"
+          ],
+          "raw_text": "• Variety: PB-67\n• Source: GBAU&T, Pantnagar, 2009\n• Early maturity, resistant to bacterial wilt and\nPhomopsis, yield potential of 410 q/ha\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 40,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Rasika",
+          "source": "Bejo Sheetal Seeds Pvt. Ltd. Jalana,",
+          "year": null,
+          "yield_q_per_ha": [
+            400.0,
+            580.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "2009",
+            "Fruit length of 16.37 cm, 400-580 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: Rasika\n• Source: Bejo Sheetal Seeds Pvt. Ltd. Jalana,\n2009\n• Fruit length of 16.37 cm, 400-580 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar, Jharkhand",
+          "page": 40,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Shamli",
+          "source": "Seminis Seeds, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            350.0,
+            650.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Long fruited hybrid, yield potential of 350-650 q/ha"
+          ],
+          "raw_text": "• Hybrid: Shamli\n• Source: Seminis Seeds, 2009\n• Long fruited hybrid, yield potential of 350-650 q/ha\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 41,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "VNR-51C",
+          "source": "VNR Seeds Pvt. Ltd., Raipur, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            450.0,
+            500.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Small round hybrid, 450-500 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: VNR-51C\n• Source: VNR Seeds Pvt. Ltd., Raipur, 2009\n• Small round hybrid, 450-500 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar, Jharkhand",
+          "page": 41,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "HABH-8",
+          "source": "ICAR-ICER, RC, Ranchi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            375.0,
+            544.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": null,
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Small round fruited hybrid, 375-544 q/ha yield",
+            "Pondicherry"
+          ],
+          "raw_text": "• Hybrid: HABH-8\n• Source: ICAR-ICER, RC, Ranchi, 2009\n• Small round fruited hybrid, 375-544 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing : Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and\nPondicherry",
+          "page": 41,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "PB-70",
+          "source": "GBPUAT, Pantnagar, 2010",
+          "year": 2010,
+          "yield_q_per_ha": 400.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand, Chhattisgarh,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Chhattisgarh"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Resistance to Phomopsis blight, bacterial wilt and shoot"
+          ],
+          "other_lines": [
+            "Resistance to Phomopsis blight, bacterial wilt and shoot",
+            "and fruit borer, yield potential of 400 q/ha",
+            "Orissa, A.P., M.P., Maharashtra, Goa, Karnataka, Tamil",
+            "Nadu, Kerala and Pondicherry"
+          ],
+          "raw_text": " Variety: PB-70\n Source: GBPUAT, Pantnagar, 2010\n Resistance to Phomopsis blight, bacterial wilt and shoot\nand fruit borer, yield potential of 400 q/ha\n Seed rate: 400-500 g/ha, Sowing time: Kharif, Rabi & Zaid\nStates: Punjab, U.P., Bihar and Jharkhand, Chhattisgarh,\nOrissa, A.P., M.P., Maharashtra, Goa, Karnataka, Tamil\nNadu, Kerala and Pondicherry",
+          "page": 42,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "DBL-02",
+          "source": "ICAR- IARI, New Delhi, 2010",
+          "year": 2010,
+          "yield_q_per_ha": [
+            370.0,
+            390.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif & Spring",
+          "states_raw": "J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are long, violet-purple in colour, 370-390 q/ha yield",
+            "Jharkhand, Rajasthan, Gujarat, Haryana and Delhi"
+          ],
+          "raw_text": " Variety: DBL-02\n Source: ICAR- IARI, New Delhi, 2010\n Fruits are long, violet-purple in colour, 370-390 q/ha yield\n Seed rate: 400-500 g/ha, Sowing time: Kharif & Spring\n States: J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,\nJharkhand, Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 42,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DBHL-20",
+          "source": "ICAR- IARI, New Delhi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            450.0,
+            675.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are long, dark purple, glossy, 450-675 q/ha yield",
+            "DDBBHHLL--2200"
+          ],
+          "raw_text": " Hybrid: DBHL-20\n Source: ICAR- IARI, New Delhi, 2009\n Fruits are long, dark purple, glossy, 450-675 q/ha yield\n Seed rate: 150-200 g/ha, Sowing time: Kharif\n States: Punjab, U.P., Bihar and Jharkhand\nDDBBHHLL--2200",
+          "page": 42,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "PHBL-51",
+          "source": "PAU, Ludhiana, 2012",
+          "year": 2012,
+          "yield_q_per_ha": [
+            550.0,
+            650.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are medium-long, thin, shining deep purple,",
+            "550-650 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: PHBL-51\n• Source: PAU, Ludhiana, 2012\n• Fruits are medium-long, thin, shining deep purple,\n550-650 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 43,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "PBHSR-31",
+          "source": "PAU, Ludhiana, 2012",
+          "year": 2012,
+          "yield_q_per_ha": [
+            600.0,
+            650.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, Rajasthan,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Rajasthan"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits small-oblong, shiny purple, 600-650 q/ha yield",
+            "Gujarat, Haryana and Delhi"
+          ],
+          "raw_text": "• Hybrid: PBHSR-31\n• Source: PAU, Ludhiana, 2012\n• Fruits small-oblong, shiny purple, 600-650 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar, Jharkhand, Rajasthan,\nGujarat, Haryana and Delhi",
+          "page": 43,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "VNR-218",
+          "source": "VNR Seeds Pvt. Ltd., Raipur, 2012",
+          "year": 2012,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "West Bengal And Assam",
+          "states": [
+            "West Bengal",
+            "Assam"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Small long fruited hybrid, resistant to bacterial wilt"
+          ],
+          "other_lines": [
+            "Small long fruited hybrid, resistant to bacterial wilt"
+          ],
+          "raw_text": "• Hybrid: VNR-218\n• Source: VNR Seeds Pvt. Ltd., Raipur, 2012\n• Small long fruited hybrid, resistant to bacterial wilt\n• Seed rate: 150-200 g/ha, Sowing time: Kharif & Rabi\n• States: West Bengal And Assam",
+          "page": 44,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "HABR-21",
+          "source": "ICAR-RCER, Ranchi, 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            550.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are oblong, blackish purple, 550-600 q/ha yield"
+          ],
+          "raw_text": "• Variety: HABR-21\n• Source: ICAR-RCER, Ranchi, 2013\n• Fruits are oblong, blackish purple, 550-600 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 44,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "PBHL-52",
+          "source": "PAU, Ludhiana, 2014",
+          "year": 2014,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are long, medium sized, shiny purple, 675 q/ha",
+            "yield"
+          ],
+          "raw_text": "• Hybrid: PBHL-52\n• Source: PAU, Ludhiana, 2014\n• Fruits are long, medium sized, shiny purple, 675 q/ha\nyield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 44,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Nishant",
+          "source": "Advanta seeds Pvt. Ltd, 2015",
+          "year": 2015,
+          "yield_q_per_ha": 350.0,
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "12-15cm long violet fruits with green calyx in clusters, 300",
+            "350 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: Nishant\n• Source: Advanta seeds Pvt. Ltd, 2015\n• 12-15cm long violet fruits with green calyx in clusters, 300-\n350 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 45,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "DBL-175",
+          "source": "ICAR-IARI, New Delhi, 2018",
+          "year": 2018,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Rajasthan, Gujarat, Haryana, Delhi, M.P.,",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are long, cylindrical, shiny purple, 350-400 q/ha",
+            "yield",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Variety: DBL-175\n• Source: ICAR-IARI, New Delhi, 2018\n• Fruits are long, cylindrical, shiny purple, 350-400 q/ha\nyield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Rajasthan, Gujarat, Haryana, Delhi, M.P.,\nMaharashtra and Goa",
+          "page": 45,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "IC-0598429",
+          "source": "IIHR-CHES, Bhubaneswar, 2018",
+          "year": 2018,
+          "yield_q_per_ha": [
+            350.0,
+            360.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Chhattisgarh, Orissa and A.P",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits oval, and purple green in colour with white",
+            "patches, 350-360 q/ha yield"
+          ],
+          "raw_text": "• Variety: IC-0598429\n• Source: IIHR-CHES, Bhubaneswar, 2018\n• Fruits oval, and purple green in colour with white\npatches, 350-360 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Chhattisgarh, Orissa and A.P.",
+          "page": 45,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "PBL-232",
+          "source": "PAU, Ludhiana, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 360.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Rajasthan, Gujarat, Haryana, Delhi, Madhya",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi",
+            "Madhya"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Early maturing, Fruits medium long (16.3 cm), deep",
+            "purple and shining. Calyx green; Yield: 360 q/ha",
+            "Pradesh, Maharashtra and Goa"
+          ],
+          "raw_text": "• Variety: PBL-232\n• Source: PAU, Ludhiana, 2019\n• Early maturing, Fruits medium long (16.3 cm), deep\npurple and shining. Calyx green; Yield: 360 q/ha\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Rajasthan, Gujarat, Haryana, Delhi, Madhya\nPradesh, Maharashtra and Goa",
+          "page": 46,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "IVBL-23",
+          "source": "IIVR, Varanasi, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 400.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to Phomopsis blight in brinjal and Fusarium"
+          ],
+          "other_lines": [
+            "Tolerant to Phomopsis blight in brinjal and Fusarium",
+            "wilt, Early maturing, Fruits 14 cm, crimson colour, Frt",
+            "Wt. 150 g ; Yield: 400 q/ha yield"
+          ],
+          "raw_text": "• Variety: IVBL-23\n• Source: IIVR, Varanasi, 2019\n• Tolerant to Phomopsis blight in brinjal and Fusarium\nwilt, Early maturing, Fruits 14 cm, crimson colour, Frt\nWt. 150 g ; Yield: 400 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 46,
+          "crop": "Brinjal"
+        },
+        {
+          "type": "Variety",
+          "name": "DBPR-23 (Pusa Vaibhav)",
+          "source": "IARI, New Delhi, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 410.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Plants are tall (105-110 cm); Fruits are round (15 cm",
+            "length, 7.5 cm diameter), shiny purple in colour with",
+            "non-spiny green calyx, frt. Wt. 250 g;",
+            "Yield 410 q/ha."
+          ],
+          "raw_text": "• Variety: DBPR-23 (Pusa Vaibhav)\n• Source: IARI, New Delhi, 2019\n• Plants are tall (105-110 cm); Fruits are round (15 cm\nlength, 7.5 cm diameter), shiny purple in colour with\nnon-spiny green calyx, frt. Wt. 250 g;\n• Yield 410 q/ha.\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 47,
+          "crop": "Brinjal"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 19
+      }
+    },
+    {
+      "crop_name": "Cabbage",
+      "crop_name_key": "cabbage",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "KTCBH- 81",
+          "source": "IARI, RS, Katrain; 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            400.0,
+            450.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Rabi for plain",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Dark green, head is round shaped, compact and",
+            "covered with outer leaf, ready for harvest in 60-65 DAT,",
+            "yield potential 400-450 q/ha",
+            "areas and Zaid for hill areas"
+          ],
+          "raw_text": "• Hybrid: KTCBH- 81\n• Source: IARI, RS, Katrain; 2013\n• Dark green, head is round shaped, compact and\ncovered with outer leaf, ready for harvest in 60-65 DAT,\nyield potential 400-450 q/ha\n• Seed rate: 250-300 g/ha. Sowing time: Rabi for plain\nareas and Zaid for hill areas\n• States: J&K, H.P. and Uttarakhand",
+          "page": 74,
+          "crop": "Cabbage"
+        },
+        {
+          "type": "Hybrid",
+          "name": "KTCBH-822",
+          "source": "IARI, RS, Katrain; 2019",
+          "year": 2019,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Rabi for plain",
+          "states_raw": "J&K, H.P., Uttarakhand, Raj., Guj., Haryana, Delhi",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Raj",
+            "Guj",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Dark green and waxy leaves, flat and very compact head",
+            "covered with outer leaf. Maturity in 70-75 DAT; has very",
+            "good field staying capacity after head formation; Yield",
+            "400 q/ha",
+            "areas and Zaid for hill areas"
+          ],
+          "raw_text": "• Hybrid: KTCBH-822\n• Source: IARI, RS, Katrain; 2019\n• Dark green and waxy leaves, flat and very compact head\ncovered with outer leaf. Maturity in 70-75 DAT; has very\ngood field staying capacity after head formation; Yield\n400 q/ha\n• Seed rate: 250-300 g/ha. Sowing time: Rabi for plain\nareas and Zaid for hill areas\n• States: J&K, H.P., Uttarakhand, Raj., Guj., Haryana, Delhi",
+          "page": 74,
+          "crop": "Cabbage"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Capsicum",
+      "crop_name_key": "capsicum",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "PRCH-101",
+          "source": "UUHF, Ranichauri, 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            300.0,
+            320.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Spring-summer",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "80 g average fruit weight, 300-320 q/ha yield"
+          ],
+          "raw_text": " Hybrid: PRCH-101\n Source: UUHF, Ranichauri, 2013\n 80 g average fruit weight, 300-320 q/ha yield\n Seed rate: 1.5-2.0 Kg/ha, Sowing time: Spring-summer\n States: J&K, H.P. and Uttarakhand",
+          "page": 53,
+          "crop": "Capsicum"
+        },
+        {
+          "type": "Variety",
+          "name": "DARL-70",
+          "source": "DIBER, Pithoragadh, 2013",
+          "year": 2013,
+          "yield_q_per_ha": 220.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Spring-summer",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to Fusarium wilt and powdery mildew, 200"
+          ],
+          "other_lines": [
+            "Tolerant to Fusarium wilt and powdery mildew, 200",
+            "220 q/ha yield"
+          ],
+          "raw_text": " Variety: DARL-70\n Source: DIBER, Pithoragadh, 2013\n Tolerant to Fusarium wilt and powdery mildew, 200-\n220 q/ha yield\n Seed rate: 1.5-2.0 Kg/ha, Sowing time: Spring-summer\n States: J&K, H.P. and Uttarakhand",
+          "page": 53,
+          "crop": "Capsicum"
+        },
+        {
+          "type": "Variety",
+          "name": "KTC-1",
+          "source": "IARI (RS), Katrain, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 200.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Spring-summer",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Plant bear 6-7 fruits/plant; fruit wt. 70g; Yield: 200q/ha"
+          ],
+          "raw_text": " Variety: KTC-1\n Source: IARI (RS), Katrain, 2019\n Plant bear 6-7 fruits/plant; fruit wt. 70g; Yield: 200q/ha\n Seed rate: 1.5-2.0 Kg/ha, Sowing time: Spring-summer\n States: J&K, H.P. and Uttarakhand",
+          "page": 53,
+          "crop": "Capsicum"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 3
+      }
+    },
+    {
+      "crop_name": "Castor Seed",
+      "crop_name_key": "castor seed",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "July",
+            "August"
+          ],
+          "growth_months": [
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November",
+            "December"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Cauliflower",
+      "crop_name_key": "cauliflower",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "SBECF - 102 (Sabour Agrim)",
+          "source": "BAU, Sabour; 2014",
+          "year": 2014,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": [
+            400.0,
+            450.0
+          ],
+          "sowing_time": "Kharif (June-July)",
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Early; form curd at average temp. 22-27 oC, plants are erect to",
+            "semi spreading; 65 - 68 days for 50% curd (450g) maturity, yield",
+            "potential of 150-200q/ha."
+          ],
+          "raw_text": "• Variety : SBECF - 102 (Sabour Agrim)\n• Source: BAU, Sabour; 2014\n• Early; form curd at average temp. 22-27 oC, plants are erect to\nsemi spreading; 65 - 68 days for 50% curd (450g) maturity, yield\npotential of 150-200q/ha.\n• Seed rate: 400-450 g/ha. Sowing time: Kharif (June-July)\n• States: M.P., Maharashtra and Goa",
+          "page": 75,
+          "crop": "Cauliflower"
+        },
+        {
+          "type": "Variety",
+          "name": "DC 31",
+          "source": "IARI, Pusa, New Delhi; 2014",
+          "year": 2014,
+          "yield_q_per_ha": [
+            160.0,
+            180.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            450.0
+          ],
+          "sowing_time": "Kharif (June-July)",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Suitable for July transplanting and reaches marketable maturity",
+            "during October. Curds compact with retentive white colour. Curd",
+            "weight 500-600g with yield potential of 160-180q/ha."
+          ],
+          "raw_text": "• Variety : DC 31\n• Source: IARI, Pusa, New Delhi; 2014\n• Suitable for July transplanting and reaches marketable maturity\nduring October. Curds compact with retentive white colour. Curd\nweight 500-600g with yield potential of 160-180q/ha.\n• Seed rate: 400-450 g/ha. Sowing time: Kharif (June-July)\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 75,
+          "crop": "Cauliflower"
+        },
+        {
+          "type": "Hybrid",
+          "name": "KTH-301",
+          "source": "IARI (RS), Katrain; 2019",
+          "year": 2019,
+          "yield_q_per_ha": 390.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            450.0
+          ],
+          "sowing_time": "Kharif (June-July)",
+          "states_raw": "J&K, H.P., Uttarakhand, Raj., Gujarat, Haryana and Delhi",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Raj",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Suitable for cultivation in the mid-season with the harvesting of",
+            "curd in the month of November-December; Yield: 390 q/ha."
+          ],
+          "raw_text": "• Hybrid: KTH-301\n• Source: IARI (RS), Katrain; 2019\n• Suitable for cultivation in the mid-season with the harvesting of\ncurd in the month of November-December; Yield: 390 q/ha.\n• Seed rate: 400-450 g/ha. Sowing time: Kharif (June-July)\n• States: J&K, H.P., Uttarakhand, Raj., Gujarat, Haryana and Delhi",
+          "page": 75,
+          "crop": "Cauliflower"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 3
+      }
+    },
+    {
+      "crop_name": "Chana",
+      "crop_name_key": "chana",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January",
+            "February"
+          ],
+          "harvest_months": [
+            "March",
+            "April"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Chilli",
+      "crop_name_key": "chilli",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "January",
+            "February",
+            "March"
+          ],
+          "growth_months": [
+            "April",
+            "May",
+            "June"
+          ],
+          "harvest_months": [
+            "October",
+            "November",
+            "December"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "PC-7 (Pant Chilli-3)",
+          "source": "GBPUAT, Pantnagar, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 175.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Chhattisgarh, Orissa and A.P",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Fruit long, tolerant to LCV and anthracnose diseases, 150"
+          ],
+          "other_lines": [
+            "Fruit long, tolerant to LCV and anthracnose diseases, 150",
+            "175 q/ha yield"
+          ],
+          "raw_text": "• Variety: PC-7 (Pant Chilli-3)\n• Source: GBPUAT, Pantnagar, 2009\n• Fruit long, tolerant to LCV and anthracnose diseases, 150-\n175 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Chhattisgarh, Orissa and A.P.",
+          "page": 48,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "HS-HP-154",
+          "source": "SKUA&T, Srinagar, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            150.0,
+            200.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are 6 – 7 cm long, 150-200 q/ha yield"
+          ],
+          "raw_text": "• Variety: HS-HP-154\n• Source: SKUA&T, Srinagar, 2009\n• Fruits are 6 – 7 cm long, 150-200 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 48,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "IVPBC-535 (Kashi Sinduri)",
+          "source": "ICAR-IIVR, Varanasi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 150.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Non-pungent and high oleoresin content (15 percent),",
+            "150 q/ha yield"
+          ],
+          "raw_text": "• Variety: IVPBC-535 (Kashi Sinduri)\n• Source: ICAR-IIVR, Varanasi, 2009\n• Non-pungent and high oleoresin content (15 percent),\n150 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 48,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "BSS-453",
+          "source": "Bejo Sheetal Seeds Pvt. Ltd., Jalana, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            90.0,
+            120.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "West Bengal And Assam",
+          "states": [
+            "West Bengal",
+            "Assam"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "9-11 cm long fruits, 90-120 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: BSS-453\n• Source: Bejo Sheetal Seeds Pvt. Ltd., Jalana, 2009\n• 9-11 cm long fruits, 90-120 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif & Rabi\n• States: West Bengal And Assam",
+          "page": 49,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "PC-56",
+          "source": "GBPUAT, Pantnagar, 2010",
+          "year": 2010,
+          "yield_q_per_ha": [
+            150.0,
+            170.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to LCV, anthracnose diseases and nematode,"
+          ],
+          "other_lines": [
+            "Tolerant to LCV, anthracnose diseases and nematode,",
+            "150-170 q/ha yield",
+            "Jharkhand, Chhattisgarh, Orissa, A.P., M.P.,",
+            "Maharashtra, Goa, Karnataka, Tamil Nadu, Kerala and",
+            "Pondicherry"
+          ],
+          "raw_text": "• Variety: PC-56\n• Source: GBPUAT, Pantnagar, 2010\n• Tolerant to LCV, anthracnose diseases and nematode,\n150-170 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: J&K, H.P. and Uttarakhand, Punjab, U.P., Bihar,\nJharkhand, Chhattisgarh, Orissa, A.P., M.P.,\nMaharashtra, Goa, Karnataka, Tamil Nadu, Kerala and\nPondicherry",
+          "page": 49,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "NCH-587",
+          "source": "Nirmal Seeds Pvt. Ltd., Jalgaon (MS), 2010",
+          "year": 2010,
+          "yield_q_per_ha": [
+            120.0,
+            135.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, M.P.,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to biotic and abiotic stress, 120-135 q/ha yield"
+          ],
+          "other_lines": [
+            "Tolerant to biotic and abiotic stress, 120-135 q/ha yield",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Hybrid: NCH-587\n• Source: Nirmal Seeds Pvt. Ltd., Jalgaon (MS), 2010\n• Tolerant to biotic and abiotic stress, 120-135 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar, Jharkhand, M.P.,\nMaharashtra and Goa",
+          "page": 49,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "VNR-332 (Rani)",
+          "source": "VNR Seeds Pvt. Ltd., Raipur, 2010",
+          "year": 2010,
+          "yield_q_per_ha": [
+            175.0,
+            200.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, Karnataka, Tamil",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Karnataka",
+            "Tamil"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to Fusarium wilt and LCV, 175-200 q/ha yield"
+          ],
+          "other_lines": [
+            "Tolerant to Fusarium wilt and LCV, 175-200 q/ha yield",
+            "Nadu, Kerala and Pondicherry"
+          ],
+          "raw_text": "• Hybrid: VNR-332 (Rani)\n• Source: VNR Seeds Pvt. Ltd., Raipur, 2010\n• Tolerant to Fusarium wilt and LCV, 175-200 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Punjab, U.P., Bihar, Jharkhand, Karnataka, Tamil\nNadu, Kerala and Pondicherry",
+          "page": 50,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "VR-338 (Kashi Gaurav)",
+          "source": "ICAR-IIVR, Varanasi, 2011",
+          "year": 2011,
+          "yield_q_per_ha": 150.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "West Bengal and Assam",
+          "states": [
+            "West Bengal",
+            "Assam"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to anthracnose, thrips & mites, 150 q/ha yield"
+          ],
+          "other_lines": [
+            "Tolerant to anthracnose, thrips & mites, 150 q/ha yield"
+          ],
+          "raw_text": "• Variety: VR-338 (Kashi Gaurav)\n• Source: ICAR-IIVR, Varanasi, 2011\n• Tolerant to anthracnose, thrips & mites, 150 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif & Rabi\n• States: West Bengal and Assam",
+          "page": 50,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "ACS-06-2",
+          "source": "AAU, Anand, 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            110.0,
+            130.0
+          ],
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are pungent, elongated, 110-130 q/ha yield"
+          ],
+          "raw_text": "• Variety: ACS-06-2\n• Source: AAU, Anand, 2011\n• Fruits are pungent, elongated, 110-130 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 50,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "HH-41786",
+          "source": "Syngenta Seeds Pvt, Ltd.2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            100.0,
+            130.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Long fruited, 100-130 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: HH-41786\n• Source: Syngenta Seeds Pvt, Ltd.2011\n• Long fruited, 100-130 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif\n• States: M.P., Maharashtra and Goa",
+          "page": 51,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "BSS-378 (Garima)",
+          "source": "Bejo Sheetal Seeds Pvt. Ltd. Jalana, 2012",
+          "year": 2012,
+          "yield_q_per_ha": 150.0,
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Long fruits 14-16 cm, yellowish green, 150 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: BSS-378 (Garima)\n• Source: Bejo Sheetal Seeds Pvt. Ltd. Jalana, 2012\n• Long fruits 14-16 cm, yellowish green, 150 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif\n• States: M.P., Maharashtra and Goa",
+          "page": 51,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Vidya",
+          "source": "VNR Seeds Ltd., Raipur, 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            200.0,
+            220.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Tolerant to Fusarium wilt, 200-220 q/ha yield"
+          ],
+          "other_lines": [
+            "Tolerant to Fusarium wilt, 200-220 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: Vidya\n• Source: VNR Seeds Ltd., Raipur, 2013\n• Tolerant to Fusarium wilt, 200-220 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 51,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Variety",
+          "name": "LCA-620",
+          "source": "Dr YSRHU, RS, Lam, 2014",
+          "year": 2014,
+          "yield_q_per_ha": 138.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Chhattisgarh, Orissa and A.P",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Excellent dry fruit colour, 138 q/ha yield"
+          ],
+          "raw_text": "• Variety: LCA-620\n• Source: Dr YSRHU, RS, Lam, 2014\n• Excellent dry fruit colour, 138 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Chhattisgarh, Orissa and A.P",
+          "page": 52,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "2014/CHIHYB-3",
+          "source": "Private sector, Code yet not opened , 2014",
+          "year": 2014,
+          "yield_q_per_ha": [
+            125.0,
+            150.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            300.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, Uttar Pradesh, Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "fruit length ranges from 7-13 cm, 125-150 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: 2014/CHIHYB-3\n• Source: Private sector, Code yet not opened , 2014\n• fruit length ranges from 7-13 cm, 125-150 q/ha yield\n• Seed rate: 250-300 g/ha, Sowing time: Kharif\n• States: Punjab, Uttar Pradesh, Bihar and Jharkhand",
+          "page": 52,
+          "crop": "Chilli"
+        },
+        {
+          "type": "Hybrid",
+          "name": "CH-27",
+          "source": "PAU, Ludhiana, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 145.0,
+          "seed_rate_g_per_ha": [
+            400.0,
+            500.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "(242 ASTA units); resistant to leaf curl virus, fruit"
+          ],
+          "other_lines": [
+            "Plants spreading, tall, Fruits length 7.5 cm;",
+            "pungent (0.8% capsaicin), rich in colouring matter",
+            "(242 ASTA units); resistant to leaf curl virus, fruit",
+            "rot and root knot nematodes; 145 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: CH-27\n• Source: PAU, Ludhiana, 2019\n• Plants spreading, tall, Fruits length 7.5 cm;\npungent (0.8% capsaicin), rich in colouring matter\n(242 ASTA units); resistant to leaf curl virus, fruit\nrot and root knot nematodes; 145 q/ha yield\n• Seed rate: 400-500 g/ha, Sowing time: Kharif\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 52,
+          "crop": "Chilli"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 15
+      }
+    },
+    {
+      "crop_name": "Coriander",
+      "crop_name_key": "coriander",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "February",
+            "March"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Cotton",
+      "crop_name_key": "cotton",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "April",
+            "May"
+          ],
+          "growth_months": [
+            "June",
+            "July",
+            "August"
+          ],
+          "harvest_months": [
+            "October",
+            "November",
+            "December"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Cowpea",
+      "crop_name_key": "cowpea",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "Arka Anoop",
+          "source": "ICAR-IIHR, Bangalore, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 200.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Oct-Nov",
+          "states_raw": "J&K, H.P. and Uttarakhand, Chhatisgarh, Orissa,",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Chhatisgarh",
+            "Odisha"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Resistance to rust & tolerant to bacterial blight, 200 q/ha yield"
+          ],
+          "other_lines": [
+            "Resistance to rust & tolerant to bacterial blight, 200 q/ha yield",
+            "Andhra Pradesh, Karnataka, Tamil Nadu, Kerala and",
+            "Pondicherry"
+          ],
+          "raw_text": "• Variety: Arka Anoop\n• Source: ICAR-IIHR, Bangalore, 2009\n• Resistance to rust & tolerant to bacterial blight, 200 q/ha yield\n• Seed rate: 70-80 kg/ha, Sowing time: Oct-Nov\n• States: J&K, H.P. and Uttarakhand, Chhatisgarh, Orissa,\nAndhra Pradesh, Karnataka, Tamil Nadu, Kerala and\nPondicherry",
+          "page": 57,
+          "crop": "Cowpea"
+        },
+        {
+          "type": "Variety",
+          "name": "HAFB – 3",
+          "source": "ICAR- RCER, RC, Ranchi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            80.0,
+            90.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Oct-Nov",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Bush type variety,80-90 q/ha yield"
+          ],
+          "raw_text": "• Variety: HAFB – 3\n• Source: ICAR- RCER, RC, Ranchi, 2009\n• Bush type variety,80-90 q/ha yield\n• Seed rate: 70-80 kg/ha, Sowing time: Oct-Nov\n• States: Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 57,
+          "crop": "Cowpea"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Cucumber",
+      "crop_name_key": "cucumber",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "DC-83",
+          "source": "ICAR-IARI, Pusa, New Delhi; 2018",
+          "year": 2018,
+          "yield_q_per_ha": [
+            200.0,
+            250.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring-summer",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Straight, rudimentary spines, soft skinned with tender and crispy",
+            "flesh. Harvest at 45-50 DAS, yield potential of 200-250 q/ha."
+          ],
+          "raw_text": "• Variety : DC-83\n• Source: ICAR-IARI, Pusa, New Delhi; 2018\n• Straight, rudimentary spines, soft skinned with tender and crispy\nflesh. Harvest at 45-50 DAS, yield potential of 200-250 q/ha.\n• Seed rate: 1.0- 2.0 kg/ha, Sowing time: Kharif and Spring-summer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 68,
+          "crop": "Cucumber"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DGCH-18",
+          "source": "ICAR-IARI, Pusa, New Delhi; 2019",
+          "year": 2019,
+          "yield_q_per_ha": 240.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring-summer",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Gynoecy based hybrid of cucumber with predominately gynoecious",
+            "behavior, earliness (45 DAS); suitable for spring summer and Kharif",
+            "season cultivation. Yield: 240 q/ha"
+          ],
+          "raw_text": "• Hybrid: DGCH-18\n• Source: ICAR-IARI, Pusa, New Delhi; 2019\n• Gynoecy based hybrid of cucumber with predominately gynoecious\nbehavior, earliness (45 DAS); suitable for spring summer and Kharif\nseason cultivation. Yield: 240 q/ha\n• Seed rate: 1.0- 2.0 kg/ha, Sowing time: Kharif and Spring-summer\n• States: J&K, H.P. and Uttarakhand",
+          "page": 68,
+          "crop": "Cucumber"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DARL 101",
+          "source": null,
+          "year": null,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": null,
+          "states": [],
+          "resistance_or_tolerance_lines": [
+            "Specially suited to micro climatic conditions of hilly region. Field tolerant to"
+          ],
+          "other_lines": [
+            "Specially suited to micro climatic conditions of hilly region. Field tolerant to",
+            "powdery mildew",
+            "Suitable for Uttarakhand"
+          ],
+          "raw_text": "Hybrid : DARL 101\n• Specially suited to micro climatic conditions of hilly region. Field tolerant to\npowdery mildew\n• Suitable for Uttarakhand",
+          "page": 120,
+          "crop": "Cucumber"
+        },
+        {
+          "type": "Hybrid",
+          "name": "DARL 102",
+          "source": null,
+          "year": null,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": null,
+          "states": [],
+          "resistance_or_tolerance_lines": [
+            "Excellent for hills in open and protected conditions. Field tolerant to powdery",
+            "Field tolerant to black rot disease. Early maturing, vigorous growth with",
+            "Creamy white in color with spines, early maturing, field tolerant to"
+          ],
+          "other_lines": [
+            "Excellent for hills in open and protected conditions. Field tolerant to powdery",
+            "mildew and fruit fly.",
+            "Suitable for Uttarakhand",
+            "Cabbage",
+            "Hybrid DARL 801",
+            "Field tolerant to black rot disease. Early maturing, vigorous growth with",
+            "compact head",
+            "Suitable for Uttarakhand",
+            "Bitter Gourd",
+            "Variety DARL-41",
+            "Creamy white in color with spines, early maturing, field tolerant to",
+            "powdery mildew",
+            "Suitable for Uttarakhand"
+          ],
+          "raw_text": "Hybrid: DARL 102\n• Excellent for hills in open and protected conditions. Field tolerant to powdery\nmildew and fruit fly.\n• Suitable for Uttarakhand\nCabbage\nHybrid DARL 801\n• Field tolerant to black rot disease. Early maturing, vigorous growth with\ncompact head\n• Suitable for Uttarakhand\nBitter Gourd\nVariety DARL-41\n• Creamy white in color with spines, early maturing, field tolerant to\npowdery mildew\n• Suitable for Uttarakhand",
+          "page": 120,
+          "crop": "Cucumber"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 4
+      }
+    },
+    {
+      "crop_name": "Dolichos bean",
+      "crop_name_key": "dolichos bean",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "HADB – 3",
+          "source": "ICAR –RCER, RC, Ranchi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 400.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Oct-Nov",
+          "states_raw": "Chhattisgarh, Orissa and A.P. and Telangana",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh",
+            "Telangana"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Pole type, pods are slightly curled and flat fibreless, 350",
+            "400 q/ha yield"
+          ],
+          "raw_text": "• Variety: HADB – 3\n• Source: ICAR –RCER, RC, Ranchi, 2009\n• Pole type, pods are slightly curled and flat fibreless, 350-\n400 q/ha yield\n• Seed rate: 25-30 kg/ha, Sowing time: Oct-Nov\n• States: Chhattisgarh, Orissa and A.P. and Telangana",
+          "page": 59,
+          "crop": "Dolichos bean"
+        },
+        {
+          "type": "Variety",
+          "name": "IIVR Sem-8 (Kashi Haritima)",
+          "source": "ICAR-IIVR, Varanasi, 2010",
+          "year": 2010,
+          "yield_q_per_ha": 350.0,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif (July-Aug)",
+          "states_raw": "NE States & Arunachal Pradesh, Andaman &",
+          "states": [
+            "NE States",
+            "Arunachal Pradesh",
+            "Andaman"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Pole type plants. 250-300 pods per plant, 350 q/ha yield",
+            "Nicobar, Punjab, U.P., Bihar and Jharkhand, Chhattisgarh,",
+            "Orissa and A.P., M.P., Maharashtra and Goa."
+          ],
+          "raw_text": "• Variety: IIVR Sem-8 (Kashi Haritima)\n• Source: ICAR-IIVR, Varanasi, 2010\n• Pole type plants. 250-300 pods per plant, 350 q/ha yield\n• Seed rate: 30 kg/ha, Sowing time: Kharif (July-Aug)\n• States: NE States & Arunachal Pradesh, Andaman &\nNicobar, Punjab, U.P., Bihar and Jharkhand, Chhattisgarh,\nOrissa and A.P., M.P., Maharashtra and Goa.",
+          "page": 59,
+          "crop": "Dolichos bean"
+        },
+        {
+          "type": "Variety",
+          "name": "DB-10",
+          "source": "ICAR-IARI, Pusa, New Delhi, 2018",
+          "year": 2018,
+          "yield_q_per_ha": [
+            300.0,
+            350.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif (July-August)",
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Pole type, resistant to common been mosaic virus and"
+          ],
+          "other_lines": [
+            "Pole type, resistant to common been mosaic virus and",
+            "cercospera disease, 300-350 q/ha yield"
+          ],
+          "raw_text": "• Variety: DB-10\n• Source: ICAR-IARI, Pusa, New Delhi, 2018\n• Pole type, resistant to common been mosaic virus and\ncercospera disease, 300-350 q/ha yield\n• Seed rate: 30 kg/ha, Sowing time: Kharif (July-August)\n• States: M.P., Maharashtra and Goa",
+          "page": 59,
+          "crop": "Dolichos bean"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 3
+      }
+    },
+    {
+      "crop_name": "French bean",
+      "crop_name_key": "french bean",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "HAFB – 4",
+          "source": "ICAR -RCER, RC, Ranchi, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            200.0,
+            250.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Oct-Nov",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Pole type, 200-250 q/ha yield",
+            " Variety: VPFBP-14",
+            " Source: IIVR, Varanasi, 2019",
+            " Pole type (250-300 cm vine length); Days to first picking:",
+            "70-80 days after sowing; Pod color: Purple; length: 14-15",
+            "cm; Round, slightly curved, fleshy, free from parchment",
+            "and smooth surface.",
+            "Nov",
+            "Uttarakhand, Madhya Pradesh, Maharashtra, Goa,",
+            "Karnataka, Tamil Nadu, Kerala and Pondicherry"
+          ],
+          "raw_text": "• Variety: HAFB – 4\n• Source: ICAR -RCER, RC, Ranchi, 2009\n• Pole type, 200-250 q/ha yield\n• Seed rate: 25-30 kg/ha, Sowing time: Oct-Nov\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry\n Variety: VPFBP-14\n Source: IIVR, Varanasi, 2019\n Pole type (250-300 cm vine length); Days to first picking:\n70-80 days after sowing; Pod color: Purple; length: 14-15\ncm; Round, slightly curved, fleshy, free from parchment\nand smooth surface.\n Pod yield: 16.0 t/ha, Seed rate: 25-30 kg/ha, Sowing : Oct-\nNov\n States: Jammu & Kashmir (J&K), Himachal Pradesh,\nUttarakhand, Madhya Pradesh, Maharashtra, Goa,\nKarnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 58,
+          "crop": "French bean"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 1
+      }
+    },
+    {
+      "crop_name": "Guar",
+      "crop_name_key": "guar",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "June",
+            "July"
+          ],
+          "growth_months": [
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Jeera",
+      "crop_name_key": "jeera",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "February",
+            "March"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Kale",
+      "crop_name_key": "kale",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "KTK-64",
+          "source": "IARI, RS, Katrain; 2013",
+          "year": 2013,
+          "yield_q_per_ha": 350.0,
+          "seed_rate_g_per_ha": [
+            800.0,
+            1000.0
+          ],
+          "sowing_time": "Kharif",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "carotenoids, high tolerance to cold and frost conditions."
+          ],
+          "other_lines": [
+            "Highly serrated, purplish green leaves, 40-50 cm in length and",
+            "15-20 cm in width, plant height is 50-60 cm. Leaves available",
+            "throughout the winter season in multiple harvestings, higher",
+            "contents of phenols, anthocyanin, ascorbic acid, chlorophyll-a,",
+            "chlorophyll-b, total chlorophyll, lycopene and total",
+            "carotenoids, high tolerance to cold and frost conditions.",
+            "Average leaf yield over locations is 350 q/ha.",
+            "Mustard Green"
+          ],
+          "raw_text": "• Variety : KTK-64\n• Source: IARI, RS, Katrain; 2013\n• Highly serrated, purplish green leaves, 40-50 cm in length and\n15-20 cm in width, plant height is 50-60 cm. Leaves available\nthroughout the winter season in multiple harvestings, higher\ncontents of phenols, anthocyanin, ascorbic acid, chlorophyll-a,\nchlorophyll-b, total chlorophyll, lycopene and total\ncarotenoids, high tolerance to cold and frost conditions.\nAverage leaf yield over locations is 350 q/ha.\n• Seed rate: 800-1000 g/ha. Sowing time: Kharif\n• States: J&K, H.P. and Uttarakhand\nMustard Green",
+          "page": 77,
+          "crop": "Kale"
+        },
+        {
+          "type": "Variety",
+          "name": "UHF VR-12-1",
+          "source": "Ranichauri; 2018",
+          "year": 2018,
+          "yield_q_per_ha": [
+            350.0,
+            400.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Rabi (Oct.-Nov.)",
+          "states_raw": "Sikkim, Meghalaya, Manipur, Nagaland, Mizoram,",
+          "states": [
+            "Sikkim",
+            "Meghalaya",
+            "Manipur",
+            "Nagaland",
+            "Mizoram"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Leaves green to purplish green, About 3-4 times leaves can be",
+            "picked in direct sown crop of Rabi (Oct-April). Leaves are for",
+            "harvest at 45-50 DAS and has an average leaf yield 350-400 q/ha.",
+            "Tripura, Arunachal Pradesh and Andaman & Nicobar Islands"
+          ],
+          "raw_text": "• Variety : UHF VR-12-1\n• Source: Ranichauri; 2018\n• Leaves green to purplish green, About 3-4 times leaves can be\npicked in direct sown crop of Rabi (Oct-April). Leaves are for\nharvest at 45-50 DAS and has an average leaf yield 350-400 q/ha.\n• Seed rate: 2 – 2.5 kg/ha. Sowing time: Rabi (Oct.-Nov.)\n• States: Sikkim, Meghalaya, Manipur, Nagaland, Mizoram,\nTripura, Arunachal Pradesh and Andaman & Nicobar Islands",
+          "page": 77,
+          "crop": "Kale"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Maize",
+      "crop_name_key": "maize",
+      "calendar": [
+        {
+          "region": "India",
+          "season": "Kharif",
+          "window_label_raw": "India_Kharif",
+          "sowing_months": [
+            "May",
+            "June"
+          ],
+          "growth_months": [
+            "July",
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        },
+        {
+          "region": "India",
+          "season": "Rabi",
+          "window_label_raw": "India_Rabi",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January",
+            "February"
+          ],
+          "harvest_months": [
+            "March",
+            "April"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Moong",
+      "crop_name_key": "moong",
+      "calendar": [
+        {
+          "region": "India",
+          "season": "Kharif",
+          "window_label_raw": "India_Kharif",
+          "sowing_months": [
+            "June",
+            "July"
+          ],
+          "growth_months": [
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        },
+        {
+          "region": "India",
+          "season": "Rabi",
+          "window_label_raw": "India_Rabi",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "February",
+            "March"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        },
+        {
+          "region": "India",
+          "season": "Summer",
+          "window_label_raw": "India_Summer",
+          "sowing_months": [
+            "February",
+            "March"
+          ],
+          "growth_months": [
+            "April",
+            "May"
+          ],
+          "harvest_months": [
+            "June"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Mustard Seed",
+      "crop_name_key": "mustard seed",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "February",
+            "March"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Okra",
+      "crop_name_key": "okra",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "JOH-05-9",
+          "source": "JAU, Junagadh; 2010",
+          "year": 2010,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Chhatisgarh, Orissa and Andhra Pradesh, AND",
+          "states": [
+            "Chhatisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Flowering 50% in 39 days DAS, bears 26-27 fruits/plant,",
+            "average fruit length 11 cm, yield potential of 140-150",
+            "q/ha",
+            "kg/ha for rainy season crop.",
+            "Rajasthan, Gujarat, Haryana and Delhi and Madhya",
+            "Pradesh, Maharashtra and Goa."
+          ],
+          "raw_text": "• Hybrid : JOH-05-9\n• Source: JAU, Junagadh; 2010\n• Flowering 50% in 39 days DAS, bears 26-27 fruits/plant,\naverage fruit length 11 cm, yield potential of 140-150\nq/ha\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Chhatisgarh, Orissa and Andhra Pradesh, AND\nRajasthan, Gujarat, Haryana and Delhi and Madhya\nPradesh, Maharashtra and Goa.",
+          "page": 70,
+          "crop": "Okra"
+        },
+        {
+          "type": "Variety",
+          "name": "VRO-22 (Kashi Kranti)",
+          "source": "ICAR-IIVR, Varanasi; 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            125.0,
+            140.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "yield 125-140 q/ha. Resistant to YVMV and OLCV."
+          ],
+          "other_lines": [
+            "Flowering 50% in 46 DAS, Fruits are 8-10 cm long at",
+            "marketable stage, average 17-18 per plants. Average fruit",
+            "yield 125-140 q/ha. Resistant to YVMV and OLCV.",
+            "kg/ha for rainy season crop."
+          ],
+          "raw_text": "• Variety: VRO-22 (Kashi Kranti)\n• Source: ICAR-IIVR, Varanasi; 2011\n• Flowering 50% in 46 DAS, Fruits are 8-10 cm long at\nmarketable stage, average 17-18 per plants. Average fruit\nyield 125-140 q/ha. Resistant to YVMV and OLCV.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 70,
+          "crop": "Okra"
+        },
+        {
+          "type": "Variety",
+          "name": "JOL-2K-19 (GJO-3)",
+          "source": "JAU, Junadadh; 2011",
+          "year": 2011,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Chhattisgarh, Orissa and A.P",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Moderately resistant to Jassids, whitefly and pod borer",
+            "damage and field resistant to YVMV , Attractive green pods"
+          ],
+          "other_lines": [
+            "Moderately resistant to Jassids, whitefly and pod borer",
+            "damage and field resistant to YVMV , Attractive green pods",
+            "and good keeping quality. It has average green fruit yield is",
+            "150-240 q/ha.",
+            "kg/ha for rainy season crop."
+          ],
+          "raw_text": "• Variety: JOL-2K-19 (GJO-3)\n• Source: JAU, Junadadh; 2011\n• Moderately resistant to Jassids, whitefly and pod borer\ndamage and field resistant to YVMV , Attractive green pods\nand good keeping quality. It has average green fruit yield is\n150-240 q/ha.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Chhattisgarh, Orissa and A.P.",
+          "page": 71,
+          "crop": "Okra"
+        },
+        {
+          "type": "Hybrid",
+          "name": "OH-597",
+          "source": "Syngenta India Limited, Pune; 2012",
+          "year": 2012,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [
+            "resistant to YVMV disease. It has yield potential of 120-150"
+          ],
+          "other_lines": [
+            "dark green leaves and produced tender green pods. It is",
+            "resistant to YVMV disease. It has yield potential of 120-150",
+            "q/ha.",
+            "kg/ha for rainy season crop."
+          ],
+          "raw_text": "• Hybrid: OH-597\n• Source: Syngenta India Limited, Pune; 2012\n• dark green leaves and produced tender green pods. It is\nresistant to YVMV disease. It has yield potential of 120-150\nq/ha.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: M.P., Maharashtra and Goa",
+          "page": 71,
+          "crop": "Okra"
+        },
+        {
+          "type": "Hybrid",
+          "name": "AROH-631",
+          "source": "Ankur Seeds Pvt. Ltd., 2012",
+          "year": 2012,
+          "yield_q_per_ha": [
+            125.0,
+            160.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Chhattisgarh, Orissa and A.P., and M.P., Maharashtra",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh",
+            "Madhya Pradesh",
+            "Maharashtra"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Picking starts at 40-50 DAS, fruits cylindrical, smooth, dark",
+            "green and medium long with average fruit weight 60-70g.",
+            "yield potential of 125-160 q/ha.",
+            "kg/ha for rainy season crop.",
+            "and Goa"
+          ],
+          "raw_text": "• Hybrid: AROH-631\n• Source: Ankur Seeds Pvt. Ltd., 2012\n• Picking starts at 40-50 DAS, fruits cylindrical, smooth, dark\ngreen and medium long with average fruit weight 60-70g.\nyield potential of 125-160 q/ha.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Chhattisgarh, Orissa and A.P., and M.P., Maharashtra\nand Goa",
+          "page": 72,
+          "crop": "Okra"
+        },
+        {
+          "type": "Hybrid",
+          "name": "JOH-0819",
+          "source": "JAU, Junagadh; 2014",
+          "year": 2014,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi & M.P.,",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits medium long in size with attractive in light green colour",
+            "with good shining. Average fruit length ranges from 10-15 cm,",
+            "fruit girth 2-5 cm and fruit weight 10-150g. Average fruit yield",
+            "160 q/ha.",
+            "kg/ha for rainy season crop.",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Hybrid: JOH-0819\n• Source: JAU, Junagadh; 2014\n• Fruits medium long in size with attractive in light green colour\nwith good shining. Average fruit length ranges from 10-15 cm,\nfruit girth 2-5 cm and fruit weight 10-150g. Average fruit yield\n160 q/ha.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Rajasthan, Gujarat, Haryana and Delhi & M.P.,\nMaharashtra and Goa",
+          "page": 72,
+          "crop": "Okra"
+        },
+        {
+          "type": "Variety",
+          "name": "VRO-25 (Kashi Vardan)",
+          "source": "ICAR-IIVR, Varanasi., 2014",
+          "year": 2014,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Early variety with short internodes along with 2 to 3",
+            "branches. takes 42-44 days for first flowering, The yield",
+            "potential is around 140-150 q/ha.",
+            "kg/ha for rainy season crop."
+          ],
+          "raw_text": "• Variety: VRO-25 (Kashi Vardan)\n• Source: ICAR-IIVR, Varanasi., 2014\n• Early variety with short internodes along with 2 to 3\nbranches. takes 42-44 days for first flowering, The yield\npotential is around 140-150 q/ha.\n• Seed rate: 10-12 kg/ha for spring summer crop and 8-10\nkg/ha for rainy season crop.\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 73,
+          "crop": "Okra"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 7
+      }
+    },
+    {
+      "crop_name": "Paddy",
+      "crop_name_key": "paddy",
+      "calendar": [
+        {
+          "region": "India",
+          "season": "Kharif",
+          "window_label_raw": "India_Kharif",
+          "sowing_months": [
+            "May",
+            "June"
+          ],
+          "growth_months": [
+            "July",
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        },
+        {
+          "region": "India",
+          "season": "Rabi",
+          "window_label_raw": "India_Rabi",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January"
+          ],
+          "harvest_months": [
+            "February",
+            "March"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        },
+        {
+          "region": "India",
+          "season": "Summer",
+          "window_label_raw": "India_Summer",
+          "sowing_months": [
+            "January",
+            "February"
+          ],
+          "growth_months": [
+            "March",
+            "April"
+          ],
+          "harvest_months": [
+            "May",
+            "June"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Pumpkin",
+      "crop_name_key": "pumpkin",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "HAPK-10 (Swarna Amrit)",
+          "source": "ICAR-ICER,RC, Ranchi; 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            450.0,
+            500.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Round flat fruits. First fruits harvest 75-80 days after",
+            "sowing and has yield potential of 450-500 q/ha",
+            "summer",
+            "Long melon"
+          ],
+          "raw_text": "• Hybrid : HAPK-10 (Swarna Amrit)\n• Source: ICAR-ICER,RC, Ranchi; 2009\n• Round flat fruits. First fruits harvest 75-80 days after\nsowing and has yield potential of 450-500 q/ha\n• Seed rate: 3.5-4.0 kg/ha , Sowing time: Kharif and Spring-\nsummer\n• States: J&K, H.P. and Uttarakhand\nLong melon",
+          "page": 69,
+          "crop": "Pumpkin"
+        },
+        {
+          "type": "Variety",
+          "name": "VRSLM-16",
+          "source": "ICAR-IIVR, RS, Sargatia, Kushinagar; 2015",
+          "year": 2015,
+          "yield_q_per_ha": [
+            150.0,
+            200.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring-summer",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "average fruit length – 30 cm, frt wt. 50-60 g, fruit crispy, light green, smooth prominent",
+            "ridges. yield potential of 150-200 q/ha"
+          ],
+          "raw_text": "• Variety: VRSLM-16\n• Source: ICAR-IIVR, RS, Sargatia, Kushinagar; 2015\n• average fruit length – 30 cm, frt wt. 50-60 g, fruit crispy, light green, smooth prominent\nridges. yield potential of 150-200 q/ha\n• Seed rate: 2.5-3.0 kg/ha , Sowing time: Kharif and Spring-summer\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 69,
+          "crop": "Pumpkin"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Radish",
+      "crop_name_key": "radish",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "Kashi Aardra (VRRAD-150 )",
+          "source": "ICAR-IIVR, Varanasi, 2019",
+          "year": 2019,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Rabi",
+          "states_raw": "West Bengal and Assam",
+          "states": [
+            "West Bengal",
+            "Assam"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Suitable for sowing during mid-September to mid-December;",
+            "Roots are attractive white in colour, long and icicle in shape.",
+            "Roots are ready to harvest in 40-45 days after sowing.",
+            "Root yield (24-40 t/ha) ."
+          ],
+          "raw_text": "• Variety : Kashi Aardra (VRRAD-150 )\n• Source: ICAR-IIVR, Varanasi, 2019\n• Suitable for sowing during mid-September to mid-December;\nRoots are attractive white in colour, long and icicle in shape.\nRoots are ready to harvest in 40-45 days after sowing.\n• Root yield (24-40 t/ha) .\n• Seed rate: 8-10 kg/ha. Sowing time: Rabi\n• States: West Bengal and Assam",
+          "page": 76,
+          "crop": "Radish"
+        },
+        {
+          "type": "Variety",
+          "name": "UHFR-12-1",
+          "source": "Ranichauri, 2019",
+          "year": 2019,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "J&K, H.P. and Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "The roots are round to slightly tapering, 10-12 cm in length and width, white in colour.",
+            "Weighing 180-200 g at edible maturity.",
+            "Roots are ready to harvest in 55-60 days after sowing."
+          ],
+          "raw_text": "• Variety : UHFR-12-1\n• Source: Ranichauri, 2019\n• The roots are round to slightly tapering, 10-12 cm in length and width, white in colour.\n• Weighing 180-200 g at edible maturity.\n• Roots are ready to harvest in 55-60 days after sowing.\n• Root yield (35 t/ha). Seed rate: 7-8 kg/ha.\n• States: J&K, H.P. and Uttarakhand",
+          "page": 76,
+          "crop": "Radish"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 2
+      }
+    },
+    {
+      "crop_name": "Ridge gourd",
+      "crop_name_key": "ridge gourd",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "Pallavi",
+          "source": "Sungro Seed Pvt. Ltd. ; 2009",
+          "year": 2009,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring",
+          "states_raw": "Chhattisgarh, Orissa and A.P., Telangana",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh",
+            "Telangana"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Green long fruits with highly ridged. Yield potential of this",
+            "variety is 138-185 q/ha.",
+            "summer"
+          ],
+          "raw_text": "• Hybrid : Pallavi\n• Source: Sungro Seed Pvt. Ltd. ; 2009\n• Green long fruits with highly ridged. Yield potential of this\nvariety is 138-185 q/ha.\n• Seed rate: 3.0-4.0 kg/ha, Sowing time: Kharif and Spring-\nsummer\n• States: Chhattisgarh, Orissa and A.P., Telangana",
+          "page": 64,
+          "crop": "Ridge gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "NHYRGH-5HB (Haritham)",
+          "source": "APHU, Hyderabad., 2009",
+          "year": 2009,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif and Spring-summer",
+          "states_raw": "Madhya Pradesh, Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are light in colour and can be harvested after 65-68 days of seeding. It has yield",
+            "potential of 201-260 q/ha."
+          ],
+          "raw_text": "• Hybrid: NHYRGH-5HB (Haritham)\n• Source: APHU, Hyderabad., 2009\n• Fruits are light in colour and can be harvested after 65-68 days of seeding. It has yield\npotential of 201-260 q/ha.\n• Seed rate: 3.0-4.0 kg/ha, Sowing time: Kharif and Spring-summer\n• States: Madhya Pradesh, Maharashtra and Goa",
+          "page": 64,
+          "crop": "Ridge gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "Kashi Shivani (VRRG-27)",
+          "source": "ICAR-IIVR, Varanasi ; 2016",
+          "year": 2016,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif & Spring",
+          "states_raw": "Punjab, Uttar Pradesh, Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are green, long straight (20-30 cm and may increase",
+            "on bower up to 40cm) with a diameter of 3-4 cm, Yield:",
+            "180-200 q/ha",
+            "summer",
+            "Ash gourd"
+          ],
+          "raw_text": "• Variety : Kashi Shivani (VRRG-27)\n• Source: ICAR-IIVR, Varanasi ; 2016\n• Fruits are green, long straight (20-30 cm and may increase\non bower up to 40cm) with a diameter of 3-4 cm, Yield:\n180-200 q/ha\n• Seed rate: 3.0-4.0 kg/ha, Sowing time: Kharif & Spring-\nsummer\n• States: Punjab, Uttar Pradesh, Bihar and Jharkhand\nAsh gourd",
+          "page": 65,
+          "crop": "Ridge gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "IVAG-3 (Kashi Surabhi)",
+          "source": "ICAR-IIVR, Varanasi ; 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            550.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": null,
+          "sowing_time": "Kharif",
+          "states_raw": "Punjab, Uttar Pradesh, Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Resistant to anthracnose disease"
+          ],
+          "other_lines": [
+            "Fruits are oblong with white wax coating. Maturing 105",
+            "110 days after sowing, yield potential of 550-600 q/ha.",
+            "Resistant to anthracnose disease"
+          ],
+          "raw_text": "• Variety : IVAG-3 (Kashi Surabhi)\n• Source: ICAR-IIVR, Varanasi ; 2009\n• Fruits are oblong with white wax coating. Maturing 105-\n110 days after sowing, yield potential of 550-600 q/ha.\nResistant to anthracnose disease\n• Seed rate: 3.0-4.0 kg/ha, Sowing time: Kharif\n• States: Punjab, Uttar Pradesh, Bihar and Jharkhand",
+          "page": 65,
+          "crop": "Ridge gourd"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 4
+      }
+    },
+    {
+      "crop_name": "Soybean",
+      "crop_name_key": "soybean",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "June",
+            "July"
+          ],
+          "growth_months": [
+            "August"
+          ],
+          "harvest_months": [
+            "September",
+            "October"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Sponge gourd",
+      "crop_name_key": "sponge gourd",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Variety",
+          "name": "VR-1 (Kashi Divya)",
+          "source": "ICAR-IIVR, Varanasi, 2010",
+          "year": 2010,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are cylindrical, light, fruit length 20-25 cm, yield",
+            "potential of 130-160 q/ha."
+          ],
+          "raw_text": " Variety: VR-1 (Kashi Divya)\n Source: ICAR-IIVR, Varanasi, 2010\n Fruits are cylindrical, light, fruit length 20-25 cm, yield\npotential of 130-160 q/ha.\n Seed Rate: 3.5-4.0 Kg/ha; Spring summer and kharif\n States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 63,
+          "crop": "Sponge gourd"
+        },
+        {
+          "type": "Variety",
+          "name": "VRSG-1 (Kashi Shreya)",
+          "source": "ICAR-IIVR, Varanasi, 2018",
+          "year": 2018,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits are dark green, long (20-25 cm on flat bed, up to",
+            "32 cm on bower) and 3-3.75 cm diameter."
+          ],
+          "raw_text": " Variety: VRSG-1 (Kashi Shreya)\n Source: ICAR-IIVR, Varanasi, 2018\n Fruits are dark green, long (20-25 cm on flat bed, up to\n32 cm on bower) and 3-3.75 cm diameter.\n Seed Rate: 3.5-4.0 Kg/ha; Spring summer and kharif\n States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 63,
+          "crop": "Sponge gourd"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Kashi Rakshita",
+          "source": "ICAR-IIVR, Varanasi, 20218",
+          "year": 2021,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": null,
+          "sowing_time": null,
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits dark green, long (20-25 cm on flat bed and may on",
+            "up to 30 cm on bower) with 3-4 cm dia."
+          ],
+          "raw_text": " Hybrid: Kashi Rakshita\n Source: ICAR-IIVR, Varanasi, 20218\n Fruits dark green, long (20-25 cm on flat bed and may on\nup to 30 cm on bower) with 3-4 cm dia.\n Seed Rate: 3.5-4.0 Kg/ha; Spring summer and kharif\n States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 63,
+          "crop": "Sponge gourd"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 3
+      }
+    },
+    {
+      "crop_name": "Sugar",
+      "crop_name_key": "sugar",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "January",
+            "February",
+            "March"
+          ],
+          "growth_months": [
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November",
+            "December"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Tomato",
+      "crop_name_key": "tomato",
+      "calendar": [],
+      "varieties": [
+        {
+          "type": "Hybrid",
+          "name": "BSS-488",
+          "source": "Bejo Sheetal Company, Jalana; 2009",
+          "year": 2009,
+          "yield_q_per_ha": 550.0,
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Chhattisgarh, Orissa and A.P",
+          "states": [
+            "Chhattisgarh",
+            "Odisha",
+            "Andhra Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Indeterminate hybrid, 550 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: BSS-488\n• Source: Bejo Sheetal Company, Jalana; 2009\n• Indeterminate hybrid, 550 q/ha yield\n• Seed rate: 150g/ha, Sowing time: Kharif & Rabi\n• States: Chhattisgarh, Orissa and A.P.",
+          "page": 31,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Himsohna",
+          "source": "Syngenta Seed Company, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 600.0,
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "West Bengal And Assam",
+          "states": [
+            "West Bengal",
+            "Assam"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Indeterminate hybrid, Yield up to 600 q/ha."
+          ],
+          "raw_text": "• Hybrid: Himsohna\n• Source: Syngenta Seed Company, 2009\n• Indeterminate hybrid, Yield up to 600 q/ha.\n• Seed rate: 150g/ha, Sowing time: Kharif & Rabi\n• States: West Bengal And Assam",
+          "page": 31,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Tai-01458 (TO-01458)",
+          "source": "Syngenta Seed Company, 2009",
+          "year": 2009,
+          "yield_q_per_ha": 450.0,
+          "seed_rate_g_per_ha": 250.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Determinate hybrid, 450 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: Tai-01458 (TO-01458)\n• Source: Syngenta Seed Company, 2009\n• Determinate hybrid, 450 q/ha yield\n• Seed rate: 250g/ha, Sowing time: Kharif & Rabi.\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 31,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "Pant T-10 (Pant Tomato-10)",
+          "source": "GBPUAT, Pantnagar, 2009",
+          "year": 2009,
+          "yield_q_per_ha": [
+            350.0,
+            450.0
+          ],
+          "seed_rate_g_per_ha": [
+            350.0,
+            400.0
+          ],
+          "sowing_time": "Kharif & Rabi/Spring",
+          "states_raw": "J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Determinate variety, tolerant to blight, 350-450 q/ha yield"
+          ],
+          "other_lines": [
+            "Determinate variety, tolerant to blight, 350-450 q/ha yield",
+            "Jharkhand"
+          ],
+          "raw_text": "• Variety: Pant T-10 (Pant Tomato-10)\n• Source: GBPUAT, Pantnagar, 2009\n• Determinate variety, tolerant to blight, 350-450 q/ha yield\n• Seed rate: 350-400 g/ha, Sowing time: Kharif & Rabi/Spring\n• States: J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and\nJharkhand",
+          "page": 32,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "BCTH-4",
+          "source": "BCKV, Kalyani, 2010",
+          "year": 2010,
+          "yield_q_per_ha": [
+            550.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif and Rabi for zone- IV",
+          "states_raw": "J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Semi-determinate hybrid, Yield 550-600 q/ha.",
+            "and spring-summer for zone- I",
+            "Jharkhand"
+          ],
+          "raw_text": "• Hybrid: BCTH-4\n• Source: BCKV, Kalyani, 2010\n• Semi-determinate hybrid, Yield 550-600 q/ha.\n• Seed rate: 150 g/ha, Sowing time: Kharif and Rabi for zone- IV\nand spring-summer for zone- I\n• States: J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and\nJharkhand",
+          "page": 32,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "PAU-2372",
+          "source": "PAU, Ludhiana, 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            450.0,
+            550.0
+          ],
+          "seed_rate_g_per_ha": [
+            250.0,
+            400.0
+          ],
+          "sowing_time": "Kharif & Rabi/Spring",
+          "states_raw": "J&K, H.P., Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Indeterminate variety, 450-550 q/ha yield"
+          ],
+          "raw_text": "• Variety: PAU-2372\n• Source: PAU, Ludhiana, 2011\n• Indeterminate variety, 450-550 q/ha yield\n• Seed rate: 250-400g/ha, Sowing time: Kharif & Rabi/Spring\n• States: J&K, H.P., Uttarakhand",
+          "page": 32,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "ATL-O1-19 (Anand Tomato-4)",
+          "source": "AAU, Anand, 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            350.0,
+            400.0
+          ],
+          "seed_rate_g_per_ha": [
+            350.0,
+            400.0
+          ],
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Determinate, tolerant to tomato leaf curl virus disease,"
+          ],
+          "other_lines": [
+            "Determinate, tolerant to tomato leaf curl virus disease,",
+            "350-400 q/ha yield"
+          ],
+          "raw_text": "• Variety: ATL-O1-19 (Anand Tomato-4)\n• Source: AAU, Anand, 2011\n• Determinate, tolerant to tomato leaf curl virus disease,\n350-400 q/ha yield\n• Seed rate: 350-400 g/ha, Sowing time: Kharif & Rabi\n• States: Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 33,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "ARTH-2104",
+          "source": "Ankur Seeds, Nagpur, 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            500.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": [
+            150.0,
+            175.0
+          ],
+          "sowing_time": "Kharif and Rabi",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Indeterminate hybrid, Yield 500-600 q/ha."
+          ],
+          "raw_text": "• Hybrid: ARTH-2104\n• Source: Ankur Seeds, Nagpur, 2011\n• Indeterminate hybrid, Yield 500-600 q/ha.\n• Seed rate: 150-175 g/ha, Sowing time: Kharif and Rabi\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 33,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "VRTH-101 (Kashi Abhiman)",
+          "source": "ICAR-IIVR, Varanasi, 2011",
+          "year": 2011,
+          "yield_q_per_ha": [
+            850.0,
+            900.0
+          ],
+          "seed_rate_g_per_ha": 250.0,
+          "sowing_time": "Mid Sept; /Feb-March",
+          "states_raw": "J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand",
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Determinate hybrid, tolerant to tomato leaf curl virus"
+          ],
+          "other_lines": [
+            "Determinate hybrid, tolerant to tomato leaf curl virus",
+            "disease, 850-900 q/ha yield",
+            "Jharkhand"
+          ],
+          "raw_text": "• Hybrid: VRTH-101 (Kashi Abhiman)\n• Source: ICAR-IIVR, Varanasi, 2011\n• Determinate hybrid, tolerant to tomato leaf curl virus\ndisease, 850-900 q/ha yield\n• Seed rate: 250 g/ha, Sowing time: Mid Sept; /Feb-March\n• States: J&K, H.P., Uttarakhand, Punjab, U.P., Bihar and\nJharkhand",
+          "page": 33,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Bhagya",
+          "source": "Nuziveedu Seeds Pvt. Ltd., 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            300.0,
+            350.0
+          ],
+          "seed_rate_g_per_ha": 250.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Determinate, good firmness, 300-350 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: Bhagya\n• Source: Nuziveedu Seeds Pvt. Ltd., 2013\n• Determinate, good firmness, 300-350 q/ha yield\n• Seed rate: 250 g/ha, Sowing time: Kharif & Rabi\n• States: Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 34,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "VRT-0801 (Kashi Aman)",
+          "source": "ICAR-IIVR, Varanasi, 2013",
+          "year": 2013,
+          "yield_q_per_ha": [
+            500.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif and Rabi",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Determinate variety, resistant to ToLCV, Yield 500-600 q/ha."
+          ],
+          "other_lines": [
+            "Determinate variety, resistant to ToLCV, Yield 500-600 q/ha."
+          ],
+          "raw_text": "• Variety: VRT-0801 (Kashi Aman)\n• Source: ICAR-IIVR, Varanasi, 2013\n• Determinate variety, resistant to ToLCV, Yield 500-600 q/ha.\n• Seed rate: 400 g/ha, Sowing time: Kharif and Rabi\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 34,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "DARL-68",
+          "source": "DIBER, Pithoragarh, 2014",
+          "year": 2014,
+          "yield_q_per_ha": 320.0,
+          "seed_rate_g_per_ha": [
+            150.0,
+            200.0
+          ],
+          "sowing_time": "Rabi/Spring -summer",
+          "states_raw": "Sikkim, Meghalaya, Manipur, Nagaland, Mizoram,",
+          "states": [
+            "Sikkim",
+            "Meghalaya",
+            "Manipur",
+            "Nagaland",
+            "Mizoram"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Indeterminate, 320 q/ha yield",
+            "Tripura, Arunachal Pradesh, Andaman & Nicobar Islands,",
+            "Punjab, U.P., Bihar and Jharkhand"
+          ],
+          "raw_text": "• Variety: DARL-68\n• Source: DIBER, Pithoragarh, 2014\n• Indeterminate, 320 q/ha yield\n• Seed rate: 150-200 g/ha, Sowing time: Rabi/Spring -summer\n• States: Sikkim, Meghalaya, Manipur, Nagaland, Mizoram,\nTripura, Arunachal Pradesh, Andaman & Nicobar Islands,\nPunjab, U.P., Bihar and Jharkhand",
+          "page": 34,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "Punjab Ratta",
+          "source": "PAU, Ludhiana, 2014",
+          "year": 2014,
+          "yield_q_per_ha": 560.0,
+          "seed_rate_g_per_ha": [
+            350.0,
+            400.0
+          ],
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Determinate variety, processing quality, 560 q/ha yield"
+          ],
+          "raw_text": "• Variety: Punjab Ratta\n• Source: PAU, Ludhiana, 2014\n• Determinate variety, processing quality, 560 q/ha yield\n• Seed rate: 350-400 g/ha, Sowing time: Kharif & Rabi\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 35,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "2011/TODHyb-2",
+          "source": "Private sector, Code yet not opened , 2014",
+          "year": 2014,
+          "yield_q_per_ha": [
+            350.0,
+            450.0
+          ],
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif and Rabi",
+          "states_raw": "J&K, H.P., Uttarakhand",
+          "states": [
+            "J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Determinate hybrid, Yield 350-450 q/ha."
+          ],
+          "raw_text": "• Hybrid:2011/TODHyb-2\n• Source: Private sector, Code yet not opened , 2014\n• Determinate hybrid, Yield 350-450 q/ha.\n• Seed rate: 150 g/ha, Sowing time: Kharif and Rabi\n• States: J&K, H.P., Uttarakhand",
+          "page": 35,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Improved Bhagya",
+          "source": "Nuziveedu Seeds, 2014",
+          "year": 2014,
+          "yield_q_per_ha": [
+            350.0,
+            400.0
+          ],
+          "seed_rate_g_per_ha": 250.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, M.P.,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Joint Pedicel, good firmness, 350-400 q/ha yield",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Hybrid: Improved Bhagya\n• Source: Nuziveedu Seeds, 2014\n• Joint Pedicel, good firmness, 350-400 q/ha yield\n• Seed rate: 250 g/ha, Sowing time: Kharif & Rabi.\n• States: Punjab, U.P., Bihar, Jharkhand, M.P.,\nMaharashtra and Goa",
+          "page": 35,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "IIHR-H-240 (Arka Samrat)",
+          "source": "ICAR-IIHR, Banglore, 2015",
+          "year": 2015,
+          "yield_q_per_ha": [
+            800.0,
+            850.0
+          ],
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Semi-determinate variety, resistance to ToLCV, BW and"
+          ],
+          "other_lines": [
+            "Semi-determinate variety, resistance to ToLCV, BW and",
+            "early blight, processing quality, 800-850q/ha yield"
+          ],
+          "raw_text": "• Hybrid: IIHR-H-240 (Arka Samrat)\n• Source: ICAR-IIHR, Banglore, 2015\n• Semi-determinate variety, resistance to ToLCV, BW and\nearly blight, processing quality, 800-850q/ha yield\n• Seed rate: 150 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 36,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "ATL 08-21",
+          "source": "AAU, Anand, 2016",
+          "year": 2016,
+          "yield_q_per_ha": [
+            450.0,
+            500.0
+          ],
+          "seed_rate_g_per_ha": [
+            350.0,
+            400.0
+          ],
+          "sowing_time": "Kharif and Rabi",
+          "states_raw": "Rajasthan, Gujarat, Haryana and Delhi",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Determinate variety, tolerant to borer and leaf miner,"
+          ],
+          "other_lines": [
+            "Determinate variety, tolerant to borer and leaf miner,",
+            "Yield :450-500 q/ha."
+          ],
+          "raw_text": "• Variety: ATL 08-21\n• Source: AAU, Anand, 2016\n• Determinate variety, tolerant to borer and leaf miner,\nYield :450-500 q/ha.\n• Seed rate: 350-400 g/ha, Sowing time: Kharif and Rabi\n• States: Rajasthan, Gujarat, Haryana and Delhi",
+          "page": 36,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "Kashi Amul (VRT-1202)",
+          "source": "ICAR-IIVR, Varanasi, 2016",
+          "year": 2016,
+          "yield_q_per_ha": [
+            500.0,
+            600.0
+          ],
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif, Rabi & Zaid",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Semi determinate; Disease resistant, 500-600 q/ha yield"
+          ],
+          "other_lines": [
+            "Semi determinate; Disease resistant, 500-600 q/ha yield"
+          ],
+          "raw_text": "• Variety: Kashi Amul (VRT-1202)\n• Source: ICAR-IIVR, Varanasi, 2016\n• Semi determinate; Disease resistant, 500-600 q/ha yield\n• Seed rate: 400 g/ha, Sowing time: Kharif, Rabi & Zaid\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 36,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "Kashi Adarsh (VRT-1201)",
+          "source": "ICAR-IIVR, Varanasi, 2016",
+          "year": 2016,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "M.P., Maharashtra and Goa",
+          "states": [
+            "Madhya Pradesh",
+            "Maharashtra",
+            "Goa"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Semi-determinate variety, resistant to viral disease, 600"
+          ],
+          "other_lines": [
+            "Semi-determinate variety, resistant to viral disease, 600",
+            "q/ha yield"
+          ],
+          "raw_text": "• Variety: Kashi Adarsh (VRT-1201)\n• Source: ICAR-IIVR, Varanasi, 2016\n• Semi-determinate variety, resistant to viral disease, 600\nq/ha yield\n• Seed rate: 400 g/ha, Sowing time: Kharif & Rabi\n• States: M.P., Maharashtra and Goa",
+          "page": 37,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "Kaveri - 304 (KTH-304)",
+          "source": "Private Sector hybrid, code not open, 2018",
+          "year": 2018,
+          "yield_q_per_ha": null,
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif and Rabi",
+          "states_raw": "Punjab, U.P., Bihar and Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Semi-determinate hybrid, tolerant to blight & ToLCV, Yield"
+          ],
+          "other_lines": [
+            "Semi-determinate hybrid, tolerant to blight & ToLCV, Yield",
+            "900-1000 q/ha."
+          ],
+          "raw_text": "• Hybrid: Kaveri - 304 (KTH-304)\n• Source: Private Sector hybrid, code not open, 2018\n• Semi-determinate hybrid, tolerant to blight & ToLCV, Yield\n900-1000 q/ha.\n• Seed rate: 150 g/ha, Sowing time: Kharif and Rabi\n• States: Punjab, U.P., Bihar and Jharkhand",
+          "page": 37,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "2013/TODHYB-05",
+          "source": "Private sector, Code yet not opened , 2017",
+          "year": 2017,
+          "yield_q_per_ha": 325.0,
+          "seed_rate_g_per_ha": 250.0,
+          "sowing_time": "Kharif & Rabi",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Good firmness, 325 q/ha yield"
+          ],
+          "raw_text": "• Hybrid: 2013/TODHYB-05\n• Source: Private sector, Code yet not opened , 2017\n• Good firmness, 325 q/ha yield\n• Seed rate: 250 g/ha, Sowing time: Kharif & Rabi.\n• States: Punjab, U.P., Bihar, Jharkhand",
+          "page": 37,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "2014/TOLCVRES-5",
+          "source": "Private sector, Code yet not opened , 2018",
+          "year": 2018,
+          "yield_q_per_ha": 350.0,
+          "seed_rate_g_per_ha": 150.0,
+          "sowing_time": "Kharif, Rabi",
+          "states_raw": "Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "states": [
+            "Karnataka",
+            "Tamil Nadu",
+            "Kerala",
+            "Puducherry"
+          ],
+          "resistance_or_tolerance_lines": [
+            "ToLCV resistant, 350 q/ha yield"
+          ],
+          "other_lines": [
+            "ToLCV resistant, 350 q/ha yield"
+          ],
+          "raw_text": "• Variety: 2014/TOLCVRES-5\n• Source: Private sector, Code yet not opened , 2018\n• ToLCV resistant, 350 q/ha yield\n• Seed rate: 150 g/ha, Sowing time: Kharif, Rabi\n• States: Karnataka, Tamil Nadu, Kerala and Pondicherry",
+          "page": 38,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "BT 19-1-1-1",
+          "source": "OUAT, Bhubaneswar, 2019",
+          "year": 2019,
+          "yield_q_per_ha": 300.0,
+          "seed_rate_g_per_ha": 350.0,
+          "sowing_time": "Kharif, Rabi",
+          "states_raw": "Jammu & Kashmir (J&K), Himachal Pradesh and Uttarakhand)",
+          "states": [
+            "Jammu",
+            "Kashmir J",
+            "K",
+            "Himachal Pradesh",
+            "Uttarakhand"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Fruit wt.: 70-80g; Fruit shape: Round; Tolerant to Bacterial Wilt"
+          ],
+          "other_lines": [
+            "Fruit wt.: 70-80g; Fruit shape: Round; Tolerant to Bacterial Wilt"
+          ],
+          "raw_text": "• Variety: BT 19-1-1-1\n• Source: OUAT, Bhubaneswar, 2019\n• Fruit wt.: 70-80g; Fruit shape: Round; Tolerant to Bacterial Wilt\n• Yield: 300.0 q/ha; Seed rate: 350 g/ha, Sowing time: Kharif, Rabi\n• States: Jammu & Kashmir (J&K), Himachal Pradesh and Uttarakhand)",
+          "page": 38,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "Kashi Chyan",
+          "source": "IIVR, Varanasi, 2019",
+          "year": 2019,
+          "yield_q_per_ha": [
+            600.0,
+            700.0
+          ],
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif, Rabi",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, Madhya Pradesh,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [
+            "Indeterminate; resistant to ToYLCVD carrying Ty3 gene and",
+            "tolerant to early blight. yield potential is 600 -700 q/ha in"
+          ],
+          "other_lines": [
+            "Indeterminate; resistant to ToYLCVD carrying Ty3 gene and",
+            "tolerant to early blight. yield potential is 600 -700 q/ha in",
+            "crop duration of 140 days",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Variety: Kashi Chyan\n• Source: IIVR, Varanasi, 2019\n• Indeterminate; resistant to ToYLCVD carrying Ty3 gene and\ntolerant to early blight. yield potential is 600 -700 q/ha in\ncrop duration of 140 days\n• Seed rate: 400 g/ha, Sowing time: Kharif, Rabi\n• States: Punjab, U.P., Bihar, Jharkhand, Madhya Pradesh,\nMaharashtra and Goa",
+          "page": 38,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Hybrid",
+          "name": "CTH-1",
+          "source": "TNAU, Coimbatore , 2019",
+          "year": 2019,
+          "yield_q_per_ha": [
+            800.0,
+            900.0
+          ],
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif, Rabi",
+          "states_raw": "Rajasthan, Gujarat, Haryana, Delhi, Madhya Pradesh,",
+          "states": [
+            "Rajasthan",
+            "Gujarat",
+            "Haryana",
+            "Delhi",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Fruits flat round, thick pericarp (5.84 mm) shelf life 10 days at room",
+            "temp.",
+            "Fruit yield 800-900 q/ha;",
+            "Maharashtra, Goa, Karnataka, Tamil Nadu, Kerala and Pondicherry",
+            "Cherry Tomato"
+          ],
+          "raw_text": "• Hybrid : CTH-1\n• Source: TNAU, Coimbatore , 2019\n• Fruits flat round, thick pericarp (5.84 mm) shelf life 10 days at room\ntemp.\n• Fruit yield 800-900 q/ha;\n• Seed rate: 400 g/ha, Sowing time: Kharif, Rabi\n• States: Rajasthan, Gujarat, Haryana, Delhi, Madhya Pradesh,\nMaharashtra, Goa, Karnataka, Tamil Nadu, Kerala and Pondicherry\nCherry Tomato",
+          "page": 39,
+          "crop": "Tomato"
+        },
+        {
+          "type": "Variety",
+          "name": "VT-95",
+          "source": "VPKAS, Almora, 2019",
+          "year": 2019,
+          "yield_q_per_ha": [
+            250.0,
+            300.0
+          ],
+          "seed_rate_g_per_ha": 400.0,
+          "sowing_time": "Kharif, Rabi",
+          "states_raw": "Punjab, U.P., Bihar, Jharkhand, Madhya Pradesh,",
+          "states": [
+            "Punjab",
+            "Uttar Pradesh",
+            "Bihar",
+            "Jharkhand",
+            "Madhya Pradesh"
+          ],
+          "resistance_or_tolerance_lines": [],
+          "other_lines": [
+            "Pure line selection of introduced AVRDC line EC 461693.",
+            "Fruits oval, firm, high TSS (6-7.0 oBrix), rich in Vitamin C;",
+            "Fruit yield 250-300 q/ha;",
+            "Maharashtra and Goa"
+          ],
+          "raw_text": "• Variety: VT-95\n• Source: VPKAS, Almora, 2019\n• Pure line selection of introduced AVRDC line EC 461693.\n• Fruits oval, firm, high TSS (6-7.0 oBrix), rich in Vitamin C;\nFruit yield 250-300 q/ha;\n• Seed rate: 400 g/ha, Sowing time: Kharif, Rabi\n• States: Punjab, U.P., Bihar, Jharkhand, Madhya Pradesh,\nMaharashtra and Goa",
+          "page": 39,
+          "crop": "Tomato"
+        }
+      ],
+      "source_summary": {
+        "has_calendar": false,
+        "varieties_count": 26
+      }
+    },
+    {
+      "crop_name": "Turmeric",
+      "crop_name_key": "turmeric",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "April",
+            "May"
+          ],
+          "growth_months": [
+            "June",
+            "July",
+            "August",
+            "September"
+          ],
+          "harvest_months": [
+            "October",
+            "November",
+            "December"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    },
+    {
+      "crop_name": "Wheat",
+      "crop_name_key": "wheat",
+      "calendar": [
+        {
+          "region": "India",
+          "season": null,
+          "window_label_raw": "India",
+          "sowing_months": [
+            "October",
+            "November"
+          ],
+          "growth_months": [
+            "December",
+            "January",
+            "February"
+          ],
+          "harvest_months": [
+            "March",
+            "April"
+          ],
+          "source_reference": {
+            "document": "crop-description.json"
+          }
+        }
+      ],
+      "varieties": [],
+      "source_summary": {
+        "has_calendar": true,
+        "varieties_count": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FarmerOnboardingData",
+  "description": "Minimal farmer profile collected during the onboarding call",
+  "type": "object",
+  "properties": {
+    "farmer_id": {
+      "type": "string",
+      "description": "Unique farmer identifier (provided by the caller, not collected during call)"
+    },
+    "farmer_phone_number": {
+      "type": "string",
+      "description": "Farmer's phone number in E.164 format (provided by the caller)"
+    },
+    "farmer_name": {
+      "type": "string",
+      "description": "Farmer's full name as stated by them"
+    },
+    "state": {
+      "type": "string",
+      "description": "Indian state where the farm is located"
+    },
+    "district": {
+      "type": "string",
+      "description": "District within the state"
+    },
+    "village": {
+      "type": "string",
+      "description": "Village or town name"
+    },
+    "land_size": {
+      "type": "number",
+      "description": "Approximate size of the farm",
+      "minimum": 0
+    },
+    "land_size_unit": {
+      "type": "string",
+      "description": "Unit of land measurement used by the farmer",
+      "enum": ["acres", "bigha", "hectare", "guntha", "other"]
+    },
+    "irrigation_type": {
+      "type": "string",
+      "description": "Primary farming method",
+      "enum": ["irrigated", "rainfed", "mixed"]
+    },
+    "primary_crops": {
+      "type": "array",
+      "description": "List of crops the farmer regularly grows",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "current_season_crop": {
+      "type": "string",
+      "description": "Crop currently growing in the field this season"
+    },
+    "preferred_language": {
+      "type": "string",
+      "description": "Language the farmer is most comfortable speaking in",
+      "enum": ["hindi", "telugu", "kannada", "tamil", "bengali", "other"]
+    }
+  },
+  "required": [
+    "farmer_id",
+    "farmer_phone_number",
+    "farmer_name",
+    "state",
+    "district",
+    "primary_crops",
+    "preferred_language"
+  ]
+}

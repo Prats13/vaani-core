@@ -1,0 +1,173 @@
+{
+  "endpoint": "POST /api/v1/sip/call/outbound",
+  "description": "Initiate an outbound PSTN call to a farmer via LiveKit SIP participant creation through the configured Exotel trunk.",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key",
+    "required": true
+  },
+  "request": {
+    "content_type": "application/json",
+    "body": {
+      "agent_config": {
+        "type": "object",
+        "required": true,
+        "description": "Agent model configuration",
+        "properties": {
+          "agent_type": {
+            "type": "string",
+            "required": false,
+            "default": "farmer_advisory",
+            "allowed_values": ["farmer_advisory", "farmer_onboarding"],
+            "description": "Type of agent to deploy for this call"
+          },
+          "stt_config": {
+            "type": "string",
+            "required": false,
+            "default": "sarvam-saarika-2.5",
+            "description": "STT provider key"
+          },
+          "llm_config": {
+            "type": "string",
+            "required": false,
+            "default": "gemini-2.5-flash",
+            "description": "LLM provider key"
+          },
+          "tts_config": {
+            "type": "string",
+            "required": false,
+            "default": "sarvam-bulbul",
+            "description": "TTS provider key"
+          }
+        }
+      },
+      "call_config": {
+        "type": "object",
+        "required": true,
+        "description": "Call routing configuration",
+        "properties": {
+          "call_direction": {
+            "type": "string",
+            "required": false,
+            "default": "outbound",
+            "description": "Direction of the call"
+          },
+          "call_type": {
+            "type": "string",
+            "required": false,
+            "default": "pstn",
+            "allowed_values": ["pstn", "sip"],
+            "description": "Type of call"
+          },
+          "call_provider": {
+            "type": "string",
+            "required": false,
+            "default": "exotel",
+            "allowed_values": ["exotel"],
+            "description": "SIP/PSTN provider"
+          },
+          "call_from": {
+            "type": "string",
+            "required": true,
+            "description": "Exophone / caller ID number in E.164 format (e.g. +918035001234)"
+          },
+          "call_to": {
+            "type": "string",
+            "required": true,
+            "description": "Farmer phone number to call. E.164 preferred; bare 10-digit numbers are auto-prefixed with +91"
+          }
+        }
+      },
+      "agent_params": {
+        "type": "object",
+        "required": false,
+        "default": null,
+        "description": "Agent-specific runtime parameters passed as participant metadata (JSON). Arbitrary key-value pairs.",
+        "common_keys": {
+          "farmer_name": {
+            "type": "string",
+            "description": "Farmer's name (used for greeting). Defaults to 'Kisan' if omitted."
+          },
+          "farmer_phone": {
+            "type": "string",
+            "description": "Farmer phone number (for reference inside agent)"
+          },
+          "query_context": {
+            "type": "string",
+            "description": "Pre-loaded context or reason for the call"
+          }
+        }
+      }
+    },
+    "example": {
+      "agent_config": {
+        "agent_type": "farmer_advisory",
+        "stt_config": "sarvam-saarika-2.5",
+        "llm_config": "gemini-2.5-flash",
+        "tts_config": "sarvam-bulbul"
+      },
+      "call_config": {
+        "call_direction": "outbound",
+        "call_type": "pstn",
+        "call_provider": "exotel",
+        "call_from": "+918035001234",
+        "call_to": "+919876543210"
+      },
+      "agent_params": {
+        "farmer_name": "Raju",
+        "farmer_phone": "+919876543210",
+        "query_context": "Cotton crop pest advisory"
+      }
+    }
+  },
+  "response": {
+    "status_code": 201,
+    "content_type": "application/json",
+    "body": {
+      "success": {
+        "type": "boolean",
+        "description": "Whether the call was successfully initiated"
+      },
+      "room_name": {
+        "type": "string",
+        "description": "LiveKit room created for this call"
+      },
+      "farmer_phone": {
+        "type": "string",
+        "description": "E.164 phone number the call was placed to"
+      },
+      "sip_participant_id": {
+        "type": "string",
+        "nullable": true,
+        "description": "LiveKit SIP participant ID for the outbound call leg"
+      },
+      "status": {
+        "type": "string",
+        "description": "Initial call status",
+        "example_value": "ringing"
+      },
+      "message": {
+        "type": "string",
+        "description": "Human-readable status message"
+      }
+    },
+    "example": {
+      "success": true,
+      "room_name": "vaani-room-x9y8z7w6",
+      "farmer_phone": "+919876543210",
+      "sip_participant_id": "PA_abc123",
+      "status": "ringing",
+      "message": "Outbound call initiated to +919876543210"
+    }
+  },
+  "errors": {
+    "401": "Missing or invalid X-API-Key header",
+    "500": "No outbound trunk configured, or LiveKit SIP participant creation failed"
+  },
+  "notes": [
+    "Bare 10-digit numbers in call_to are automatically prefixed with +91 (India).",
+    "agent_config and call_config fields are forwarded as flat string attributes on the LiveKit SIP participant.",
+    "agent_params is forwarded as a JSON string in the participant metadata field.",
+    "A P-Asserted-Identity SIP header is set using call_from to assert the exophone as the caller ID."
+  ]
+}

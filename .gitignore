@@ -254,6 +254,7 @@ jarvis_env/
 .chainlit
 .env
 .env.prod
+.env.dev
 
 # Ignore folders
 misc/
@@ -267,7 +268,7 @@ pids/
 # Ignore log and output files
 *.out
 *.log
-*.txt
+#*.txt
 
 .ec2config.json
 
