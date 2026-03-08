@@ -59,27 +59,26 @@ async def entrypoint(ctx: JobContext):
         callbacks=callbacks,
     )
 
-    participant = (
-        list(ctx.room.remote_participants.values())[0]
-        if ctx.room.remote_participants
-        else None
-    )
-    if not participant:
-        logger.debug(f"{root_folder} | No participant yet, waiting...")
-        participant = await ctx.wait_for_participant()
-
     room_name = ctx.room.name
-    identity = participant.identity
-    logger.debug(f"{room_name} | {root_folder} | Participant joined: identity={identity}")
 
-    # Parse phone from identity
+    # Find farmer participant — skip agent identities (agent-AJ_...)
+    farmer_participant = None
+    for p in ctx.room.remote_participants.values():
+        if _extract_phone_from_identity(p.identity):
+            farmer_participant = p
+            break
+
+    while not farmer_participant:
+        logger.debug(f"{root_folder} | No farmer participant yet, waiting...")
+        p = await ctx.wait_for_participant()
+        if _extract_phone_from_identity(p.identity):
+            farmer_participant = p
+        else:
+            logger.debug(f"{room_name} | {root_folder} | Ignoring participant: {p.identity}")
+
+    identity = farmer_participant.identity
     farmer_phone = _extract_phone_from_identity(identity)
-    if not farmer_phone:
-        logger.debug(
-            f"{room_name} | {root_folder} | "
-            f"Invalid identity format: {identity} — expected farmer_{{digits}}"
-        )
-        return
+    logger.debug(f"{room_name} | {root_folder} | Participant joined: identity={identity}")
 
     logger.debug(f"{room_name} | {root_folder} | Resolved phone={farmer_phone}")
 
