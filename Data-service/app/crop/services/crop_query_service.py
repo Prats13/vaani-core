@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
 from typing import List, Dict, Any, Optional
-from app.models_crop import Crop, CropVariety, State, VarietyState, CropCalendarWindow
+from app.crop.models import Crop, CropVariety, State, VarietyState, CropCalendarWindow
 from sqlalchemy import select, and_, or_, String, cast, desc
 
 def get_crops_paginated(db: Session, query_str: str = None, limit: int = 50, offset: int = 0) -> List[Dict[str, Any]]:

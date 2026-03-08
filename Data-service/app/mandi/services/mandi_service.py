@@ -4,10 +4,10 @@ from datetime import datetime, timedelta
 from typing import Optional, List
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from app.config import settings
-from app.clients.data_gov_client import fetch_mandi_prices_from_data_gov
-from app.repositories import mandi_repo
-from app.services.cache_service import get_cached_data, set_cached_data
+from app.core.config import settings
+from app.mandi.clients.data_gov_client import fetch_mandi_prices_from_data_gov
+from app.mandi.repositories import mandi_repo
+from app.core.cache_service import get_cached_data, set_cached_data
 
 logger = logging.getLogger(__name__)
 

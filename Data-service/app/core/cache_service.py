@@ -1,6 +1,6 @@
 import json
 import redis.asyncio as redis
-from app.config import settings
+from app.core.config import settings
 import logging
 
 logger = logging.getLogger(__name__)

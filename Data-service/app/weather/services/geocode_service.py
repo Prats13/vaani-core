@@ -1,7 +1,7 @@
 import httpx
 from sqlalchemy.orm import Session
-from app.models import PincodeLocation
-from app.config import settings
+from app.weather.models import PincodeLocation
+from app.core.config import settings
 
 async def resolve_pincode(db: Session, pincode: str) -> PincodeLocation:
     loc = db.query(PincodeLocation).filter(PincodeLocation.pincode == pincode).first()

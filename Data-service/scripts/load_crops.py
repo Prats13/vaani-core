@@ -83,7 +83,7 @@ def get_canonical_state(state_name, state_map):
     return s # return as-is, will be upserted later
 
 def main():
-    json_path = os.getenv("CROP_JSON_PATH", "/Users/prajwalnayak/code/project/Vaani---The-Farmer-Buddy/merged_crop_calendar_and_varieties.json")
+    json_path = os.getenv("CROP_JSON_PATH", os.path.join(os.path.dirname(__file__), "..", "data", "merged_crop_calendar_and_varieties.json"))
     
     if not os.path.exists(json_path):
         print(f"Error: JSON file not found at {json_path}")

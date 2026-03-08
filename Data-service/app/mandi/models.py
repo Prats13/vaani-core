@@ -1,7 +1,7 @@
 import json
 from sqlalchemy import Column, String, Integer, DateTime, BigInteger, UniqueConstraint, Index, Date, JSON
 from sqlalchemy.sql import func
-from app.models_crop import CropBase
+from app.crop.models import CropBase
 
 class ApiRawSnapshot(CropBase):
     __tablename__ = "api_raw_snapshots"

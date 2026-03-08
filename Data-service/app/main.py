@@ -3,10 +3,10 @@ from fastapi import FastAPI, Depends
 from sqlalchemy.orm import Session
 from sqlalchemy import text
 
-# IMPORTANT: Ensure models are imported before create_all so tables correspond to the DB schema
-import app.weather.models
-import app.crop.models
-import app.mandi.models
+# Ensure models are imported before create_all so tables correspond to the DB schema
+import app.weather.models  # noqa: F401
+import app.crop.models  # noqa: F401
+import app.mandi.models  # noqa: F401
 from app.core.db import get_db, Base, engine
 from app.core.cache_service import redis_client
 

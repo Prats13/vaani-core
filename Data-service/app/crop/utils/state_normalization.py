@@ -1,6 +1,6 @@
 from typing import Dict, List
 from sqlalchemy.orm import Session
-from app.models_crop import State
+from app.crop.models import State
 
 # Simple static fallback map if DB fails
 STATIC_STATE_ALIASES = {
