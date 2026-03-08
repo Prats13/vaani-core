@@ -27,19 +27,19 @@ CREATE TABLE IF NOT EXISTS crop.crop_calendar_windows (
     growth_months TEXT[] NOT NULL DEFAULT '{}',
     harvest_months TEXT[] NOT NULL DEFAULT '{}',
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    CONSTRAINT uq_crop_calendar_windows UNIQUE(
-        crop_id, 
-        COALESCE(region, ''), 
-        COALESCE(season, ''), 
-        COALESCE(window_label_raw, ''), 
-        sowing_months, 
-        growth_months, 
-        harvest_months
-    )
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE INDEX IF NOT EXISTS idx_crop_calendar_windows_crop_id ON crop.crop_calendar_windows(crop_id);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_crop_calendar_windows ON crop.crop_calendar_windows(
+    crop_id,
+    COALESCE(region, ''),
+    COALESCE(season, ''),
+    COALESCE(window_label_raw, ''),
+    sowing_months,
+    growth_months,
+    harvest_months
+);
 
 -- 3) crop.crop_varieties
 CREATE TABLE IF NOT EXISTS crop.crop_varieties (
@@ -62,17 +62,17 @@ CREATE TABLE IF NOT EXISTS crop.crop_varieties (
     page INT,
     extras JSONB NOT NULL DEFAULT '{}'::jsonb,
     created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
-    CONSTRAINT uq_crop_varieties UNIQUE(
-        crop_id, 
-        variety_type, 
-        name, 
-        COALESCE(source, ''), 
-        COALESCE(year, 0)
-    )
+    updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
 CREATE INDEX IF NOT EXISTS idx_crop_varieties_crop_id ON crop.crop_varieties(crop_id);
+CREATE UNIQUE INDEX IF NOT EXISTS uq_crop_varieties ON crop.crop_varieties(
+    crop_id,
+    variety_type,
+    name,
+    COALESCE(source, ''),
+    COALESCE(year, 0)
+);
 
 -- 4) crop.states
 CREATE TABLE IF NOT EXISTS crop.states (
