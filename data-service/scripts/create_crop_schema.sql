@@ -40,6 +40,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS uq_crop_calendar_windows ON crop.crop_calendar
     growth_months,
     harvest_months
 );
+DO $$ BEGIN
+    ALTER TABLE crop.crop_calendar_windows ADD CONSTRAINT uq_crop_calendar_windows UNIQUE USING INDEX uq_crop_calendar_windows;
+EXCEPTION WHEN others THEN NULL; END $$;
 
 -- 3) crop.crop_varieties
 CREATE TABLE IF NOT EXISTS crop.crop_varieties (
@@ -73,6 +76,9 @@ CREATE UNIQUE INDEX IF NOT EXISTS uq_crop_varieties ON crop.crop_varieties(
     COALESCE(source, ''),
     COALESCE(year, 0)
 );
+DO $$ BEGIN
+    ALTER TABLE crop.crop_varieties ADD CONSTRAINT uq_crop_varieties UNIQUE USING INDEX uq_crop_varieties;
+EXCEPTION WHEN others THEN NULL; END $$;
 
 -- 4) crop.states
 CREATE TABLE IF NOT EXISTS crop.states (
