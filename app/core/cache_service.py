@@ -1,11 +1,11 @@
 import json
 import redis.asyncio as redis
-from app.core.config import settings
+from core.config import settings
 import logging
 
 logger = logging.getLogger(__name__)
 
-redis_client = redis.from_url(settings.REDIS_URL, decode_responses=True)
+redis_client = redis.from_url(settings.redis_url, decode_responses=True)
 
 def generate_cache_key(pincode: str, from_ts: str, to_ts: str) -> str:
     return f"weather:{pincode}:{from_ts}:{to_ts}:v2"
@@ -28,7 +28,7 @@ async def set_cached_weather(key: str, data: dict):
         logger.info(f"WEATHER SERVICE | CACHE SERVICE | REDIS | SET | key: {key}")
         await redis_client.setex(
             key,
-            settings.CACHE_TTL_SECONDS,
+            settings.cache_ttl_seconds,
             json.dumps(data)
         )
         logger.info(f"WEATHER SERVICE | CACHE SERVICE | REDIS | SET SUCCESS | key: {key}")

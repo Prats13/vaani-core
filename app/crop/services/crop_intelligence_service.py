@@ -2,7 +2,7 @@ import json
 import logging
 from typing import Dict, Any, List
 from sqlalchemy.orm import Session
-from app.core.config import settings
+from core.config import settings
 from app.core.cache_service import redis_client
 from app.weather.services.geocode_service import resolve_pincode
 from app.weather.services.weather_features_service import get_weather_features_for_pincode
@@ -122,7 +122,7 @@ async def get_crop_suitability(db: Session, pincode: str, month: int = None, day
     }
     
     try:
-         await redis_client.setex(key, settings.CROP_CACHE_TTL_WEATHER, json.dumps(final_payload))
+         await redis_client.setex(key, settings.crop_cache_ttl_weather, json.dumps(final_payload))
     except:
          pass
          

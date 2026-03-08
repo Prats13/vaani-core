@@ -1,7 +1,7 @@
 import httpx
 from sqlalchemy.orm import Session
 from app.weather.models import PincodeLocation
-from app.core.config import settings
+from core.config import settings
 
 async def resolve_pincode(db: Session, pincode: str) -> PincodeLocation:
     loc = db.query(PincodeLocation).filter(PincodeLocation.pincode == pincode).first()
@@ -11,7 +11,7 @@ async def resolve_pincode(db: Session, pincode: str) -> PincodeLocation:
     import logging
     # Not found in DB, fetch from Zippopotam
     async with httpx.AsyncClient(timeout=10.0) as client:
-        url = f"{settings.PINCODE_API_BASE}/{pincode}"
+        url = f"{settings.pincode_api_base}/{pincode}"
         logging.info(f"WEATHER SERVICE | PINCODE SERVICE | Fetching geocode for pincode: {pincode}")
         try:
             resp = await client.get(url)

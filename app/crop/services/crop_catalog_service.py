@@ -2,7 +2,7 @@ import json
 import logging
 from typing import Dict, Any, List
 from sqlalchemy.orm import Session
-from app.core.config import settings
+from core.config import settings
 from app.core.cache_service import redis_client
 from app.crop.services.crop_query_service import (
     get_crops_paginated, get_states_with_aliases, get_varieties_for_state_by_crop,
@@ -43,13 +43,13 @@ async def get_crops(db: Session, q: str = None, limit: int = 50, offset: int = 0
     def fetch():
         data = get_crops_paginated(db, q, limit, offset)
         return {"data": data, "limit": limit, "offset": offset, "total": len(data)}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_MEDIUM)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_medium)
 
 async def get_states(db: Session) -> Dict[str, Any]:
     key = "crop:states"
     def fetch():
         return {"states": get_states_with_aliases(db)}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_LONG)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_long)
 
 async def get_crops_for_state(db: Session, state: str) -> Dict[str, Any]:
     key = f"crop:state_crops:{state.lower()}"
@@ -72,7 +72,7 @@ async def get_crops_for_state(db: Session, state: str) -> Dict[str, Any]:
                 "top_yield_variety": top
             })
         return {"state": canonical_state, "crops": results}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 async def get_crops_for_season(db: Session, season: str, state: str, limit_crops: int = 25, limit_varieties: int = 5) -> Dict[str, Any]:
     key = f"crop:season:{season}:{state}:lc={limit_crops}:lv={limit_varieties}"
@@ -109,7 +109,7 @@ async def get_crops_for_season(db: Session, season: str, state: str, limit_crops
             })
             
         return {"state": canonical_state, "season": season, "crops": results}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 async def get_crops_for_month(db: Session, month: int, state: str) -> Dict[str, Any]:
     # Month to season fallback
@@ -136,7 +136,7 @@ async def get_crops_for_month(db: Session, month: int, state: str) -> Dict[str, 
                  "id": c.id
              })
         return {"state": canonical_state, "month": month, "month_name": month_name, "inferred_season": season, "crops": res[:25]}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 # --- TIER 2: VARIETY APIS ---
 async def get_varieties_by_crop(db: Session, crop_name: str, state: str, limit: int = 50, include_raw_text: bool = False) -> Dict[str, Any]:
@@ -161,7 +161,7 @@ async def get_varieties_by_crop(db: Session, crop_name: str, state: str, limit: 
             fmt_vs.append(format_variety_essential(v_dict, include_raw_text))
             
         return {"crop": crop_name, "state": canonical_state, "varieties": fmt_vs}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 async def get_top_varieties_overall(db: Session, state: str, limit: int = 10) -> Dict[str, Any]:
     key = f"crop:topvar:{state}:{limit}"
@@ -177,7 +177,7 @@ async def get_top_varieties_overall(db: Session, state: str, limit: int = 10) ->
                  "variety": format_variety_essential(v)
              })
         return {"state": canonical_state, "top_varieties": fmt_vs}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 async def search_resistant_varieties(db: Session, crop_name: str, state: str, disease: str, limit: int = 50) -> Dict[str, Any]:
     key = f"crop:resist:{crop_name}:{state}:{disease}:{limit}"
@@ -195,7 +195,7 @@ async def search_resistant_varieties(db: Session, crop_name: str, state: str, di
              # Exclude raw text unless manually passed, use snippets instead
              fmt_vs.append(format_variety_essential(v_dict, False))
         return {"crop": crop_name, "state": canonical_state, "disease": disease, "matches": fmt_vs}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 # --- TIER 3: CALENDAR APIS ---
 async def get_calendar_windows(db: Session, crop_name: str) -> Dict[str, Any]:
@@ -213,7 +213,7 @@ async def get_calendar_windows(db: Session, crop_name: str) -> Dict[str, Any]:
                  "source_document": c.source_document
              })
         return {"crop": crop_name, "windows": res}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_MEDIUM)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_medium)
 
 async def get_crop_stage(db: Session, crop_name: str, month: int = None) -> Dict[str, Any]:
     m = month if month is not None else get_current_month_ist()
@@ -245,7 +245,7 @@ async def get_crop_stage(db: Session, crop_name: str, month: int = None) -> Dict
             "possible_stages": possible_stages,
             "best_guess": best_guess
         }
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_MEDIUM)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_medium)
 
 # --- TIER 5: DECISION SUPPORT APIS ---
 async def compare_crops(db: Session, crops: List[str], state: str, month: int = None) -> Dict[str, Any]:
@@ -294,7 +294,7 @@ async def compare_crops(db: Session, crops: List[str], state: str, month: int = 
             })
             
         return {"state": canonical_state, "month": m, "comparison": comparison}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_SHORT)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_short)
 
 async def get_crop_types_stats(db: Session, crop_name: str, state: str) -> Dict[str, Any]:
     key = f"crop:types:{crop_name}:{state}"
@@ -314,4 +314,4 @@ async def get_crop_types_stats(db: Session, crop_name: str, state: str) -> Dict[
              
         stats = calculate_crop_stats(v_dicts)
         return {"crop": crop_name, "state": canonical_state, "types": stats}
-    return await get_or_set_cache(key, fetch, settings.CROP_CACHE_TTL_MEDIUM)
+    return await get_or_set_cache(key, fetch, settings.crop_cache_ttl_medium)

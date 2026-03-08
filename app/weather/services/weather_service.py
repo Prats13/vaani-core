@@ -8,7 +8,7 @@ from app.weather.clients.openmeteo_client import fetch_daily_forecast, fetch_hou
 from app.core.cache_service import get_cached_weather, set_cached_weather, generate_cache_key
 from app.crop.utils.time_utils import get_time_window_utc, get_now_utc, utc_to_local_str, local_to_utc
 from app.weather.utils.rainfall_utils import is_heavy_rain_day
-from app.core.config import settings
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -39,7 +39,7 @@ async def get_weather_for_pincode(db: Session, pincode: str, days_past: int = 7,
     needs_refresh = True
     if coverage and not force_refresh:
         logger.info(f"WEATHER SERVICE | GET WEATHER | COVERAGE | {coverage}")
-        stale_threshold = now - timedelta(hours=settings.FORECAST_REFRESH_TTL_HOURS)
+        stale_threshold = now - timedelta(hours=settings.forecast_refresh_ttl_hours)
         if coverage.last_refresh_at >= stale_threshold:
             needs_refresh = False
 

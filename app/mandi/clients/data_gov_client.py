@@ -2,7 +2,7 @@ import httpx
 import logging
 import asyncio
 from fastapi import HTTPException
-from app.core.config import settings
+from core.config import settings
 
 logger = logging.getLogger(__name__)
 
@@ -21,7 +21,7 @@ async def fetch_mandi_prices_from_data_gov(
     Fetch raw mandi prices from Data.gov.in API.
     Raises HTTPException (502) if upstream fails.
     """
-    api_key = settings.DATA_GOV_API_KEY
+    api_key = settings.data_gov_api_key
     if not api_key or api_key == "dummy-key-if-not-provided":
         logger.warning("WEATHER SERVICE | No valid DATA_GOV_API_KEY is configured.")
 

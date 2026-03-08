@@ -10,6 +10,31 @@ from api.sip_routes import router as sip_router
 from core.livekit_manager import livekit_manager
 from contextlib import asynccontextmanager
 
+# ---------------------------------------------------------------------------
+# Data-service model imports — ensure tables are registered before create_all
+# ---------------------------------------------------------------------------
+import app.weather.models   # noqa: F401
+import app.crop.models      # noqa: F401
+import app.mandi.models     # noqa: F401
+
+from app.weather import routers as weather_routers
+from app.crop import routers as crop_routers
+from app.mandi import routers as mandi_routers
+from app.search import routers as search_routers
+from app.core.db import engine, Base
+from app.core.cache_service import close_redis
+from sqlalchemy import text
+
+# ---------------------------------------------------------------------------
+# Database schema & table creation (synchronous, runs at import time)
+# ---------------------------------------------------------------------------
+with engine.begin() as conn:
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS weather"))
+    conn.execute(text("CREATE SCHEMA IF NOT EXISTS crop"))
+
+Base.metadata.create_all(bind=engine)
+app.crop.models.CropBase.metadata.create_all(bind=engine)
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -17,6 +42,7 @@ async def lifespan(app: FastAPI):
     await livekit_manager.initialize()
     yield
     await livekit_manager.close()
+    await close_redis()
 
 
 # Create FastAPI application
@@ -39,6 +65,12 @@ app.add_middleware(
 # Include API routes
 app.include_router(api_router, prefix="/api/v1")
 app.include_router(sip_router, prefix="/api/v1")
+
+# Include data-service routers (weather, crop, mandi, search)
+app.include_router(weather_routers.router)
+app.include_router(crop_routers.router)
+app.include_router(mandi_routers.router)
+app.include_router(search_routers.router)
 
 
 # Explicit CORS preflight handler

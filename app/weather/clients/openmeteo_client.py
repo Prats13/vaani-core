@@ -1,11 +1,11 @@
 import httpx
-from app.core.config import settings
+from core.config import settings
 import logging
 
 logger = logging.getLogger(__name__)
 
 async def fetch_daily_forecast(lat: float, lon: float, past_days: int = 7, forecast_days: int = 16) -> dict:
-    url = f"{settings.OPEN_METEO_BASE}"
+    url = f"{settings.open_meteo_base}"
     params = {
         "latitude": lat,
         "longitude": lon,
@@ -32,7 +32,7 @@ async def fetch_daily_forecast(lat: float, lon: float, past_days: int = 7, forec
             raise   
 
 async def fetch_hourly_forecast(lat: float, lon: float, past_days: int = 7, forecast_days: int = 16) -> dict:
-    url = f"{settings.OPEN_METEO_BASE}"
+    url = f"{settings.open_meteo_base}"
     params = {
         "latitude": lat,
         "longitude": lon,

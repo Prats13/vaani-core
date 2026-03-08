@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 from typing import Optional, List
 from sqlalchemy.orm import Session
 from fastapi import HTTPException
-from app.core.config import settings
+from core.config import settings
 from app.mandi.clients.data_gov_client import fetch_mandi_prices_from_data_gov
 from app.mandi.repositories import mandi_repo
 from app.core.cache_service import get_cached_data, set_cached_data
@@ -103,7 +103,7 @@ async def get_mandi_raw(db: Session, state: str, district: str = None, market: s
     raw_payload = await fetch_and_upsert_raw(db, state, district, market, commodity, limit, offset)
 
     # Cache response
-    ttl = getattr(settings, "MANDI_CACHE_TTL_V1", 10800)
+    ttl = settings.mandi_cache_ttl_v1
     await set_cached_data(cache_key, raw_payload, ttl)
 
     logger.info(f"MANDI SERVICE | Cache set for raw v1: {cache_key}")
@@ -246,7 +246,7 @@ async def get_mandi_insights(db: Session, state: str, district: str = None, mark
     }
 
     # Cache insights
-    ttl = getattr(settings, "MANDI_CACHE_TTL_V2", 21600)
+    ttl = settings.mandi_cache_ttl_v2
     await set_cached_data(cache_key, insights_payload, ttl)
     
     logger.info(f"MANDI SERVICE | Fetched {len(insights_payload)} records from data.gov.in for State: {state}")
