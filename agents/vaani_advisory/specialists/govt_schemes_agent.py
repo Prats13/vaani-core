@@ -57,7 +57,7 @@ class GovtSchemesAgent(Agent):
             )
         )
         if data.is_web_session:
-            await send_cta(self.session, ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
+            await send_cta(self.session, ["🌾 PM-Kisan", "🏦 KCC Loan", "🛡️ PMFBY Insurance", "🏠 Back to Home"])
 
     # =========================================================================
     # RETURN TO ORCHESTRATOR

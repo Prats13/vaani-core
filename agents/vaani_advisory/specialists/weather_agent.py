@@ -60,7 +60,7 @@ class WeatherAdvisoryAgent(Agent):
             )
         )
         if data.is_web_session:
-            await send_cta(self.session, ["Irrigation Timing", "Rain Forecast", "Back to Home"])
+            await send_cta(self.session, ["💧 Irrigation Timing", "🌧️ Rain Forecast", "🏠 Back to Home"])
 
     async def _fetch_weather_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch weather from data_service. Returns a string summary for the LLM."""

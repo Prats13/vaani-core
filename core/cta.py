@@ -52,7 +52,7 @@ async def send_text(session: AgentSession, message: str) -> None:
 
 # Predefined CTA payloads
 
-HOME_BUTTONS = ["Know Your Crop", "Mandi Prices", "Weather", "Government Schemes"]
+HOME_BUTTONS = ["🌾 Fasal", "💰 Mandi Bhav", "🌤️ Mausam", "🏛️ Sarkari Yojana"]
 
 
 def home_cta(farmer_name: str) -> tuple[str, list[str]]:
@@ -65,12 +65,12 @@ def home_cta(farmer_name: str) -> tuple[str, list[str]]:
 def know_your_crop_cta() -> tuple[str, list[str]]:
     return (
         "Apni fasal ke baare mein kya jaanna chahte hain?",
-        ["Ask Me Anything", "Back to Home"],
+        ["💬 Kuch Bhi Poochein", "🏠 Wapas Jaayein"],
     )
 
 
 def newsletter_cta() -> tuple[str, list[str]]:
     return (
         "Kaunsi jaankari chahiye aapko?",
-        ["Local News", "National News", "Government Schemes", "Back to Home"],
+        ["📰 Sthaniya Samachar", "🗞️ Rashtriya Samachar", "🏛️ Sarkari Yojana", "🏠 Wapas Jaayein"],
     )

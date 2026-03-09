@@ -60,7 +60,7 @@ class MandiAgent(Agent):
             )
         )
         if data.is_web_session:
-            await send_cta(self.session, ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
+            await send_cta(self.session, ["📍 Best Market Near Me", "📈 Price Trend", "🤝 When to Sell", "🏠 Back to Home"])
 
     async def _fetch_mandi_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch mandi insights from data_service. Returns a string summary for the LLM."""

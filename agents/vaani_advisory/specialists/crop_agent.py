@@ -61,7 +61,7 @@ class CropAdvisoryAgent(Agent):
             )
         )
         if data.is_web_session:
-            await send_cta(self.session, ["Varieties", "Sowing Time", "Fertilizer Tips", "Back to Home"])
+            await send_cta(self.session, ["🌱 Varieties", "📅 Sowing Time", "🧴 Fertilizer Tips", "🏠 Back to Home"])
 
     async def _fetch_crop_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch crop info from data_service. Returns a string summary for the LLM."""
