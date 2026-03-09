@@ -15,6 +15,7 @@ from livekit.agents import Agent, ChatContext, ChatMessage, ModelSettings, funct
 from agents.vaani_advisory.models.advisory_data_model import FarmerAdvisoryData
 from core.config import logger
 from core.conversation_fillers import play_filler
+from core.cta import send_cta
 from core.pronunciation import apply_pronunciation_fixes, PRONUNCIATION_MAP
 
 root_folder = "AGENTS | VAANI_ADVISORY"
@@ -59,6 +60,10 @@ class MandiAgent(Agent):
                 f"Mandi Data:\n{mandi_context}"
             )
         )
+
+        if data.is_web_session:
+            await send_cta(self.session, "Mandi ke baare mein kuch aur poochna hai?",
+                           ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
 
     async def _fetch_mandi_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch mandi insights from data_service. Returns a string summary for the LLM."""

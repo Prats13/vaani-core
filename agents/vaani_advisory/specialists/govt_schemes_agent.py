@@ -13,6 +13,7 @@ from livekit.agents import Agent, ChatContext, ChatMessage, ModelSettings, funct
 from agents.vaani_advisory.models.advisory_data_model import FarmerAdvisoryData
 from core.config import logger
 from core.conversation_fillers import play_filler
+from core.cta import send_cta
 from core.pronunciation import apply_pronunciation_fixes, PRONUNCIATION_MAP
 
 root_folder = "AGENTS | VAANI_ADVISORY"
@@ -58,6 +59,10 @@ class GovtSchemesAgent(Agent):
                 f"Remember you are providing general guidance, not guaranteed eligibility."
             )
         )
+
+        if data.is_web_session:
+            await send_cta(self.session, "Kaunsi yojana ke baare mein aur jaanna chahte hain?",
+                           ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
 
     # =========================================================================
     # RETURN TO ORCHESTRATOR

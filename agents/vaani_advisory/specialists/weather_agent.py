@@ -15,6 +15,7 @@ from livekit.agents import Agent, ChatContext, ChatMessage, ModelSettings, funct
 from agents.vaani_advisory.models.advisory_data_model import FarmerAdvisoryData
 from core.config import logger
 from core.conversation_fillers import play_filler
+from core.cta import send_cta
 from core.pronunciation import apply_pronunciation_fixes, PRONUNCIATION_MAP
 
 root_folder = "AGENTS | VAANI_ADVISORY"
@@ -60,6 +61,10 @@ class WeatherAdvisoryAgent(Agent):
                 f"Weather Data:\n{weather_context}"
             )
         )
+
+        if data.is_web_session:
+            await send_cta(self.session, "Mausam ke baare mein kuch aur poochna hai?",
+                           ["Irrigation Timing", "Rain Forecast", "Back to Home"])
 
     async def _fetch_weather_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch weather from data_service. Returns a string summary for the LLM."""
