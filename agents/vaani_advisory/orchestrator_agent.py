@@ -62,13 +62,13 @@ class VaaniFarmerAdvisoryAgent(Agent):
                 f"ON_ENTER | Orchestrator entered | topic={data.current_topic} | web={data.is_web_session}"
             )
 
-            msg, buttons = home_cta(data.name or "")
+            _, buttons = home_cta(data.name or "")
 
             if data.current_topic:
                 data.current_topic = None
                 if data.is_web_session:
                     await self.session.say(f"Aur kuch poochna hai {data.name or 'ji'}?")
-                    await send_cta(self.session, msg, buttons)
+                    await send_cta(self.session, buttons)
                 else:
                     await self.session.generate_reply(
                         instructions=(
@@ -82,7 +82,7 @@ class VaaniFarmerAdvisoryAgent(Agent):
                     await self.session.say(
                         f"Namaste {data.name or 'ji'}! Main Vaani hoon, aapki digital kheti ki saathi."
                     )
-                    await send_cta(self.session, msg, buttons)
+                    await send_cta(self.session, buttons)
                 else:
                     await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
 

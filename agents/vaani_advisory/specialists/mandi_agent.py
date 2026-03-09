@@ -54,8 +54,7 @@ class MandiAgent(Agent):
 
         if data.is_web_session:
             await self.session.say(f"Chaliye {data.active_crop or 'fasal'} ke mandi bhav dekhte hain!")
-            await send_cta(self.session, "Mandi ke baare mein kya jaanna hai?",
-                           ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
+            await send_cta(self.session, ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
         else:
             await self.session.generate_reply(
                 instructions=(

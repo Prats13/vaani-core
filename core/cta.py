@@ -21,11 +21,11 @@ from livekit.agents import AgentSession, get_job_context
 logger = logging.getLogger("vaani")
 
 
-async def send_cta(session: AgentSession, message: str, buttons: list[str]) -> None:
-    """Send a CTA message to the frontend via LiveKit data channel (publish_data).
+async def send_cta(session: AgentSession, buttons: list[str], message: str = "") -> None:
+    """Send CTA buttons to the frontend via LiveKit data channel (publish_data).
 
-    Uses publish_data (not send_text) so the frontend receives it via
-    RoomEvent.DataReceived with raw bytes — clean and version-safe.
+    Text/audio is handled by generate_reply()/say() — CTA is buttons only.
+    Uses publish_data so the frontend receives it via RoomEvent.DataReceived.
     """
     try:
         payload = json.dumps({

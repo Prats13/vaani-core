@@ -51,8 +51,7 @@ class GovtSchemesAgent(Agent):
 
         if data.is_web_session:
             await self.session.say("Chaliye sarkari yojanaon ke baare mein baat karte hain!")
-            await send_cta(self.session, "Kaunsi yojana ke baare mein jaanna chahte hain?",
-                           ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
+            await send_cta(self.session, ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
         else:
             await self.session.generate_reply(
                 instructions=(

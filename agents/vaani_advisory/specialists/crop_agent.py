@@ -54,8 +54,7 @@ class CropAdvisoryAgent(Agent):
 
         if data.is_web_session:
             await self.session.say(f"Chaliye {data.active_crop or 'fasal'} ke baare mein baat karte hain!")
-            await send_cta(self.session, "Fasal ke baare mein kya jaanna hai?",
-                           ["Varieties", "Sowing Time", "Fertilizer Tips", "Back to Home"])
+            await send_cta(self.session, ["Varieties", "Sowing Time", "Fertilizer Tips", "Back to Home"])
         else:
             await self.session.generate_reply(
                 instructions=(

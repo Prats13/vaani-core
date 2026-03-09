@@ -54,8 +54,7 @@ class WeatherAdvisoryAgent(Agent):
 
         if data.is_web_session:
             await self.session.say("Chaliye mausam ke baare mein baat karte hain!")
-            await send_cta(self.session, "Mausam ke baare mein kya jaanna hai?",
-                           ["Irrigation Timing", "Rain Forecast", "Back to Home"])
+            await send_cta(self.session, ["Irrigation Timing", "Rain Forecast", "Back to Home"])
         else:
             await self.session.generate_reply(
                 instructions=(
