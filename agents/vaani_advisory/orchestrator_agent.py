@@ -66,14 +66,16 @@ class VaaniFarmerAdvisoryAgent(Agent):
 
             if data.current_topic:
                 data.current_topic = None
-                await self.session.generate_reply(
-                    instructions=(
-                        "The farmer just finished a topic. Ask in ONE short sentence in their "
-                        "preferred language if they need help with anything else."
-                    )
-                )
                 if data.is_web_session:
+                    # Web: silently show buttons — farmer may have already typed next question
                     await send_cta(self.session, buttons)
+                else:
+                    await self.session.generate_reply(
+                        instructions=(
+                            "The farmer just finished a topic. Ask in ONE short sentence in their "
+                            "preferred language if they need help with anything else."
+                        )
+                    )
             else:
                 await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
                 if data.is_web_session:
