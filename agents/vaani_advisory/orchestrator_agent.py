@@ -62,27 +62,29 @@ class VaaniFarmerAdvisoryAgent(Agent):
                 f"ON_ENTER | Orchestrator entered | topic={data.current_topic} | web={data.is_web_session}"
             )
 
-            # If this is a return from a specialist, ask if they need anything else
+            msg, buttons = home_cta(data.name or "")
+
             if data.current_topic:
                 data.current_topic = None
-                await self.session.generate_reply(
-                    instructions=(
-                        "The farmer just finished discussing a topic with a specialist. "
-                        "Ask them warmly if they have any other questions or need help "
-                        "with anything else. Keep it to 1-2 sentences."
+                if data.is_web_session:
+                    await self.session.say(f"Aur kuch poochna hai {data.name or 'ji'}?")
+                    await send_cta(self.session, msg, buttons)
+                else:
+                    await self.session.generate_reply(
+                        instructions=(
+                            "The farmer just finished discussing a topic with a specialist. "
+                            "Ask them warmly if they have any other questions or need help "
+                            "with anything else. Keep it to 1-2 sentences."
+                        )
                     )
-                )
-                # For web sessions: send home CTA buttons after the voice response
-                if data.is_web_session:
-                    msg, buttons = home_cta(data.name or "")
-                    await send_cta(self.session, msg, buttons)
             else:
-                # First entry — greet and ask what they need
-                await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
-                # For web sessions: also send the home CTA immediately
                 if data.is_web_session:
-                    msg, buttons = home_cta(data.name or "")
+                    await self.session.say(
+                        f"Namaste {data.name or 'ji'}! Main Vaani hoon, aapki digital kheti ki saathi."
+                    )
                     await send_cta(self.session, msg, buttons)
+                else:
+                    await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
 
         except Exception as e:
             logger.error(f"{root_folder} | {sub_file_path} | ON_ENTER | ERROR | {e}")
