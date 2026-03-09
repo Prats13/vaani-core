@@ -124,6 +124,22 @@ async def start_advisory_session(
     await session.start(room=ctx.room, agent=agent)
     logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | Session started")
 
+    # =========================================================================
+    # Text input handler — receives button taps and typed messages from frontend
+    # =========================================================================
+    def _on_data_received(data: bytes, *args, **kwargs):
+        try:
+            text = data.decode("utf-8").strip()
+            if not text or text.startswith('{"vaani_cta"'):
+                return  # ignore our own outgoing CTA messages
+            logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | TEXT_INPUT | '{text}'")
+            asyncio.ensure_future(session.generate_reply(user_input=text))
+        except Exception as e:
+            logger.error(f"{room_name} | {root_folder} | {sub_file_path} | TEXT_INPUT_ERROR | {e}")
+
+    ctx.room.on("data_received", _on_data_received)
+    logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | Text input handler registered")
+
     # Background audio: subtle ambient sound for presence and warmth
     background_audio = BackgroundAudioPlayer(
         ambient_sound=AudioConfig(BuiltinAudioClip.OFFICE_AMBIENCE, volume=0.7),
