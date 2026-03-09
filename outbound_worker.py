@@ -26,12 +26,19 @@ server = AgentServer()
 
 @server.rtc_session()
 async def entrypoint(ctx: JobContext):
+    room_name = ctx.room.name
+
+    # Web sessions (browser) are handled exclusively by web_worker — skip them
+    if room_name.startswith("vaani_room_"):
+        logger.debug(f"{room_name} | {root_folder} | Web room detected — skipping (handled by web_worker)")
+        return
+
     await ctx.connect(auto_subscribe=AutoSubscribe.SUBSCRIBE_ALL)
 
     callbacks = create_callback_registry()
     setup_room_listeners(
         ctx.room,
-        log_context={"room_name": ctx.room.name, "root_folder": root_folder, "sub_file_path": sub_file_path},
+        log_context={"room_name": room_name, "root_folder": root_folder, "sub_file_path": sub_file_path},
         callbacks=callbacks,
     )
 
@@ -39,8 +46,6 @@ async def entrypoint(ctx: JobContext):
     if not participant:
         logger.debug(f"{root_folder} | No participant yet, waiting...")
         participant = await ctx.wait_for_participant()
-
-    room_name = ctx.room.name
 
     # =========================================================================
     # Parse participant data
