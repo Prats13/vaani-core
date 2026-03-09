@@ -22,7 +22,11 @@ logger = logging.getLogger("vaani")
 
 
 async def send_cta(session: AgentSession, message: str, buttons: list[str]) -> None:
-    """Send a CTA message to the frontend via LiveKit chat (send_text)."""
+    """Send a CTA message to the frontend via LiveKit data channel (publish_data).
+
+    Uses publish_data (not send_text) so the frontend receives it via
+    RoomEvent.DataReceived with raw bytes — clean and version-safe.
+    """
     try:
         payload = json.dumps({
             "vaani_cta": True,
@@ -30,7 +34,7 @@ async def send_cta(session: AgentSession, message: str, buttons: list[str]) -> N
             "buttons": buttons,
         })
         room = get_job_context().room
-        await room.local_participant.send_text(payload)
+        await room.local_participant.publish_data(payload, reliable=True)
         logger.debug(f"CTA | SENT | message='{message}' | buttons={buttons}")
     except Exception as e:
         logger.error(f"CTA | SEND_ERROR | {e}")

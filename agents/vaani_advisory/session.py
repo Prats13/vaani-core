@@ -127,9 +127,11 @@ async def start_advisory_session(
     # =========================================================================
     # Text input handler — receives button taps and typed messages from frontend
     # =========================================================================
-    def _on_data_received(data: bytes, *args, **kwargs):
+    def _on_data_received(data_packet, *args, **kwargs):
         try:
-            text = data.decode("utf-8").strip()
+            # livekit Python SDK v1.x passes a DataPacket object with a .data bytes field
+            raw = data_packet.data if hasattr(data_packet, "data") else data_packet
+            text = raw.decode("utf-8").strip()
             if not text or text.startswith('{"vaani_cta"'):
                 return  # ignore our own outgoing CTA messages
             logger.debug(f"{room_name} | {root_folder} | {sub_file_path} | TEXT_INPUT | '{text}'")
