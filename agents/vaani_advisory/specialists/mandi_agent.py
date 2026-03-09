@@ -52,14 +52,25 @@ class MandiAgent(Agent):
 
         mandi_context = await self._fetch_mandi_data(data)
 
-        await self.session.generate_reply(
-            instructions=(
-                f"You have just received mandi (market) price data for the farmer. "
-                f"Summarise the key insights: current prices, trends, and best markets to sell at. "
-                f"Keep it simple and actionable.\n\n"
-                f"Mandi Data:\n{mandi_context}"
+        if data.is_web_session:
+            await self.session.generate_reply(
+                instructions=(
+                    f"Greet the farmer in one short sentence in Hindi, telling them you have "
+                    f"mandi price info ready for them. Be warm and brief.\n\n"
+                    f"You have this data available for follow-up questions:\n{mandi_context}"
+                )
             )
-        )
+            await send_cta(self.session, "Mandi ke baare mein kuch poochna hai?",
+                           ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
+        else:
+            await self.session.generate_reply(
+                instructions=(
+                    f"You have just received mandi (market) price data for the farmer. "
+                    f"Summarise the key insights: current prices, trends, and best markets to sell at. "
+                    f"Keep it simple and actionable.\n\n"
+                    f"Mandi Data:\n{mandi_context}"
+                )
+            )
 
         if data.is_web_session:
             await send_cta(self.session, "Mandi ke baare mein kuch aur poochna hai?",

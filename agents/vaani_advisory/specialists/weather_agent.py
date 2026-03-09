@@ -52,19 +52,25 @@ class WeatherAdvisoryAgent(Agent):
 
         weather_context = await self._fetch_weather_data(data)
 
-        # Generate response with weather data injected
-        await self.session.generate_reply(
-            instructions=(
-                f"You have just received the following weather data for the farmer's area. "
-                f"Summarise it in simple, farmer-friendly language. "
-                f"Highlight anything important for farming decisions.\n\n"
-                f"Weather Data:\n{weather_context}"
-            )
-        )
-
         if data.is_web_session:
-            await send_cta(self.session, "Mausam ke baare mein kuch aur poochna hai?",
+            await self.session.generate_reply(
+                instructions=(
+                    f"Greet the farmer in one short sentence in Hindi, telling them you have "
+                    f"their local weather info ready. Be warm and brief.\n\n"
+                    f"You have this data available for follow-up questions:\n{weather_context}"
+                )
+            )
+            await send_cta(self.session, "Mausam ke baare mein kuch poochna hai?",
                            ["Irrigation Timing", "Rain Forecast", "Back to Home"])
+        else:
+            await self.session.generate_reply(
+                instructions=(
+                    f"You have just received the following weather data for the farmer's area. "
+                    f"Summarise it in simple, farmer-friendly language. "
+                    f"Highlight anything important for farming decisions.\n\n"
+                    f"Weather Data:\n{weather_context}"
+                )
+            )
 
     async def _fetch_weather_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch weather from data_service. Returns a string summary for the LLM."""
