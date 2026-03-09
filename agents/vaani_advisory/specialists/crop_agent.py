@@ -52,18 +52,16 @@ class CropAdvisoryAgent(Agent):
 
         crop_context = await self._fetch_crop_data(data)
 
-        if data.is_web_session:
-            await self.session.say(f"Chaliye {data.active_crop or 'fasal'} ke baare mein baat karte hain!")
-            await send_cta(self.session, ["Varieties", "Sowing Time", "Fertilizer Tips", "Back to Home"])
-        else:
-            await self.session.generate_reply(
-                instructions=(
-                    f"You have just received crop data for the farmer. "
-                    f"Present the most relevant information in simple language. "
-                    f"Focus on what's actionable for the farmer right now.\n\n"
-                    f"Crop Data:\n{crop_context}"
-                )
+        await self.session.generate_reply(
+            instructions=(
+                f"In ONE short sentence in the farmer's preferred language, share the single most "
+                f"useful fact about {data.active_crop or 'their crop'} right now "
+                f"(e.g. best variety, sowing window, current stage).\n\n"
+                f"Crop Data:\n{crop_context}"
             )
+        )
+        if data.is_web_session:
+            await send_cta(self.session, ["Varieties", "Sowing Time", "Fertilizer Tips", "Back to Home"])
 
     async def _fetch_crop_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch crop info from data_service. Returns a string summary for the LLM."""

@@ -66,25 +66,18 @@ class VaaniFarmerAdvisoryAgent(Agent):
 
             if data.current_topic:
                 data.current_topic = None
-                if data.is_web_session:
-                    await self.session.say(f"Aur kuch poochna hai {data.name or 'ji'}?")
-                    await send_cta(self.session, buttons)
-                else:
-                    await self.session.generate_reply(
-                        instructions=(
-                            "The farmer just finished discussing a topic with a specialist. "
-                            "Ask them warmly if they have any other questions or need help "
-                            "with anything else. Keep it to 1-2 sentences."
-                        )
+                await self.session.generate_reply(
+                    instructions=(
+                        "The farmer just finished a topic. Ask in ONE short sentence in their "
+                        "preferred language if they need help with anything else."
                     )
+                )
+                if data.is_web_session:
+                    await send_cta(self.session, buttons)
             else:
+                await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
                 if data.is_web_session:
-                    await self.session.say(
-                        f"Namaste {data.name or 'ji'}! Main Vaani hoon, aapki digital kheti ki saathi."
-                    )
                     await send_cta(self.session, buttons)
-                else:
-                    await self.session.generate_reply(instructions=ORCHESTRATOR_GREETING)
 
         except Exception as e:
             logger.error(f"{root_folder} | {sub_file_path} | ON_ENTER | ERROR | {e}")

@@ -49,20 +49,15 @@ class GovtSchemesAgent(Agent):
             f"ON_ENTER | Schemes advisor for state={data.state}"
         )
 
-        if data.is_web_session:
-            await self.session.say("Chaliye sarkari yojanaon ke baare mein baat karte hain!")
-            await send_cta(self.session, ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
-        else:
-            await self.session.generate_reply(
-                instructions=(
-                    f"The farmer wants to learn about government agricultural schemes. "
-                    f"Based on their profile (state: {data.state or 'not specified'}, "
-                    f"crops: {', '.join(data.primary_crops) if data.primary_crops else 'various'}), "
-                    f"suggest 2-3 relevant schemes they might benefit from. "
-                    f"Explain eligibility in simple terms and where to apply. "
-                    f"Remember you are providing general guidance, not guaranteed eligibility."
-                )
+        await self.session.generate_reply(
+            instructions=(
+                f"In ONE short sentence in the farmer's preferred language, name the single most "
+                f"relevant scheme for them (state: {data.state or 'their state'}, "
+                f"crops: {', '.join(data.primary_crops) if data.primary_crops else 'various'})."
             )
+        )
+        if data.is_web_session:
+            await send_cta(self.session, ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
 
     # =========================================================================
     # RETURN TO ORCHESTRATOR
