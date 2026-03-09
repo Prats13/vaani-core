@@ -53,14 +53,8 @@ class WeatherAdvisoryAgent(Agent):
         weather_context = await self._fetch_weather_data(data)
 
         if data.is_web_session:
-            await self.session.generate_reply(
-                instructions=(
-                    f"Greet the farmer in one short sentence in Hindi, telling them you have "
-                    f"their local weather info ready. Be warm and brief.\n\n"
-                    f"You have this data available for follow-up questions:\n{weather_context}"
-                )
-            )
-            await send_cta(self.session, "Mausam ke baare mein kuch poochna hai?",
+            await self.session.say("Chaliye mausam ke baare mein baat karte hain!")
+            await send_cta(self.session, "Mausam ke baare mein kya jaanna hai?",
                            ["Irrigation Timing", "Rain Forecast", "Back to Home"])
         else:
             await self.session.generate_reply(

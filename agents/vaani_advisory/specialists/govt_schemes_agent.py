@@ -50,12 +50,7 @@ class GovtSchemesAgent(Agent):
         )
 
         if data.is_web_session:
-            await self.session.generate_reply(
-                instructions=(
-                    f"Greet the farmer in one short sentence in Hindi, telling them you're ready "
-                    f"to help with government scheme information. Be warm and brief."
-                )
-            )
+            await self.session.say("Chaliye sarkari yojanaon ke baare mein baat karte hain!")
             await send_cta(self.session, "Kaunsi yojana ke baare mein jaanna chahte hain?",
                            ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
         else:
@@ -69,10 +64,6 @@ class GovtSchemesAgent(Agent):
                     f"Remember you are providing general guidance, not guaranteed eligibility."
                 )
             )
-
-        if data.is_web_session:
-            await send_cta(self.session, "Kaunsi yojana ke baare mein aur jaanna chahte hain?",
-                           ["PM-Kisan", "KCC Loan", "PMFBY Insurance", "Back to Home"])
 
     # =========================================================================
     # RETURN TO ORCHESTRATOR

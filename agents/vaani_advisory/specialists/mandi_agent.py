@@ -53,14 +53,8 @@ class MandiAgent(Agent):
         mandi_context = await self._fetch_mandi_data(data)
 
         if data.is_web_session:
-            await self.session.generate_reply(
-                instructions=(
-                    f"Greet the farmer in one short sentence in Hindi, telling them you have "
-                    f"mandi price info ready for them. Be warm and brief.\n\n"
-                    f"You have this data available for follow-up questions:\n{mandi_context}"
-                )
-            )
-            await send_cta(self.session, "Mandi ke baare mein kuch poochna hai?",
+            await self.session.say(f"Chaliye {data.active_crop or 'fasal'} ke mandi bhav dekhte hain!")
+            await send_cta(self.session, "Mandi ke baare mein kya jaanna hai?",
                            ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
         else:
             await self.session.generate_reply(
@@ -71,10 +65,6 @@ class MandiAgent(Agent):
                     f"Mandi Data:\n{mandi_context}"
                 )
             )
-
-        if data.is_web_session:
-            await send_cta(self.session, "Mandi ke baare mein kuch aur poochna hai?",
-                           ["Best Market Near Me", "Price Trend", "When to Sell", "Back to Home"])
 
     async def _fetch_mandi_data(self, data: FarmerAdvisoryData) -> str:
         """Fetch mandi insights from data_service. Returns a string summary for the LLM."""
