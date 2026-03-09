@@ -142,7 +142,7 @@ class MandiAgent(Agent):
         from agents.vaani_advisory.orchestrator_agent import VaaniFarmerAdvisoryAgent
         from agents.vaani_advisory.prompts import build_orchestrator_instructions
 
-        await self.session.update_agent(
+        self.session.update_agent(
             VaaniFarmerAdvisoryAgent(
                 instructions=build_orchestrator_instructions(data),
                 chat_ctx=self.chat_ctx,

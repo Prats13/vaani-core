@@ -112,7 +112,7 @@ class VaaniFarmerAdvisoryAgent(Agent):
         from agents.vaani_advisory.specialists.weather_agent import WeatherAdvisoryAgent
         from agents.vaani_advisory.prompts import build_weather_instructions
 
-        await self.session.update_agent(
+        self.session.update_agent(
             WeatherAdvisoryAgent(
                 instructions=build_weather_instructions(data),
                 farmer_data=data,
@@ -145,7 +145,7 @@ class VaaniFarmerAdvisoryAgent(Agent):
         from agents.vaani_advisory.specialists.crop_agent import CropAdvisoryAgent
         from agents.vaani_advisory.prompts import build_crop_instructions
 
-        await self.session.update_agent(
+        self.session.update_agent(
             CropAdvisoryAgent(
                 instructions=build_crop_instructions(data),
                 farmer_data=data,
@@ -178,7 +178,7 @@ class VaaniFarmerAdvisoryAgent(Agent):
         from agents.vaani_advisory.specialists.mandi_agent import MandiAgent
         from agents.vaani_advisory.prompts import build_mandi_instructions
 
-        await self.session.update_agent(
+        self.session.update_agent(
             MandiAgent(
                 instructions=build_mandi_instructions(data),
                 farmer_data=data,
@@ -207,7 +207,7 @@ class VaaniFarmerAdvisoryAgent(Agent):
         from agents.vaani_advisory.specialists.govt_schemes_agent import GovtSchemesAgent
         from agents.vaani_advisory.prompts import build_schemes_instructions
 
-        await self.session.update_agent(
+        self.session.update_agent(
             GovtSchemesAgent(
                 instructions=build_schemes_instructions(data),
                 farmer_data=data,
